@@ -239,3 +239,14 @@ Run the script to start the challenge like a pro 😉.
 > ENG: Please give us your feedback about this chapter.
 > FR: Let us know what you think about this chapter.
 > 👉🏾 https://forms.gle/nJHWw4uqLuAUjAyi7
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./04-users-groups.md)
+
+* [Next chapter](./06-package-management.md)
+
+* [Go To Summary](./index.md)

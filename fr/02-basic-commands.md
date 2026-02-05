@@ -293,3 +293,14 @@ Ouvrez votre terminal et tapez **vimtutor**. Vous aurez un retour similaire à:
 > FR: Faites-nous part de votre avis sur ce chapitre.
 
 > 👉🏾 https://forms.gle/gk932mwzgjJmbtc87
+
+---
+---
+
+## Navigation 
+
+* [Chapitre précédent](./01-inside-linux-world.md)
+
+* [Chapitre suivant](./03-process-management.md)
+
+* [Allez au sommaire](./index.md)

@@ -219,3 +219,14 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 > FR: Faites-nous part de votre avis sur ce chapitre.
 
 > 👉🏾 https://forms.gle/kpgXVDY8EY3twRQV9
+
+---
+---
+
+## Navigation 
+
+* [Chapitre précédent](./06-package-management.md)
+
+* [Chapitre suivant](./08-network-management.md)
+
+* [Allez au sommaire](./index.md)

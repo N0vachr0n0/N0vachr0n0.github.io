@@ -126,3 +126,12 @@ We will compare distributions according to three criteria: **package and update 
 > FR: Let us know what you think about this chapter.
 
 > 👉🏾 https://forms.gle/1oYNEGehhKUCMcoP7 
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./02-basic-commands.md)
+
+* [Go to summary](./index.md)

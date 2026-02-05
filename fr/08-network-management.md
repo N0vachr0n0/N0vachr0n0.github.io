@@ -615,3 +615,15 @@ Lien du script du challenge: https://raw.githubusercontent.com/N0vachr0n0/NoFD/r
 > FR: Faites-nous part de votre avis sur ce chapitre.
 
 > 👉🏾 https://forms.gle/xnuAAfbBtxyGFz8h9
+
+
+---
+---
+
+## Navigation 
+
+* [Chapitre précédent](./07-service-management.md)
+
+* [Chapitre suivant](./09-firewall.md)
+
+* [Allez au sommaire](./index.md)

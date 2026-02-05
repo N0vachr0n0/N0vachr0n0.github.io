@@ -332,3 +332,14 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 > FR: Faites-nous part de votre avis sur ce chapitre.
 
 > 👉🏾 https://forms.gle/nJHWw4uqLuAUjAyi7
+
+---
+---
+
+## Navigation 
+
+* [Chapitre précédent](./04-users-groups.md)
+
+* [Chapitre suivant](./06-package-management.md)
+
+* [Allez au sommaire](./index.md)

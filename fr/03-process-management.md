@@ -179,3 +179,14 @@ C'est par ici: https://sadservers.com/scenario/saint-john
 > FR: Faites-nous part de votre avis sur ce chapitre.
 
 > 👉🏾 https://forms.gle/dNjUFEXf6saN8RTEA
+
+---
+---
+
+## Navigation 
+
+* [Chapitre précédent](./02-basic-commands.md)
+
+* [Chapitre suivant](./04-users-groups.md)
+
+* [Allez au sommaire](./index.md)

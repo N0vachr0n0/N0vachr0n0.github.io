@@ -168,3 +168,15 @@ Run the script to start the challenge like a pro 😉.
 > ENG: Please give us your feedback about this chapter.
 > FR: Let us know what you think about this chapter.
 > 👉🏾 https://forms.gle/kpgXVDY8EY3twRQV9
+
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./06-package-management.md)
+
+* [Next chapter](./08-network-management.md)
+
+* [Go To Summary](./index.md)

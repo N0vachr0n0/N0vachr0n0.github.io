@@ -124,3 +124,14 @@ It's here: https://sadservers.com/scenario/saint-john
 > ENG: Please give us your feedback about this chapter.
 > FR: Let us know what you think about this chapter.
 > 👉🏾 https://forms.gle/dNjUFEXf6saN8RTEA
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./02-basic-commands.md)
+
+* [Next chapter](./04-users-groups.md)
+
+* [Go To Summary](./index.md)

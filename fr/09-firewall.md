@@ -133,3 +133,15 @@ En libre-service 🙂
 > FR: Faites-nous part de votre avis sur ce chapitre.
 
 > 👉🏾 https://forms.gle/88jPmFLnNPtjdgqv8 
+
+
+---
+---
+
+## Navigation 
+
+* [Chapitre précédent](./08-network-management.md)
+
+* [Chapitre suivant](./10-tasks-planification.md)
+
+* [Allez au sommaire](./index.md)

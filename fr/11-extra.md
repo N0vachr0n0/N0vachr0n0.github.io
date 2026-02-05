@@ -44,3 +44,13 @@ Pour aller plus loin, je vous propose d'explorer les ressources ci-dessous.
     <br>
     St Josémaria, (Chemin n°1).
 </details>
+
+
+---
+---
+
+## Navigation 
+
+* [Chapitre précédent](./10-tasks-planification.md)
+
+* [Allez au sommaire](./index.md)

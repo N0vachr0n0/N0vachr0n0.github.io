@@ -180,3 +180,15 @@ Si vous utilisez Docker sur votre VPS ou serveur privé accessible sur internet,
 > FR: Faites-nous part de votre avis sur ce chapitre.
 
 > 👉🏾 https://forms.gle/QxgTWzCfPTpg9Mks7
+
+
+---
+---
+
+## Navigation 
+
+* [Chapitre précédent](./05-file-permissions.md)
+
+* [Chapitre suivant](./07-service-management.md)
+
+* [Allez au sommaire](./index.md)

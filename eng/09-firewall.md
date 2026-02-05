@@ -94,3 +94,15 @@ Self-service 🙂
 > FR: Let us know what you think about this chapter.
 > 👉🏾 https://forms.gle/88jPmFLnNPtjdgqv8
  
+
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./08-network-management.md)
+
+* [Next chapter](./10-tasks-planification.md)
+
+* [Go To Summary](./index.md)

@@ -474,3 +474,15 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 > FR: Faites-nous part de votre avis sur ce chapitre.
 
 > 👉🏾 https://forms.gle/RJzHyDZMpwDDS2uc7
+
+
+---
+---
+
+## Navigation 
+
+* [Chapitre précédent](./03-process-management.md)
+
+* [Chapitre suivant](./05-file-permissions.md)
+
+* [Allez au sommaire](./index.md)

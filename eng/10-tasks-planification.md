@@ -211,3 +211,14 @@ Thank you for taking this course. I hope it has helped you better understand the
 > ENG: Please give us your feedback about this chapter.
 > FR: Let us know what you think about this chapter.
 > 👉🏾 https://forms.gle/Br22WxcwgJSeLGkW9
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./09-firewall.md)
+
+* [Next chapter](./11-extra.md)
+
+* [Go To Summary](./index.md)

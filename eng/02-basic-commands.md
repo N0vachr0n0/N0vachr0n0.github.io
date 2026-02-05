@@ -231,3 +231,15 @@ Open your terminal and type **vimtutor**. You will get a response similar to:
 > ENG: Please give us your feedback about this chapter.
 > FR: Faites-nous part de votre avis sur ce chapitre.
 > 👉🏾 https://forms.gle/gk932mwzgjJmbtc87
+
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./01-inside-linux-world.md)
+
+* [Next chapter](./03-process-management.md)
+
+* [Go To Summary](./index.md)

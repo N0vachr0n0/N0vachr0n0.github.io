@@ -43,3 +43,12 @@ To go further, I suggest you explore the resources below.
     <br>
  St Josemaria, (Way no. 1).
 </details>
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./10-tasks-planification.md)
+
+* [Go To Summary](./index.md)

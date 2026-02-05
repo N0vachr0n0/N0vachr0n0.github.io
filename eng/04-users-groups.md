@@ -384,3 +384,15 @@ Run the script to start the challenge like a pro 😉.
 > ENG: Please give us your feedback about this chapter.
 > FR: Let us know what you think about this chapter.
 > 👉🏾 https://forms.gle/RJzHyDZMpwDDS2uc7
+
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./03-process-management.md)
+
+* [Next chapter](./05-file-permissions.md)
+
+* [Go To Summary](./index.md)

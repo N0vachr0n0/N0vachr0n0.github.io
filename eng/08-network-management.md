@@ -459,3 +459,14 @@ Challenge script link: https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/he
 > ENG: Please give us your feedback about this chapter.
 > FR: Let us know what you think about this chapter.
 > 👉🏾 https://forms.gle/xnuAAfbBtxyGFz8h9
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./07-service-management.md)
+
+* [Next chapter](./09-firewall.md)
+
+* [Go To Summary](./index.md)

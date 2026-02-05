@@ -139,3 +139,14 @@ If you use Docker on your VPS or private server accessible on the internet, we i
 > ENG: Please give us your feedback about this chapter.
 > FR: Please give us your feedback about this chapter.
 > 👉🏾 https://forms.gle/QxgTWzCfPTpg9Mks7
+
+---
+---
+
+## Navigation 
+
+* [Previous chapter](./05-file-permissions.md)
+
+* [Next chapter](./07-service-management.md)
+
+* [Go To Summary](./index.md)

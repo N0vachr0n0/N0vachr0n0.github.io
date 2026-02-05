@@ -118,6 +118,7 @@ Nous allons comparer les distributions selon trois critères : **la gestion des 
 ---
 ---
 
+
 ## Feedback
 
 > ENG: Please give us your feedback about this chapter.
@@ -125,3 +126,12 @@ Nous allons comparer les distributions selon trois critères : **la gestion des 
 > FR: Faites-nous part de votre avis sur ce chapitre.
 
 > 👉🏾 https://forms.gle/1oYNEGehhKUCMcoP7 
+
+---
+---
+
+## Navigation 
+
+* [Chapitre suivant](./02-basic-commands.md)
+
+* [Allez au sommaire](./index.md)
