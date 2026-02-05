@@ -5,18 +5,21 @@ theme: jekyll-theme-cayman
 # Configuration pour les chemins relatifs
 baseurl: ""
 url: "https://n0vachr0n0.github.io"
-github_username: N0vachr0n0
+
+github:
+  repository_url: https://github.com/N0vachr0n0/Hands-on-Linux-course
+  repository_nwo: N0vachr0n0/Hands-on-Linux-course
 
 # Paramètres markdown
 markdown: kramdown
 kramdown:
   input: GFM
-  auto_ids: true
-  hard_wrap: false
+ # auto_ids: true
+ # hard_wrap: false
   syntax_highlighter: rouge
-  parse_block_html: true
-  extensions:
-    - autolink
+ # parse_block_html: true
+ # extensions:
+ #   - autolink
 
 # Exclure certains fichiers
 exclude:
