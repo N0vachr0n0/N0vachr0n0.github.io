@@ -1,3 +1,4 @@
+# Chapitre 8: Gestion réseau
 # Avant-propos
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
@@ -610,11 +611,9 @@ Lien du script du challenge: https://raw.githubusercontent.com/N0vachr0n0/NoFD/r
 
 ## Feedback
 
-> ENG: Please give us your feedback about this chapter.
+> Faites-nous part de votre avis sur ce chapitre.
 
-> FR: Faites-nous part de votre avis sur ce chapitre.
-
-> 👉🏾 https://forms.gle/xnuAAfbBtxyGFz8h9
+> 👉🏾 [Cliquez ici](https://forms.gle/xnuAAfbBtxyGFz8h9)
 
 
 ---

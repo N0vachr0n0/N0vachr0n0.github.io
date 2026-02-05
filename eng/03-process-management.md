@@ -1,3 +1,4 @@
+# Chapter 3: Process Management
 # Foreword
 We recommend that you do not use AI to do the exercises because you are in the learning phase.
 # Introduction
@@ -121,9 +122,9 @@ It's here: https://sadservers.com/scenario/saint-john
 ---
 ---
 ## Feedback
-> ENG: Please give us your feedback about this chapter.
-> FR: Let us know what you think about this chapter.
-> 👉🏾 https://forms.gle/dNjUFEXf6saN8RTEA
+> Please give us your feedback about this chapter.
+
+> 👉🏾 [Click here](https://forms.gle/dNjUFEXf6saN8RTEA)
 
 ---
 ---

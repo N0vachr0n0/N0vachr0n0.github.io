@@ -1,3 +1,4 @@
+# Chapter 9: Firewall
 # Foreword
 We recommend that you do not use AI to do the exercises, as you are still in the learning phase.
 # Introduction
@@ -90,9 +91,9 @@ Self-service 🙂
 ---
 ---
 ## Feedback
-> ENG: Please give us your feedback about this chapter.
-> FR: Let us know what you think about this chapter.
-> 👉🏾 https://forms.gle/88jPmFLnNPtjdgqv8
+> Please give us your feedback about this chapter.
+
+> 👉🏾 [Click here](https://forms.gle/88jPmFLnNPtjdgqv8)
  
 
 

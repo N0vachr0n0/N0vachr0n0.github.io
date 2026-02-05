@@ -1,4 +1,5 @@
-# Foreword (Repetition is educational)
+# Chapter 5: File Permissions
+# Foreword 
 We recommend that you do not use AI to do the exercises because you are in the learning phase.
 # Introduction
 In this section, we will discuss file management in Linux. More specifically, we will talk about file permissions and access management.
@@ -236,9 +237,9 @@ Run the script to start the challenge like a pro 😉.
 ---
 ---
 ## Feedback
-> ENG: Please give us your feedback about this chapter.
-> FR: Let us know what you think about this chapter.
-> 👉🏾 https://forms.gle/nJHWw4uqLuAUjAyi7
+> Please give us your feedback about this chapter.
+
+> 👉🏾 [Click here](https://forms.gle/nJHWw4uqLuAUjAyi7)
 
 ---
 ---

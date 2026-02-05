@@ -1,4 +1,5 @@
-# Foreword (Repetition is educational)
+# Chapter 6: Package Management
+# Foreword 
 We recommend that you do not use AI to do the exercises because you are in the learning phase.
 # Introduction
 You will often need to install software that is not provided with your distribution or remove unwanted software so that it does not take up hard drive space. In this section, we will discuss managing software packages or applications on Linux.
@@ -136,9 +137,9 @@ If you use Docker on your VPS or private server accessible on the internet, we i
 ---
 ---
 ## Feedback
-> ENG: Please give us your feedback about this chapter.
-> FR: Please give us your feedback about this chapter.
-> 👉🏾 https://forms.gle/QxgTWzCfPTpg9Mks7
+> Please give us your feedback about this chapter.
+
+> 👉🏾 [Click here](https://forms.gle/QxgTWzCfPTpg9Mks7)
 
 ---
 ---

@@ -1,3 +1,4 @@
+# Chapitre 2: Commandes de base
 # Avant-propos
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
@@ -288,11 +289,9 @@ Ouvrez votre terminal et tapez **vimtutor**. Vous aurez un retour similaire à:
 
 ## Feedback
 
-> ENG: Please give us your feedback about this chapter.
+> Faites-nous part de votre avis sur ce chapitre.
 
-> FR: Faites-nous part de votre avis sur ce chapitre.
-
-> 👉🏾 https://forms.gle/gk932mwzgjJmbtc87
+> 👉🏾 [Cliquez ici](https://forms.gle/gk932mwzgjJmbtc87)
 
 ---
 ---

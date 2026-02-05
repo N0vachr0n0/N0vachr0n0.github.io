@@ -1,3 +1,4 @@
+# Chapter 10: Tasks Planification
 # Foreword
 We recommend that you do not use AI to do the exercises, as you are still in the learning phase.
 # Introduction
@@ -208,9 +209,9 @@ Thank you for taking this course. I hope it has helped you better understand the
 ---
 ---
 ## Feedback
-> ENG: Please give us your feedback about this chapter.
-> FR: Let us know what you think about this chapter.
-> 👉🏾 https://forms.gle/Br22WxcwgJSeLGkW9
+> Please give us your feedback about this chapter.
+
+> 👉🏾 [Click here](https://forms.gle/Br22WxcwgJSeLGkW9)
 
 ---
 ---

@@ -1,3 +1,4 @@
+# Chapitre 3: Gestion des processus
 # Avant-propos
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
@@ -174,11 +175,10 @@ C'est par ici: https://sadservers.com/scenario/saint-john
 
 ## Feedback
 
-> ENG: Please give us your feedback about this chapter.
 
-> FR: Faites-nous part de votre avis sur ce chapitre.
+> Faites-nous part de votre avis sur ce chapitre.
 
-> 👉🏾 https://forms.gle/dNjUFEXf6saN8RTEA
+> 👉🏾 [Cliquez ici](https://forms.gle/dNjUFEXf6saN8RTEA)
 
 ---
 ---

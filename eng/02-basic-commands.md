@@ -1,3 +1,4 @@
+# Chapter 2: Basic Commands
 # Foreword
 We recommend that you do not use AI to do the exercises, as you are still in the learning phase.
 # Introduction
@@ -228,9 +229,9 @@ Open your terminal and type **vimtutor**. You will get a response similar to:
 ---
 ---
 ## Feedback
-> ENG: Please give us your feedback about this chapter.
-> FR: Faites-nous part de votre avis sur ce chapitre.
-> 👉🏾 https://forms.gle/gk932mwzgjJmbtc87
+> Please give us your feedback about this chapter.
+
+> 👉🏾 [Click here](https://forms.gle/gk932mwzgjJmbtc87)
 
 
 ---

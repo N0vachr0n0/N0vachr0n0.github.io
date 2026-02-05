@@ -1,7 +1,7 @@
+# Chapter 1: Inside the Linux World
 # Foreword
 
-- La version française est ici: https://github.com/N0vachr0n0/Hands-on-Linux-course/tree/main/fr
-- We recommend that you do not use AI to do the exercises as you are in the learning phase.
+We recommend that you do not use AI to do the exercises as you are in the learning phase.
 
 <br>
 <br>
@@ -121,11 +121,9 @@ We will compare distributions according to three criteria: **package and update 
 
 ## Feedback
 
-> ENG: Please give us your feedback about this chapter.
-<>
-> FR: Let us know what you think about this chapter.
+> Let us know what you think about this chapter.
 
-> 👉🏾 https://forms.gle/1oYNEGehhKUCMcoP7 
+> 👉🏾 [Click here](https://forms.gle/1oYNEGehhKUCMcoP7)
 
 ---
 ---

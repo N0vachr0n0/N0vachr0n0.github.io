@@ -1,3 +1,4 @@
+# Chapitre 10: Planification des tâches
 # Avant-propos 
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
@@ -284,11 +285,9 @@ Merci d'avoir suivi ce cours. J'espère qu'il vous a aidé à mieux appréhender
 
 ## Feedback
 
-> ENG: Please give us your feedback about this chapter.
+> Faites-nous part de votre avis sur ce chapitre.
 
-> FR: Faites-nous part de votre avis sur ce chapitre.
-
-> 👉🏾 https://forms.gle/Br22WxcwgJSeLGkW9
+> 👉🏾 [Cliquez ici](https://forms.gle/Br22WxcwgJSeLGkW9)
 
 
 ---

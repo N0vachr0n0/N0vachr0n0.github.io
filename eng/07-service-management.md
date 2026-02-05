@@ -1,3 +1,4 @@
+# Chapter 7: Service Management
 # Foreword
 We recommend that you do not use AI to do the exercises, as you are still in the learning phase.
 # Introduction
@@ -165,9 +166,9 @@ Run the script to start the challenge like a pro 😉.
 ---
 ---
 ## Feedback
-> ENG: Please give us your feedback about this chapter.
-> FR: Let us know what you think about this chapter.
-> 👉🏾 https://forms.gle/kpgXVDY8EY3twRQV9
+> Please give us your feedback about this chapter.
+
+> 👉🏾 [Click here](https://forms.gle/kpgXVDY8EY3twRQV9)
 
 
 ---

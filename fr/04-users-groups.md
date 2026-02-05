@@ -1,3 +1,4 @@
+# Chapitre 4: Utilisateurs et groupes
 # Avant-propos
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
@@ -469,11 +470,10 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 
 ## Feedback
 
-> ENG: Please give us your feedback about this chapter.
 
-> FR: Faites-nous part de votre avis sur ce chapitre.
+> Faites-nous part de votre avis sur ce chapitre.
 
-> 👉🏾 https://forms.gle/RJzHyDZMpwDDS2uc7
+> 👉🏾 [Cliquez ici](https://forms.gle/RJzHyDZMpwDDS2uc7)
 
 
 ---

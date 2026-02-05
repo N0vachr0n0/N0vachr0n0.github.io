@@ -1,9 +1,7 @@
-# Chapitre 1: Inside dans le monde de Linux
-
+# Chapitre 1: Introduction au monde de Linux
 # Avant-propos
 
-- The english version is here: https://github.com/N0vachr0n0/Hands-on-Linux-course/tree/main/eng
-- Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
+Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
 # Introduction
 
@@ -123,11 +121,10 @@ Nous allons comparer les distributions selon trois critères : **la gestion des 
 
 ## Feedback
 
-> ENG: Please give us your feedback about this chapter.
-<>
-> FR: Faites-nous part de votre avis sur ce chapitre.
 
-> 👉🏾 https://forms.gle/1oYNEGehhKUCMcoP7 
+> Faites-nous part de votre avis sur ce chapitre.
+
+> 👉🏾 [Cliquez ici](https://forms.gle/1oYNEGehhKUCMcoP7)
 
 ---
 ---

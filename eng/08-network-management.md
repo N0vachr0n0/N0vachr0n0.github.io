@@ -1,3 +1,4 @@
+# Chapter 8: Network Management
 # Foreword
 We recommend that you do not use AI to do the exercises, as you are still in the learning phase.
 # Introduction
@@ -456,9 +457,9 @@ Challenge script link: https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/he
 ---
 ---
 ## Feedback
-> ENG: Please give us your feedback about this chapter.
-> FR: Let us know what you think about this chapter.
-> 👉🏾 https://forms.gle/xnuAAfbBtxyGFz8h9
+> Please give us your feedback about this chapter.
+
+> 👉🏾 [Click here](https://forms.gle/xnuAAfbBtxyGFz8h9)
 
 ---
 ---
