@@ -1,0 +1,18 @@
+title: Linux Course
+description: Complete Linux administration course
+theme: jekyll-theme-cayman
+
+# Configuration pour les chemins relatifs
+baseurl: ""
+url: "https://N0vachr0n0.github.io"
+
+# Paramètres markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Exclure certains fichiers
+exclude:
+  - README.md
+  - README-ENG.md

@@ -1,1 +1,66 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Course - Cours Linux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .lang-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+        .lang-btn {
+            padding: 20px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .lang-btn:hover {
+            transform: scale(1.05);
+        }
+        .btn-fr {
+            background: #0055A4;
+            color: white;
+        }
+        .btn-en {
+            background: #C8102E;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐧 Linux Course / Cours Linux</h1>
+        <p>Select your language / Choisissez votre langue</p>
+        <div class="lang-buttons">
+            <a href="fr/" class="lang-btn btn-fr">🇫🇷 Français</a>
+            <a href="eng/" class="lang-btn btn-en">🇬🇧 English</a>
+        </div>
+    </div>
+</body>
+</html>
