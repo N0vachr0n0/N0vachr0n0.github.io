@@ -1,10 +1,11 @@
 title: Linux Course
-description: Complete Linux administration course
+description: Complete Linux Administration Course
 theme: jekyll-theme-cayman
 
 # Configuration pour les chemins relatifs
 baseurl: ""
-url: "https://N0vachr0n0.github.io"
+url: "https://n0vachr0n0.github.io"
+github_username: N0vachr0n0
 
 # Paramètres markdown
 markdown: kramdown
