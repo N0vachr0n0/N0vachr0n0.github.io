@@ -10,7 +10,7 @@ Futur hacker ? Futur administrateur ou administratrice système Linux ? Futur·e
 <br>
 <br>
 
-# 1. Historique de Linux
+# **Historique de Linux**
 
 Linux est né en 1991, créé par Linus Torvalds, un étudiant finlandais inspiré par UNIX, un système d'exploitation puissant et modulaire développé dans les années 1970 par Ken Thompson, Dennis Ritchie et d'autres chez Bell Labs. UNIX était réputé pour sa stabilité et sa portabilité, mais son code n'était pas libre. Torvalds a voulu recréer un système similaire, gratuit et ouvert, en publiant le noyau Linux, qu'il a partagé avec la communauté.
 En l'associant aux outils du projet GNU (lancé par Richard Stallman dans les années 1980 pour créer un système d'exploitation libre similaire à UNIX), Linux est devenu un système d'exploitation complet, souvent appelé GNU/Linux. Il a hérité de ses racines UNIX des concepts comme la gestion multi-utilisateur et le multitâche, tout en évoluant grâce à l'open source. Aujourd'hui, Linux domine le marché des serveurs, des superordinateurs et même des smartphones (via Android), surpassant souvent UNIX en popularité.
