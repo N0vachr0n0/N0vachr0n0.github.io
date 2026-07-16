@@ -1,9 +1,9 @@
-# Chapitre 7: Gestion des services
-# Avant-propos
+# **Chapitre 7: Gestion des services**
+# **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# Introduction
+# **Introduction**
 
 Dans cette partie, nous aborderons la gestion des services sur Linux. 
 
@@ -14,13 +14,15 @@ Toujours la même histoire. 😉
 <br>
 <br>
 
-# Débutons l'exploration
+---
+
+# **Débutons l'exploration**
 
 ## Les services (ou démons)
 
 Les services, aussi appelés **démons** (*daemons* en anglais), sont des composants essentiels d’un système Linux. Ils fonctionnent en arrière-plan, **sans interaction directe avec l’utilisateur**, et assurent des tâches fondamentales pour le bon fonctionnement du système. Ils permettent notamment de maintenir le système opérationnel et d’ajouter des fonctionnalités supplémentaires.
 
-Généralement, on distingue deux grands types de services :
+Généralement, on distingue deux grands types de services (service système et service installé par un utilisateur) :
 
 
 ### Services système
@@ -52,7 +54,7 @@ Les noms des démons se terminent souvent par la lettre **`d`**.
 Par exemple :
 - `sshd` : le démon SSH (pour les connexions sécurisées),
 - `systemd` : le système d'initialisation principal,
-- `httpd` ou `nginx` : démons web,
+- `httpd` : démons web,
 - `crond` : gestionnaire de tâches planifiées.
 
 Tout comme une voiture repose sur ses pièces essentielles ainsi que sur ses options pour offrir une expérience complète, un système Linux utilise à la fois les services système et les services utilisateur pour fonctionner efficacement et répondre aux besoins de chacun.
@@ -64,31 +66,37 @@ En général, voici les actions principales que l’on souhaite effectuer avec u
 
 - **Démarrer / Redémarrer** un service ou un processus
 - **Arrêter** un service ou un processus
-- **Voir ce qu’il se passe ou ce qui s’est passé** avec un service ou un processus
+- **Voir ce qui se passe ou ce qui s’est passé** avec un service ou un processus
 - **Activer / Désactiver** un service au démarrage du système
 - **Trouver** un service ou un processus
 
+<br>
 
 ## Le rôle de systemd
 
-La plupart des distributions Linux modernes utilisent **systemd** en remplacement de SystemV comme système d'initialisation (*init system*).  
+La plupart des distributions Linux modernes utilisent **systemd** en remplacement de **SystemV** comme système d'initialisation (*init system*).  
 C’est le **premier processus lancé au démarrage** du système, et il porte le numéro d’identification de processus (**PID**) `1`.
 
 Chaque processus sous Linux possède un PID unique, visible dans le répertoire `/proc/`, où sont stockées toutes les informations concernant les processus en cours.  
 Un processus peut également avoir un **PPID** (Parent Process ID), ce qui signifie qu’il a été lancé par un autre processus, devenant alors son **processus enfant**.
 
-# Les commandes en rapport avec la gestion des services
+<br>
+<br>
+
+---
+
+# **Les commandes en rapport avec la gestion des services**
 
 ## La commande systemctl
 
 **systemctl** est l’outil principal pour gérer les services, les unités et le démarrage du système  sur les distributions Linux utilisant systemd  (comme Ubuntu, Debian, Fedora, Arch, etc.).
 
-| Action | Commande | Description |
+| Action | Commande | Description ou Commentaire |
 |--------|----------|-------------|
 | Lister tous les services | `systemctl list-units --type=service` | Affiche la liste des services actifs |
 | Démarrer un service | `sudo systemctl start nom_du_service` | Exemple : `sudo systemctl start apache2` |
 | Voir si un service est bien activé au démarrage | `sudo systemctl is-enabled nom_du_service` | Exemple : `sudo systemctl is-enabled apache2` |
-| Arrêter un service | `sudo systemctl stop nom_du_service` | |
+| Arrêter un service | `sudo systemctl stop nom_du_service` | Exemple : `sudo systemctl stop apache2` |
 | Redémarrer un service | `sudo systemctl restart nom_du_service` | Utile après une modification de configuration |
 | Afficher l'unit file d'un service | `sudo systemctl cat nom_du_service` | Affiche le fichier de configuration d'un service |
 | Recharger la configuration d’un service | `sudo systemctl reload nom_du_service` | Sans redémarrer complètement le service |
@@ -103,17 +111,17 @@ Un processus peut également avoir un **PPID** (Parent Process ID), ce qui signi
 
 **journalctl** est l’outil pour lire les logs du système ou des applications géré(e)s par systemd.
 
-| Action | Commande | Description |
+| Action | Commande | Description ou Commentaire |
 |--------|----------|-------------|
 | Voir tous les logs du système | `sudo journalctl` | Affichage paginé (utilise ↑ ↓ pour naviguer) |
-| Voir les logs d’un service spécifique | `sudo journalctl -u nom_du_service` | Exemple : `sudo journalctl -u ssh` |
+| Voir les logs d’un service spécifique | `sudo journalctl -u nom_du_service` | Exemple : `sudo journalctl -u ssh` (Debian = ssh | Redhat = sshd) |
 | Voir les logs en temps réel | `sudo journalctl -f` | Mode "suivi" (comme `tail -f`) |
 | Voir les logs depuis un moment précis | `sudo journalctl --since "1 hour ago"` | Options possibles : `yesterday`, `2024-01-01`, etc. |
-| Voir les logs jusqu’à une certaine date | `sudo journalctl --until "2024-01-01 12:00"` | |
+| Voir les logs jusqu’à une certaine date | `sudo journalctl --until "2024-01-01 12:00"` | Affiche les logs jusqu'au 01/01/2024 à 12h00 |
 | Voir les logs avec priorité élevée (erreurs) | `sudo journalctl -p err` | Priorités : `emerg`, `alert`, `crit`, `err`, `warning`, `notice`, `info`, `debug` |
 | Voir les logs du boot actuel | `sudo journalctl -b` | `-b -1` pour le boot précédent |
 | Voir les logs liés à un PID | `sudo journalctl _PID=1234` | Remplacer `1234` par un numéro de processus |
-| Voir les logs triés par priorité | `sudo journalctl -x` | Ajoute des explications utiles dans les logs |
+| Ajouter des explications contextuelles aux logs | `sudo journalctl -x` | Enrichit certains messages avec des explications tirées de la base de messages catalogués systemd |
 | Exporter les logs dans un fichier | `sudo journalctl > logs.txt` ou `sudo journalctl -u ssh > ssh_logs.txt` | Pour analyse ultérieure |
 
 <br>
@@ -123,7 +131,9 @@ Pour rappel, un log (ou journal de bord) est un enregistrement d'événements g�
 <br>
 <br>
 
-# Entraînement ⚔️
+---
+
+# **Entraînement ⚔️**
 
 ## Exercice 1 (Easy)
 
@@ -133,7 +143,7 @@ Cet exercice consistera à installer le logiciel **Apache HTTP Server** qui perm
 2. Vérifiez l'état du service apache2
 3. Démarrez le service apache2
 4. Vérifiez l'état du service apache2
-5. Accédez à la page web par défaut hébergée par votre serveur web (Ouvrez votre navigateur et saisir http://127.0.0.1 | Si vous n'avez pas d'interface graphique, effectuez un curl sur http://127.0.0.1 )
+5. Accédez à la page web par défaut hébergée par votre serveur web (Ouvrez votre navigateur et saisir "http://127.0.0.1". Si vous n'avez pas d'interface graphique, effectuez un curl sur http://127.0.0.1 )
 
 **Exemples de retour:**
 
@@ -143,10 +153,10 @@ Cet exercice consistera à installer le logiciel **Apache HTTP Server** qui perm
 
 ![](https://raw.githubusercontent.com/N0vachr0n0/Hands-on-Linux-course/refs/heads/main/fr/pictures/apache_webpage_curl_2.png)
 
-6. Stoppez le service apache2 et actualisez la page web ou relancez le curl
+6. Stoppez le service apache2 et actualisez la page web ou relancez le curl.
 7. Faites en sorte que le service apache2 démarre de manière automatique au lancement de votre machine. Vérifiez en redémarrant votre machine.
-8. Assurez vous le service soit actif et affichez ses logs avec journalctl
-9. Afficher le unit file du service apache2
+8. Assurez vous le service soit actif et affichez ses logs avec journalctl.
+9. Afficher le unit file du service apache2.
 
 
 
@@ -208,7 +218,7 @@ Cet exercice consistera à créer un service personnalisé (bonjour.service) qui
 
 Exécuter le script pour débuter le challenge comme un grand 😉.
 
-* Lien du script du challenge: https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/SVC_SYSTEMD_EXO.sh
+* Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/SVC_SYSTEMD_EXO.sh>
 
 ---
 ---

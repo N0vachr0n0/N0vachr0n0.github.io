@@ -1,9 +1,9 @@
-# Chapitre 2: Commandes de base
-# Avant-propos
+# **Chapitre 2: Commandes de base**
+# **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# Introduction
+# **Introduction**
 
 Même s’il existe une multitude de commandes sous Linux, quelques-unes se révèlent indispensables pour profiter pleinement de ce système. Il y a de fortes chances que vous les utiliserez tous les jours.
 
@@ -12,7 +12,7 @@ Même s’il existe une multitude de commandes sous Linux, quelques-unes se rév
 * Avoir une machine virtuelle ou un PC ou un environnement sous Linux (Ubuntu idéalement)
 * Être résilient 😜
 
-**Info:** Si vous n'avez pas d'environnement linux à votre disposition, vous pouvez vous inscrire sur https://killercoda.com et vous rendre ici https://killercoda.com/playgrounds/scenario/ubuntu pour avoir accès à une machine virtuelle sous Ubuntu 24.04 (sans interface graphique bien sûr !!) pendant 1 heure renouvelable gratuitement.
+**Info:** Si vous n'avez pas d'environnement linux à votre disposition, vous pouvez vous inscrire sur <https://killercoda.com> et vous rendre ici <https://killercoda.com/playgrounds/scenario/ubuntu> pour avoir accès à une machine virtuelle sous Ubuntu 24.04 (sans interface graphique bien sûr !!) pendant 1 heure renouvelable gratuitement.
 
 Vous aurez donc cette vue:
 
@@ -20,11 +20,11 @@ Vous aurez donc cette vue:
 
 <br>
 
-**Bonus pour la team Killerkoda 👨🏾‍💻👩🏾‍💻:**
+**Bonus pour la team Killercoda 👨🏾‍💻👩🏾‍💻:**
 - Ouvrir son terminal
 - Exécuter : 
 ```bash
-echo "export PS1='\[\e[01;31m\]\u@\h:\w# \[\e[00m\]'" >> .bashrc
+echo "export PS1='\[\e[01;31m\]\u@\h:\w# \[\e[00m\]'" >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -35,7 +35,9 @@ Vous aurez à présent cette vue:
 <br>
 <br>
 
-# À la découverte du terminal Linux
+---
+
+# **À la découverte du terminal Linux**
 
 Qui dit terminal Linux, dit principalement invite de commande (prompt) et interpréteur de commandes (shell). Mais aussi les commandes.
 
@@ -56,12 +58,42 @@ Exemple de terminal Linux:
    - Il traduit vos instructions en actions pour le système.
 
 3. Les commandes
-   - Les instructions que vous entrez, comme `ls`, `cd`, `cat` ou encore `cowsay`, etc. Elles peuvent être :  
+   - Les instructions que vous entrez, comme `ls`, `cd`, `cat` ou encore `cowsay`, etc.  A cet effet, il faudrait noter qu'elles peuvent être :  
      - **Internes** : Intégrées au shell (ex. `cd` pour changer de répertoire).  
-     - **Externes** : Programmes séparés (ex. `ls` pour lister les fichiers).
+     - **Externes** : Programmes ou applications installés sur le système indépendants du shell. Le shell les recherche puis les exécute lorsqu'on les appelle. (ex. `ls` pour lister les fichiers).
+   
+   Il est possible d'identifier une commande externe ou interne en faisant:
 
+   ```bash
+   type -t <la commande>
+   
+   ou
 
-# L'arborescence du système Linux
+   type <la commande>
+   ```
+   <br>
+   Ci-dessous un exemple de retour:
+
+   ```bash
+   widal@j4rd1n-d3s-0mbr3s:~$ type -t cd
+   builtin # Indique une commande interne
+
+   widal@j4rd1n-d3s-0mbr3s:~$ type  cd
+   cd est une primitive du shell
+  
+   widal@j4rd1n-d3s-0mbr3s:~$ type -t cat
+   file # Indique une commande externe
+
+   widal@j4rd1n-d3s-0mbr3s:~$ type cat
+   cat est /usr/bin/cat # Commande externe : le shell indique où se trouve le programme
+
+   ```
+<br>
+<br>
+
+---
+
+# **L'arborescence du système Linux**
 
 L'arborescence du système Linux, c'est comme une grande armoire bien organisée avec plein de tiroirs et de dossiers. C'est la façon dont les fichiers et les répertoires sont structurés dans un système Linux. Tout commence à partir d'un point unique qu'on appelle la racine, notée simplement par un slash **" / "**. À partir de là, tout s'organise en branches, comme un arbre (d'où le nom "arborescence").
 
@@ -98,9 +130,15 @@ Ci-dessous une petite illustration:
 <br>
 
 **Info en plus:** <br>
-Le répertoire **"/etc"** contient principalement les configurations en rapport avec tout votre système Linux mais il existe aussi un répertoire de configuration appelé **".config"** se trouvant généralement dans le répertoire personnel de chaque utilisateur ( /home/username ). Il s'agit d'un répertoire caché contenant des configurations spécifiques pour des applications en fonction de chaque utilisateur. 
+Le répertoire **"/etc"** contient principalement les configurations en rapport avec tout votre système Linux mais il existe aussi un répertoire de configuration appelé **".config"** se trouvant généralement dans le répertoire personnel de chaque utilisateur ( /home/username ). Il s'agit d'un répertoire caché contenant des configurations spécifiques pour des applications en fonction de chaque utilisateur. Pour info, tout nom de fichier ou de dossier commençant par **un point** (".") est un élément **caché**.
 
-# Comparaison entre l'arborescence Linux et Windows (BONUS)
+
+<br>
+<br>
+
+---
+
+# **Comparaison entre l'arborescence Linux et Windows (BONUS)**
 
 Comparons l'arborescence de Linux avec celle de Windows, comme si on comparait deux armoires avec des logiques de rangement différentes.
 
@@ -143,16 +181,20 @@ Et si tu branches une clé USB :
 ### En résumé
 Linux est comme une grande bibliothèque avec un seul point d’entrée et des rayons bien étiquetés, tandis que Windows est comme plusieurs petites bibliothèques indépendantes, chacune avec son propre système de rangement.
 
+<br>
+<br>
 
 
-# Les commandes de base 
+---
+
+# **Les commandes de base**
 
 **Info :** Si vous avez l’habitude d’utiliser votre interface graphique pour travailler votre objectif sera de reproduire tout ce que vous savez faire en interface graphique dans le terminal linux (créer/déplacer/copier/supprimer des fichiers/dossiers, créer des raccourcis, se déplacer dans des répertoires/dossiers ...)
 
 ## Commandes de navigation et gestion des fichiers
 
 - **`pwd`** : Affiche le chemin absolu du répertoire actuel (ex. `/home/user`).
-- **`ls`** : Liste les fichiers et dossiers (remplacée par `dir` sur certaines distros, mais `ls` est standard).  
+- **`ls`** : Liste les fichiers et dossiers .  
   - Options utiles : `ls -l` (détails), `ls -a` (fichiers cachés).
 - **`ln`** : Crée des liens symboliques ou physiques entre fichiers (ex. `ln -s fichier.txt lien_symbolique` pour un lien symbolique, ou `ln fichier.txt lien_physique` pour un lien physique).
 - **`cd`** : Change de répertoire (ex. `cd /var/www` ou `cd ..` pour remonter).
@@ -221,7 +263,7 @@ Linux est comme une grande bibliothèque avec un seul point d’entrée et des r
 - **`|`** : Relie des commandes (ex. `ls | grep "mot"`).
 
 Eh bien ! Ça fait une panoplie de commandes. 
-Il faut noter que c'est à force de pratiquer que vous retiendrez ces différentes commandes. De plus, l'option **--help** et la commande **man** seront vos meilleurs amis pour savoir comment utiliser une commande.
+Il faut noter que c'est à force de pratiquer que vous retiendrez ces différentes commandes. De plus, l'option **--help** (deux tirets) et la commande **man** seront vos meilleurs amis pour savoir comment utiliser une commande.
 
 <br>
 
@@ -235,11 +277,13 @@ Il faut noter que c'est à force de pratiquer que vous retiendrez ces différent
 <br>
 <br>
 
-# Entraînement ⚔️
+---
+
+# **Entraînement ⚔️**
 
 ## Exercice 1
 
-* Faire au moins les 10 premiers challenge: https://cmdchallenge.com/
+* Faire au moins les 10 premiers challenge de ce site: <https://cmdchallenge.com/>
 
 
 ## Exercice 2
@@ -274,7 +318,7 @@ chmod +x BC_EXO_1.sh
 
 ## Exercice 3 (Deep dive)
 
-* Faire ce challenge https://sadservers.com/scenario/saskatoon
+* Faire ce challenge <https://sadservers.com/scenario/saskatoon>
 
 
 ## Exercice 4 (Bonus)

@@ -1,9 +1,9 @@
-# Chapitre 9: Pare-feu
-# Avant-propos
+# **Chapitre 9: Pare-feu**
+# **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# Introduction
+# **Introduction**
 
 Dans ce chapitre, nous parlerons de l'exploitation des firewalls sous Linux.
 
@@ -14,7 +14,9 @@ Toujours la même histoire. 😉
 <br>
 <br>
 
-# Qu'est-ce qu'un firewall ?
+---
+
+# **Qu'est-ce qu'un firewall ?**
 
 Un firewall (ou pare-feu) est un système de sécurité réseau qui contrôle les accès entre un réseau interne et un réseau externe, généralement Internet. Son rôle est de protéger le réseau interne contre les attaques et les accès non autorisés.
 
@@ -25,7 +27,12 @@ Il existe plusieurs types de firewalls :
 1. **Firewall matériel** : il s'agit d'un appareil dédié placé entre le réseau interne et Internet.
 2. **Firewall logiciel** : il s'agit d'un logiciel qui est installé sur un serveur ou un ordinateur et qui contrôle les accès réseau.
 
-# Les firewalls sous Linux
+<br>
+<br>
+
+---
+
+# **Les firewalls sous Linux**
 
 Sous Linux, nous allons aborder trois outils populaires pour la gestion des firewalls :
 
@@ -47,7 +54,7 @@ Voici quelques commandes de base pour utiliser iptables :
 * **Ajouter une règle** : `iptables -A INPUT -p tcp --dport 22 -j ACCEPT`
 * **Supprimer une règle** : `iptables -D INPUT -p tcp --dport 22 -j ACCEPT`
 
-#### Exemple
+**Exemple:**
 
  Pour autoriser les connexions SSH (port 22) :
 ```bash
@@ -74,16 +81,13 @@ Voici quelques commandes de base pour utiliser ufw :
 * **Autoriser un port** : `ufw allow 22`
 * **Bloquer un port** : `ufw deny 22`
 
-**Exemple**
+**Exemple:**
 
  Pour autoriser les connexions SSH (port 22) :
 ```bash
 ufw allow 22
 ```
- Pour interdire les connexions ICMP (ping) :
-```bash
-ufw deny icmp
-```
+
 
 ## Firewalld
 
@@ -100,15 +104,15 @@ Voici quelques commandes de base pour utiliser firewalld :
 * **Ajouter une règle** : `firewall-cmd --zone=public --add-port=22/tcp --permanent`
 * **Supprimer une règle** : `firewall-cmd --zone=public --remove-port=22/tcp --permanent`
 
-**Exemple**
+**Exemple:**
 
- Pour autoriser les connexions SSH (port 22) :
+Pour autoriser les connexions SSH (port 22) :
 ```bash
 firewall-cmd --zone=public --add-port=22/tcp --permanent
 ```
  Pour interdire les connexions ICMP (ping) :
 ```bash
-firewall-cmd --zone=public --set-default-zone=drop --permanent
+firewall-cmd --zone=public --add-icmp-block=echo-request --permanent
 ```
 
 <br>
@@ -120,7 +124,9 @@ firewall-cmd --zone=public --set-default-zone=drop --permanent
 <br>
 <br>
 
-# Entraînement ⚔️
+---
+
+# **Entraînement ⚔️**
 
 En libre-service 🙂
 

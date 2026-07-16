@@ -1,6 +1,6 @@
 
 ---
-# 📚 Cours Linux - Version française 🇫🇷
+# **📚 Cours Linux - Version française 🇫🇷**
 
 Bienvenue dans le **Hands-on Linux Course** en version française.
 

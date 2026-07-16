@@ -1,9 +1,9 @@
-# Chapitre 3: Gestion des processus
-# Avant-propos
+# **Chapitre 3: Gestion des processus**
+# **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# Introduction
+# **Introduction**
 
 Dans un système Linux, la gestion des processus est un aspect fondamental de l'administration du système et du fonctionnement des applications. Un processus est simplement un programme en cours d'exécution. Linux, comme tous les systèmes d'exploitation modernes, utilise des processus pour exécuter des tâches et organiser le travail.
 
@@ -12,9 +12,9 @@ Dans un système Linux, la gestion des processus est un aspect fondamental de l'
 * Avoir une machine virtuelle ou un PC ou un environnement sous Linux (Ubuntu idéalement)
 * Être résilient 😜
 
-**Info:** Si vous n'avez pas de d'environnement Linux à votre dispositon, vous pouvez vous inscrire sur https://killercoda.com et vous rendre ici https://killercoda.com/playgrounds/scenario/ubuntu pour avoir accès à une machine virtuelle sous Ubuntu 24.04 (sans interface graphique bien sûr !!) pendant 1 heure renouvellable gratuitement.
+**Info:** Si vous n'avez pas d'environnement Linux à votre disposition, vous pouvez vous inscrire sur <https://killercoda.com> et vous rendre ici <https://killercoda.com/playgrounds/scenario/ubuntu> pour avoir accès à une machine virtuelle sous Ubuntu 24.04 (sans interface graphique bien sûr !!) pendant 1 heure renouvelable gratuitement.
 
-Vous aurez donc cette vue:
+Vous aurez donc cette vue:  
 
 ![](https://raw.githubusercontent.com/N0vachr0n0/Hands-on-Linux-course/refs/heads/main/fr/pictures/killerkoda_vm.png)
 
@@ -22,7 +22,9 @@ Vous aurez donc cette vue:
 <br>
 <br>
 
-# Généralités 
+---
+
+# **Généralités**
 
 Un processus est une instance d'un programme en exécution. Il peut être aussi simple qu'une commande lancée dans le terminal ou aussi complexe qu'une application en arrière-plan. Chaque processus possède son propre espace mémoire, son propre identifiant unique (PID) et des informations relatives à son état d'exécution. Si le processus 2 a été lancé par le processus 1, on l’appelle un **processus fils**. Le processus qui l’a lancé est appelé **processus parent**.
 
@@ -40,8 +42,8 @@ Il existe différents types de processus dans Linux :
 
 * Un processus est une instance d'un programme en exécution.
 * Chaque processus dispose :
-    * d’un PID : Process IDentifiant, identifiant unique de processus ;
-    * d’un PPID : Parent Process IDentifiant, identifiant unique de processus parent.
+    * d’un PID : Process IDentifier, identifiant unique de processus ;
+    * d’un PPID : Parent Process IDentifier, identifiant unique de processus parent.
 * Types de processus: interactif, en arrière-plan et zombie
 
 
@@ -98,9 +100,14 @@ De ce résultat, on pourrait se poser deux (2) questions:
   ps
   ```
 
-# Gestion des processus
+<br>
+<br>
 
-## Commandes permettant d'afficher les processus en cours d'exécution :
+---
+
+# **Gestion des processus**
+
+## Commandes permettant d'afficher les processus en cours d'exécution 
 
 - **En temps réel :** `top`  
 - **À un instant donné :** `ps`  
@@ -111,13 +118,13 @@ De ce résultat, on pourrait se poser deux (2) questions:
 
 - Lister tous les processus avec détails : `ps -ef`  
 - Lister les processus sous forme d'arbre : `ps -faux`  
-- Vérifier si le processus apache est lancé : `ps -ef | grep httpd`  
+- Vérifier si le processus apache est lancé : `ps -ef | grep httpd`  (apache2=Debian, httpd=RedHat) 
 - Arrêter le processus `123` proprement (signal SIGTERM) : `kill 123`  
 - Forcer l'arrêt immédiat du processus `123` (signal SIGKILL) : `kill -9 123`
 
 <br>
 
-**Rappel:** La commande **man** et l'option **--help** est votre meilleur ami.
+**Rappel:** La commande **man** et l'option **--help** sont votre meilleur ami.
 
 <br>
 
@@ -136,9 +143,11 @@ La commande **pkill** enverra le signal indiqué (par défaut **SIGTERM**) à ch
 
 **Exemples :**
 
-- Récupérer le numéro de processus de **sshd** pour l’utilisateur root :  
+- Récupérer le numéro de processus du service **sshd** pour l’utilisateur root :  
   ```bash
   pgrep -u root sshd
+  ```
+
 - Tuer tous les processus tomcat :
     ```bash
     pkill tomcat
@@ -147,11 +156,13 @@ La commande **pkill** enverra le signal indiqué (par défaut **SIGTERM**) à ch
 <br>
 <br>
 
-# Entraînement ⚔️
+---
+
+# **Entraînement ⚔️**
 
 ## Exercice 1
 
-* Lien du script du challenge: https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/PRM_EXO_1.sh
+* Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/PRM_EXO_1.sh>
 
 Ci-dessous un exemple d'exécution:
 
@@ -168,7 +179,7 @@ chmod +x PRM_EXO_1.sh
 
 ## Exercice 2
 
-C'est par ici: https://sadservers.com/scenario/saint-john
+C'est par ici: <https://sadservers.com/scenario/saint-john>
 
 ---
 ---

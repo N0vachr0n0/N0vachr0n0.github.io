@@ -1,16 +1,20 @@
-# Chapitre 1: Introduction au monde de Linux
-# Avant-propos
+# **Chapitre 1: Introduction au monde de Linux**
+# **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# Introduction
+# **Introduction**
 
 Futur hacker ? Futur administrateur ou administratrice système Linux ? Futur·e DevOps ? Petit curieux ou petite curieuse ? Passionné(e) d'informatique ? Explorons ensemble cet univers merveilleux qu'est Linux. Linux, ce fameux système d'exploitation open source que tout le monde redoute.
 
 <br>
 <br>
 
-# 1. Historique de Linux
+---
+
+# **Historique de Linux**
+
+## Deep dive
 
 Linux est né en 1991, créé par Linus Torvalds, un étudiant finlandais inspiré par UNIX, un système d'exploitation puissant et modulaire développé dans les années 1970 par Ken Thompson, Dennis Ritchie et d'autres chez Bell Labs. UNIX était réputé pour sa stabilité et sa portabilité, mais son code n'était pas libre. Torvalds a voulu recréer un système similaire, gratuit et ouvert, en publiant le noyau Linux, qu'il a partagé avec la communauté.
 En l'associant aux outils du projet GNU (lancé par Richard Stallman dans les années 1980 pour créer un système d'exploitation libre similaire à UNIX), Linux est devenu un système d'exploitation complet, souvent appelé GNU/Linux. Il a hérité de ses racines UNIX des concepts comme la gestion multi-utilisateur et le multitâche, tout en évoluant grâce à l'open source. Aujourd'hui, Linux domine le marché des serveurs, des superordinateurs et même des smartphones (via Android), surpassant souvent UNIX en popularité.
@@ -36,8 +40,12 @@ Faisons un p'tit récap des points essentiels à retenir:
 * Qu'est-ce qu’un logiciel propriétaire ?
 * Quelle est la différence entre l’open source et un logiciel libre ?
 
+<br>
+<br>
 
-# 2. Les distributions Linux 
+---
+
+# **Les distributions Linux**
 
 Vous connaissez à présent c'est quoi Linux. Vous pouvez vous demander comment l'installer. L'installation de Linux se fait en trois grandes étapes.
 
@@ -62,13 +70,13 @@ Dans l’univers Linux, on parle de **distributions mères**. Une distribution m
 **NB :** Certaines distributions disposent d’une interface utilisateur par défaut, d’autres non (au démarrage du système, vous atterrissez directement sur une interface en ligne de commande).
 
 
-Une distribution Linux (Ubuntu 24.04) avec un interface utilisateur peut ressembler à ça:
+Une distribution Linux (Ubuntu 24.04) avec une interface utilisateur peut ressembler à ça:
 
-![](./pictures/Ubuntu_24.png)
+![](https://raw.githubusercontent.com/N0vachr0n0/Hands-on-Linux-course/refs/heads/main/fr/pictures/Ubuntu_24.png)
 
 Une distribution Linux sans interface utilisateur peut ressembler à ça:
 
-![](./pictures/Linux_NOGUI.png)
+![](https://raw.githubusercontent.com/N0vachr0n0/Hands-on-Linux-course/refs/heads/main/fr/pictures/Linux_NOGUI.png)
 
 
 **Info:** En général, Linux s'installe sur les serveurs sans interface utilisateur. La gestion se fait donc en ligne de commande uniquement.
@@ -103,9 +111,11 @@ Nous allons comparer les distributions selon trois critères : **la gestion des 
 <br>
 <br>
 
-# Exercice ⚔️
+---
 
-* Faire un tour sur https://distrowatch.com/
+# **Exercice ⚔️**
+
+* Faire un tour sur <https://distrowatch.com/>
 * Trouver deux distributions Linux en fonction des différentes particularités (hacking, gaming, généraliste et légères)
 * Faire des recherches sur Tails OS et Qubes OS
 * Qu'est ce qu'une version LTS ?
@@ -113,7 +123,7 @@ Nous allons comparer les distributions selon trois critères : **la gestion des 
 * Qu'est ce que le Dualboot ? Quels sont ses avantages et inconvénients ?
 * Qu'est ce qu'un hyperviseur ? Qu'est ce que la virtualisation ? Quels sont les logiciels de virtualisation pour PC ?
 * Faire des recherches sur les fournisseurs cloud
-* Installer une distribution Linux de son choix en machine virtuelle afin de l'explorer XD
+* Installer une distribution Linux de son choix en machine virtuelle afin de l'explorer 🙃​
 
 ---
 ---

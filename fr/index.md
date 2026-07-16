@@ -3,7 +3,7 @@ layout: default
 title: Cours Linux - Français
 ---
 
-# 🐧 Cours Linux - Administration
+# **🐧 Cours Linux - Administration**
 
 Bienvenue dans le cours d'administration Linux !
 

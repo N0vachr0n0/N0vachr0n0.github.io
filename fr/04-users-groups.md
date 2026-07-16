@@ -1,9 +1,9 @@
-# Chapitre 4: Utilisateurs et groupes
-# Avant-propos
+# **Chapitre 4: Utilisateurs et groupes**
+# **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# Introduction
+# **Introduction**
 
 Linux est un vrai système multi-utilisateurs ! Plusieurs utilisateurs peuvent se connecter et exécuter des tâches en même temps. Il a aussi un mode mono-utilisateur (« single user ») géré par le noyau, utilisé uniquement à des fins de maintenance. Les utilisateurs ont généralement :
 * un login et un mot de passe
@@ -18,7 +18,7 @@ Linux est un vrai système multi-utilisateurs ! Plusieurs utilisateurs peuvent s
 * Avoir une machine virtuelle ou un PC ou un environnement sous Linux (Ubuntu idéalement)
 * Être résilient 
 
-**Info:** Si vous n'avez pas de d'environnement Linux à votre disposition, vous pouvez vous inscrire sur https://killercoda.com et vous rendre ici https://killercoda.com/playgrounds/scenario/ubuntu pour avoir accès à une machine virtuelle sous Ubuntu 24.04 (sans interface graphique bien sûr !!) pendant 1 heure renouvelable gratuitement.
+**Info:** Si vous n'avez pas d'environnement Linux à votre disposition, vous pouvez vous inscrire sur <https://killercoda.com> et vous rendre ici <https://killercoda.com/playgrounds/scenario/ubuntu> pour avoir accès à une machine virtuelle sous Ubuntu 24.04 (sans interface graphique bien sûr !!) pendant 1 heure renouvelable gratuitement.
 
 Vous aurez donc cette vue:
 
@@ -28,7 +28,9 @@ Vous aurez donc cette vue:
 <br>
 <br>
 
-# Gestion des utilisateurs
+---
+
+# **Gestion des utilisateurs**
 
 ## Intro 
 
@@ -61,7 +63,6 @@ widal
 - Affiche le **nom de l'utilisateur connecté**.
 - Résultat ici : `widal`
 
----
 
 ### Commande : `id`
 
@@ -75,7 +76,6 @@ uid=1000(widal) gid=1000(widal) groupes=1000(widal),4(adm),24(cdrom),27(sudo),30
   - `gid=1000` → ID de groupe principal
   - `groupes=...` → Groupes secondaires (ex. : `sudo`, `docker`, `plugdev`, etc.)
 
----
 
 ### Commande : `who`
 
@@ -91,7 +91,6 @@ widal    pts/2        2025-04-04 16:05 (j)
 - `:1` → session graphique (interface)
 - `pts/0`, `pts/1`, `pts/2` → terminaux ouverts (par ex. via terminal ou SSH)
 
----
 
 ### Commande : `w`
 
@@ -109,6 +108,13 @@ widal    pts/2    j                04avril25 13:53   0.02s  0.02s /bin/bash
   - Système en ligne depuis **17 jours**
   - **4 utilisateurs** connectés (Chaque terminal ouvert ainsi que l'interface graphique représentent un utilisateur connecté)
   - **Charge moyenne** (1, 5, 15 min) : `1.46`, `1.24`, `1.20`
+  
+    * 1,46 → charge moyenne sur la dernière minute ;
+    * 1,24 → charge moyenne sur les 5 dernières minutes ;
+    * 1,20 → charge moyenne sur les 15 dernières minutes.
+
+    Légère explication: <br>
+    Si sur un ordinateur avec 1 cœur on a: **load average: 1,00**, cela signifie que le processeur est occupé à 100 %. Si on a un **load average: 4,00** sur un ordinateur avec 4 cœurs, cela signifie que les 4 cœurs sont pleinement occupés.
 
 - **Colonnes :**
   - `UTIL.` : Nom d'utilisateur
@@ -122,7 +128,7 @@ widal    pts/2    j                04avril25 13:53   0.02s  0.02s /bin/bash
 
 ## C'est quoi le fichier /etc/passwd ?
 
-* Le fichier /etc/passwd recense tous les utilisateurs du système et leurs informations associées.
+* Le fichier **/etc/passwd** recense tous les utilisateurs du système et leurs informations associées.
 	* commun à toutes les distributions
 	* c'est un fichier public, généralement non restreint en lecture (mais restreint en écriture)
 * Une ligne par utilisateur déclaré:
@@ -141,6 +147,13 @@ djo:x:15:15:Djo Dalton:/home/djo:/bin/bash
         * très certainement « salé »
 * Le mot de passe d'un utilisateur est généralement défini par la commande **passwd**
 
+<br>
+
+**Pause café ☕** <br>
+Nous avons dit ci-dessus que le mot de passe est très certainement **salé**. Eh oui ! le système met un peu de sel sur le mot de passe avant de le stocker 🤣. En sécurité informatique, **saler** un mot de passe signifie **ajouter une valeur aléatoire** (le "sel") au mot de passe **avant de le chiffrer** (ou plus exactement de le hacher). Cela permet d'éviter que deux utilisateurs qui ont choisi le même mot de passe aient la même empreinte stockée dans le système.
+
+<br>
+
 **À tester 👨🏾‍💻👩🏾‍💻:**
 - Ouvrir son terminal
 - Exécuter (ligne par ligne): 
@@ -154,19 +167,26 @@ djo:x:15:15:Djo Dalton:/home/djo:/bin/bash
 
 <br>
 
-* Le fichier **/etc/shadow** contient les informations de sécurité des utilisateurs (séparées par :)
+* Le fichier **/etc/shadow** contient les informations de sécurité des utilisateurs (séparées par **:**)
 * Format de ligne dans **/etc/shadow**:
-login:mdpchiffré:datedernierchangement:ageminimum:agemaximum:tempsavertissement:tempsinactivite:dateexpiration:reservé
-* Exemple :
+```
+login:MotDePasseChiffré:DateDuDernierchangementEnjour:AgeMinimum:AgeMaximum:TempsDDAvertissement:TempsInactivite:DateExpiration:Reservé
+```
+
+**Exemple:**
+
 ```
 djo:$y$j9T$3J4GSvuGv7bM4Vn4BRaOm1$3nuzvVPg0VJoidAVUKsMJvf2Hn3Q6.TbC0H5MnqA782:15051:0:99999:7:::
 ```
-	* Password hashé avec MD5 et salé
-	* Mdp non changé depuis 15051 jours (après le 01/01/1970 )
-	* Pas d'age minimum (0)
-	* Age maximum de 99999 jours avant l'expiraton
-	* 7 jours avant l'expiraton, l'utilisateur sera averti
-* ⚠️ Il est déconseillé de modifier directement les fichiers **/etc/passwd** et **/etc/shadow** afin d'éviter le risque de fautes de frappe, qui rendrait l'authentification impossible
+
+* djo => login
+* $y$j9T$3J4xxxxxxxx => Password hashé avec "yescrypt" et salé
+* 15051 => nombre de jours écoulés depuis le 01/01/1970 jusqu'à la date du dernier changement de mot de passe 
+* 0 => Age minimum avant de pourvoir re-changer le mot de passe (aucune contrainte ici) 
+* 99999 => Age maximum en jour avant l'expiraton
+* 7 => nombre de jours avant l'expiraton (l'utilisateur sera averti)
+
+⚠️ Il est déconseillé de modifier directement les fichiers **/etc/passwd** et **/etc/shadow** afin d'éviter le risque de fautes de frappe, qui rendrait l'authentification impossible.
 
 **À tester 👨🏾‍💻👩🏾‍💻:**
 - Ouvrir son terminal
@@ -174,6 +194,8 @@ djo:$y$j9T$3J4GSvuGv7bM4Vn4BRaOm1$3nuzvVPg0VJoidAVUKsMJvf2Hn3Q6.TbC0H5MnqA782:15
   ```bash
   cat /etc/shadow
   ```
+
+<br>
 
 ## Les commandes de gestion des utilisateurs
 
@@ -330,7 +352,7 @@ Il peut arriver qu'il y ait un bémol (lors de l'utilisation de `useradd` géné
 
 ## Exercice ⚔️
 
-* Lien du script du challenge: https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/USER_EXO_1.sh
+* Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/USER_EXO_1.sh>
 
 Ci-dessous un exemple d'exécution:
 
@@ -348,7 +370,9 @@ chmod +x USER_EXO_1.sh
 <br>
 <br>
 
-# Gestion des Groupes
+---
+
+# **Gestion des Groupes**
 
 ## Intro
 
@@ -386,7 +410,7 @@ nomgroupe:motdepassedugroupe:gid:liste_utilisateurs
     ```
     admins:x:10:djo,jack,william,avrell
     ```
-* Comme pour les utilisateurs, le groupe root a toujours l'guid 0 !
+* Comme pour les utilisateurs, le groupe root a toujours l'gid 0 !
 
 **À tester 👨🏾‍💻👩🏾‍💻:**
 - Ouvrir son terminal
@@ -400,7 +424,7 @@ Le **x** que vous verrez encore ici, représente le mot de passe du groupe. Il s
 * Comme **/etc/shadow**, **/etc/gshadow** ne devrait pas être librement accessible (Info: s'immiscer dans le groupe root est dangereux !)
 * Format de ligne dans **/etc/gshadow**:
 ```
-nom_de_groupe:mot_de_passe_chiffré:administrateurs_du_groupe:membre:sgroupe
+nom:mdp_chiffré:administrateurs:membres
 ```
    * Exemple :
     ```
@@ -415,12 +439,12 @@ nom_de_groupe:mot_de_passe_chiffré:administrateurs_du_groupe:membre:sgroupe
 
 * Dans l'univers Linux, le groupe **sudo** et **wheel** sont des groupes qui permettent à un simple utilisateur d'utiliser des droits d'administrateur. Disons des droits de l'utilisateur **root**. **sudo** et **wheel** sont des groupes privilégiés. On les appelle aussi les **sudoers group**.
 
-* **sudo** en plus d'être un groupe est d'abord un package / une commande qui permet à un simple utilisateur de lancer une commande / une application en tant qu'administrateur (root). Petit coup d'oeil à "Run As Administrator" ou "Exécuter en tant qu'administrateur" sur windows.
+* **sudo** en plus d'être un groupe est d'abord un package / une commande qui permet à un simple utilisateur de lancer une commande / une application en tant qu'administrateur (root). Petit coup d'oeil à **"Run As Administrator"** ou **"Exécuter en tant qu'administrateur"** sur **windows**.
 
 
 ## Les commandes de gestion des groupes
 
-⚠️ N'oublie pas les points d'attention ⚠️
+⚠️ N'oubliez pas les points d'attention ⚠️
 
 - **groupadd** : Crée un nouveau groupe (ex. `groupadd nom_du_groupe` pour ajouter un groupe nommé `nom_du_groupe`).
 - **groupdel** : Supprime un groupe (ex. `groupdel nom_du_groupe` pour supprimer le groupe `nom_du_groupe`).
@@ -463,7 +487,7 @@ sudo -l
 
 Exécuter le script pour débuter le challenge comme un grand 😉.
 
-* Lien du script du challenge: https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/Group_EXO_1.sh
+* Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/Group_EXO_1.sh>
 
 ---
 ---

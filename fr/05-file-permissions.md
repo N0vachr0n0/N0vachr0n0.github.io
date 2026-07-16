@@ -1,9 +1,9 @@
-# Chapitre 5: Permissions des fichiers
-# Avant-propos 
+# **Chapitre 5: Permissions des fichiers**
+# **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# Introduction
+# **Introduction**
 
 Dans cette partie nous aborderons la gestion des fichiers sous Linux. Plus précisément, nous parlerons des droits et de la gestion des accès sur les fichiers.
 
@@ -14,7 +14,9 @@ Toujours la même histoire. 😉
 <br>
 <br>
 
-# La Gestion des fichiers
+---
+
+# **La Gestion des fichiers**
 
 ## Les permissions sur les fichiers
 ### Généralités
@@ -51,9 +53,9 @@ Décortiquons chaque partie de cette ligne :
             `s`: Socket locale (IPC)
 
 
-   - Les trois premiers caractères (`rw-`) indiquent les permissions pour le **propriétaire** du fichier (ici, "widal"). Le propriétaire peut lire et écrire le fichier, mais ne peut pas l'exécuter.
-   - Les trois caractères suivants (`rw-`) indiquent les permissions pour le **groupe** du fichier. Le groupe "widal" peut aussi lire et écrire le fichier, mais ne peut pas l'exécuter.
-   - Les trois derniers caractères (`r--`) indiquent les permissions pour les **autres utilisateurs** (ceux qui ne sont ni le propriétaire ni membres du groupe). Ces utilisateurs peuvent seulement lire le fichier, mais ne peuvent pas l'écrire ni l'exécuter.
+   - Les trois premiers caractères (`rw-`) indiquent les **permissions** pour le **propriétaire** du fichier (ici, "widal"). Le propriétaire peut lire et écrire le fichier, mais ne peut pas l'exécuter.
+   - Les trois caractères suivants (`rw-`) indiquent les **permissions** pour le **groupe** du fichier. Le groupe "widal" peut aussi lire et écrire le fichier, mais ne peut pas l'exécuter.
+   - Les trois derniers caractères (`r--`) indiquent les **permissions** pour les **autres utilisateurs** (ceux qui ne sont ni le propriétaire ni membres du groupe). Ces utilisateurs peuvent seulement lire le fichier, mais ne peuvent pas l'écrire ni l'exécuter.
 
 2. **`1`** : Cela indique le nombre de liens physiques (c'est-à-dire, le nombre de noms de fichiers pointant vers ce fichier) dans le système. Généralement, pour un fichier simple, cela vaut 1 (un).
 
@@ -116,7 +118,7 @@ Exemple :
 - `umask 0022` : Pour un fichier, les permissions seront `644` (propriétaire : `rw-`, groupe et autres : `r--`).
 - `umask 0777` : Pour un fichier, les permissions seront `000`, ce qui empêche tout accès au fichier.
 
-#### 4. **`cp -p`**
+#### 4. Bonus: Gestion des permissions lors d'une copie de fichier ( **`cp -p`** )
 
 La commande `cp` sert à copier des fichiers ou des répertoires. L'option `-p` de `cp` permet de **préserver** les attributs du fichier source lors de la copie, tels que :
 - Les permissions.
@@ -129,7 +131,6 @@ cp -p fichier_source.txt fichier_copie.txt
 ```
 Cela crée une copie du fichier tout en maintenant les mêmes permissions et autres métadonnées que le fichier d'origine.
 
----
 
 ### Tableau des permissions et valeurs de `chmod`
 
@@ -140,15 +141,18 @@ Cela crée une copie du fichier tout en maintenant les mêmes permissions et aut
 | **Exécution** (`x`) | 1                | Exécuter le fichier| `x`               |
 | **Aucun**           | 0                | Pas de permission |                   |
 
-| Valeur numérique | Propriétaire (u) | Groupe (g) | Autres (o) | Exemple de commande |
-|------------------|------------------|------------|------------|---------------------|
-| 7 (rwx)          | lecture, écriture, exécution | lecture, écriture, exécution | lecture, écriture, exécution | `chmod 777 fichier.txt` |
-| 6 (rw-)          | lecture, écriture | lecture, écriture | lecture    | `chmod 644 fichier.txt` |
-| 5 (r-x)          | lecture, exécution | lecture, exécution | lecture  | `chmod 755 fichier.txt` |
-| 4 (r--)          | lecture           | lecture        | lecture    | `chmod 444 fichier.txt` |
-| 0 (---)          | Aucun droit       | Aucun droit    | Aucun droit| `chmod 000 fichier.txt` |
+<br>
+<br>
 
----
+| Commande | Propriétaire (u) | Groupe (g) | Autres (o) | Cas d'usage typique |
+|---|---|---|---|---|
+| `chmod 777 fichier.txt` | rwx | rwx | rwx | Tous droits pour tout le monde (à éviter en général) |
+| `chmod 750 fichier.txt` | rwx | r-x | --- | Propriétaire complet, groupe en lecture seule, autres aucun accès |
+| `chmod 640 fichier.txt` | rw- | r-- | --- | Fichier lisible/modifiable par le propriétaire, lisible par le groupe uniquement |
+| `chmod 755 fichier.txt` | rwx | r-x | r-x | Cas classique pour un script ou exécutable partagé |
+| `chmod 644 fichier.txt` | rw- | r-- | r-- | Cas classique pour un fichier texte/config non exécutable |
+| `chmod 000 fichier.txt` | --- | --- | --- | Aucun accès pour personne (sauf root) |
+
 
 ### Exemple pratique
 
@@ -178,6 +182,7 @@ cp -p script.sh /chemin/vers/nouveau_script.sh
 
 Cela gardera les mêmes métadonnées et permissions dans la copie.
 
+<br>
 
 ## La gestion du propriétaire et du groupe d'un fichier
 
@@ -189,9 +194,7 @@ processus qui a créé le fichier
 
 Ci-dessous un tableau qui montre comment se fait la gestion du propriétaire et du groupe d'un fichier.
 
-Voici le tableau en format **Markdown** :
 
-```markdown
 | **Commande**                               | **Description**                                      |
 |--------------------------------------------|------------------------------------------------------|
 | `chown alice fichier.txt`                  | Change le propriétaire du fichier à `alice`.         |
@@ -200,12 +203,13 @@ Voici le tableau en format **Markdown** :
 | `chgrp dev fichier.txt`                    | Change le groupe du fichier à `dev`.                 |
 | `chgrp -R dev /chemin/vers/dossier`        | Change récursivement le groupe dans un répertoire.   |
 | `ls -l fichier.txt`                        | Affiche les permissions, le propriétaire et le groupe du fichier. |
-```
 
 
-## Le Sticky Bit (ℹ️ Bon à savoir !)
+<br>
 
-Le **sticky bit** est une permission spéciale qui peut être définie sur un répertoire. Lorsqu'il est activé, ce bit modifie le comportement des fichiers placés dans ce répertoire. Il permet essentiellement de **restreindre la suppression des fichiers** à leur propriétaire. Autrement dit, **seul le propriétaire d’un fichier ou l’administrateur (root)** peut supprimer ou renommer ce fichier dans un répertoire marqué avec le sticky bit, même si d'autres utilisateurs ont des permissions en écriture sur le répertoire.
+## Le Sticky Bit ( Bon à savoir !)
+
+Le **sticky bit** est une permission spéciale qui peut être définie sur un répertoire. Lorsqu'il est activé, ce bit modifie le comportement des fichiers placés dans ce répertoire. Il permet essentiellement de **restreindre la suppression des fichiers** à leur propriétaire. Autrement dit, **seul le propriétaire d'un fichier ou l'administrateur (root)** peut supprimer ou renommer ce fichier dans un répertoire marqué avec le sticky bit, même si d'autres utilisateurs ont des permissions en écriture sur le répertoire.
 
 ### Utilité du Sticky Bit
 
@@ -224,7 +228,7 @@ Pour définir le sticky bit, vous utilisez la commande `chmod` avec le **`+t`**.
 chmod +t /tmp
 ```
 
-Cette commande ajoute le sticky bit sur le répertoire `/tmp`. Si vous voulez vérifier que le sticky bit est activé, vous pouvez utiliser la commande `ls -l` pour afficher les permissions du répertoire :
+Cette commande ajoute le sticky bit sur le répertoire `/tmp`. Si vous voulez vérifier que le sticky bit est activé, vous pouvez utiliser la commande `ls -ld` pour afficher les permissions du répertoire :
 
 ```bash
 ls -ld /tmp
@@ -248,11 +252,13 @@ chmod -t /tmp
 
 Cela supprime le sticky bit, et les utilisateurs ayant des permissions d'écriture sur ce répertoire peuvent alors supprimer ou modifier les fichiers des autres utilisateurs.
 
-### Comportement du Sticky Bit
+### Résumé - Comportement du Sticky Bit
 
-- **Avec sticky bit** : Si le sticky bit est activé sur un répertoire, seuls le propriétaire du fichier, le propriétaire du répertoire ou l'utilisateur root peuvent supprimer ou renommer les fichiers. Les autres utilisateurs ayant des permissions d'écriture sur le répertoire ne peuvent pas affecter les fichiers des autres utilisateurs.
-  
-- **Sans sticky bit** : Si le sticky bit n'est pas activé, tous les utilisateurs ayant des permissions d'écriture sur le répertoire peuvent supprimer ou renommer les fichiers des autres utilisateurs.
+- **Avec sticky bit** : Si le sticky bit est activé sur un répertoire, seuls le **propriétaire du fichier** et **root** peuvent supprimer ou renommer ce fichier. Les autres utilisateurs ayant des permissions d'écriture sur le répertoire ne peuvent pas affecter les fichiers appartenant à d'autres utilisateurs.
+
+- **Sans sticky bit** : Si le sticky bit n'est pas activé, tous les utilisateurs ayant des permissions d'écriture sur le répertoire peuvent supprimer ou renommer les fichiers des autres utilisateurs, indépendamment de qui en est le propriétaire.
+
+<br>
 
 ## SETUID et SETGID
 
@@ -272,7 +278,7 @@ Cela ajoute le bit **SETUID** à un fichier exécutable.
 
 <br>
 
-**À tester 👨🏾‍💻👩🏾‍💻:**
+**À tester (sans être root) 👨🏾‍💻👩🏾‍💻:**
 - Ouvrir son terminal
 - Exécuter: 
     ```bash
@@ -306,7 +312,9 @@ Ces deux bits sont principalement utilisés pour la gestion des permissions temp
 <br>
 <br>
 
-# Entraînement ⚔️
+---
+
+# **Entraînement ⚔️**
 ## Exercice 1 
 * Faire des recherches sur:
     * setfacl
@@ -317,11 +325,11 @@ Ces deux bits sont principalement utilisés pour la gestion des permissions temp
 
 Exécuter le script pour débuter le challenge comme un grand 😉.
 
-* Lien du script du challenge: https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/FilesPerms_EXO_1.sh
+* Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/FilesPerms_EXO_1.sh>
 
 ## Exercice 3 (Deep Dive)
 
-* Faire ce challenge: https://sadservers.com/scenario/yokohama
+* Faire ce challenge: <https://sadservers.com/scenario/budapest>    
 
 ---
 ---

@@ -1,9 +1,9 @@
-# Chapitre 8: Gestion réseau
-# Avant-propos
+# **Chapitre 8: Gestion réseau**
+# **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# Introduction
+# **Introduction**
 
 Dans cette partie, nous aborderons les points suivants :
 * Le réseau informatique (brièvement)
@@ -16,7 +16,9 @@ Toujours la même histoire. 😉
 <br>
 <br>
 
-# Le réseau informatique (brièvement)
+---
+
+# **Le réseau informatique (brièvement)**
 
 ## Introduction au réseau informatique
 
@@ -27,7 +29,6 @@ Un réseau informatique est un ensemble d'ordinateurs et de périphériques conn
 
 Pour que les ordinateurs puissent communiquer entre eux, **ils doivent parler un langage commun** : ce sont les **protocoles réseau**. Le plus fondamental de tous, c’est **TCP/IP**.
 
----
 
 ### Le modèle TCP/IP (le vrai fonctionnement d'Internet)
 
@@ -96,15 +97,18 @@ Le **modèle OSI** (*Open Systems Interconnection*) est une **représentation th
 > En pratique, **les réseaux utilisent TCP/IP**, mais **l’OSI aide à comprendre** ce qui se passe à chaque étape.
 
 
+<br>
 
 
 ## Types de Réseaux Informatiques
 
 Vous devez savoir qu'il existe différents types de réseaux :
 
-- **Réseau Local (LAN)** : Un LAN connecte des ordinateurs dans une zone géographique limitée, telle qu'un domicile, un bâtiment ou un campus.
-- **Réseau Étendu (WAN)** : Un WAN couvre une zone géographique plus large, connectant plusieurs LAN à travers des villes, des pays ou des continents.
-- **Réseau Sans Fil (WLAN)** : Un WLAN connecte des ordinateurs sans fil, utilisant des ondes radio pour transmettre des données.
+- **PAN (Personal Area Network)** : Réseau à l'échelle d'une personne, quelques mètres. Ex : Bluetooth entre ton téléphone et ton casque, ou une connexion USB.
+- **LAN (Local Area Network)** : Connecte des équipements dans une zone limitée (domicile, bâtiment, campus). Peut être filaire (Ethernet) ou sans fil (**WLAN**, Wi-Fi/802.11, qui est donc un *sous-type* de LAN, pas une catégorie à part).
+- **MAN (Metropolitan Area Network)** : Échelle d'une ville ou d'une métropole. Ex : le réseau de fibre optique qui relie plusieurs sites d'une même entreprise à travers une ville, ou l'infrastructure d'un opérateur télécom local.
+- **WAN (Wide Area Network)** : Connecte plusieurs LAN sur de grandes distances (villes, pays, continents). Internet est le plus grand WAN qui existe.
+- **GAN (Global Area Network)** : Réseau à l'échelle mondiale, censé désigner un WAN qui couvre littéralement toute la planète, souvent via satellites (Starlink en est un bon exemple concret).
 
 ## Équipements Réseau
 
@@ -206,8 +210,23 @@ L’interface **loopback** (`lo`) permet à une machine de **s’envoyer des mes
 
 Imaginons que tu développes une application web locale :
 
+
 ```bash
+mkdir app_web
+# Crée un nouveau répertoire nommé "app_web"
+
+cd app_web
+# Déplace toi dans ce répertoire
+
+echo "hello world" > index.html
+# Crée le fichier index.html et y écrit "hello world"
+# (index.html sera servi automatiquement par défaut)
+
 python3 -m http.server 8000
+# Lance un serveur web HTTP minimal, intégré à Python (module http.server)
+# -m http.server : exécute ce module comme un script
+# 8000 : port d'écoute (au lieu du port 80 par défaut, qui nécessite souvent les droits root)
+# Sert par défaut le contenu du répertoire courant (ici app_web) en lecture seule
 ```
 
 Tu peux y accéder depuis ton navigateur via :
@@ -222,12 +241,12 @@ Même si tu n’as **aucun accès Internet**, cette communication fonctionne via
 
 L’interface `lo` permet à un ordinateur de **s’adresser à lui-même** via des protocoles réseau standard. C’est **indispensable** pour :
 
-* tester des applis locales,
-* faire tourner des services système,
-* déboguer,
-* isoler des services de l’extérieur.
+* Tester des applis locales,
+* Faire tourner des services système,
+* Déboguer,
+* Isoler des services de l’extérieur.
 
-
+<br>
 
 ## Configuration réseau et routage sous Linux
 
@@ -299,6 +318,7 @@ La **gateway**, ou passerelle, est **l’adresse IP d’un routeur** sur le rés
 
 Sans gateway définie → le système **ne peut pas atteindre l’extérieur**.
 
+<br>
 
 ###  Configuration d’une interface réseau
 
@@ -317,9 +337,9 @@ sudo ip link set eth0 up
 sudo ip route add default via 192.168.1.1
 ```
 
-> ⛔ Cette configuration est **temporaire** : elle disparaît après un redémarrage ou désactivation de l’interface.
+> ⚠️ Cette configuration est **temporaire** : elle disparaît après un redémarrage ou désactivation de l’interface.
 
-
+<br>
 
 #### Méthode 2 – **Persistante** (configuration conservée après redémarrage)
 
@@ -327,7 +347,7 @@ Dépend de la distribution :
 
 
 
-#### Debian / Ubuntu (avec Netplan ou interfaces)
+#### Depuis Debian / Ubuntu (avec Netplan ou interfaces)
 
 ##### Avec `netplan` (Ubuntu 18.04+)
 
@@ -376,9 +396,11 @@ Redémarrer le réseau :
 sudo systemctl restart networking
 ```
 
+<br>
+
 ---
 
-####  Red Hat / CentOS / Fedora (avec `nmcli` ou fichiers `ifcfg-`)
+####  Depuis Red Hat / CentOS / Fedora (avec `nmcli` ou fichiers `ifcfg-`)
 
 Exemple fichier :
 
@@ -404,6 +426,7 @@ Redémarrage de l’interface :
 sudo ifdown eth0 && sudo ifup eth0
 ```
 
+<br>
 
 
 ### Résumé
@@ -417,13 +440,15 @@ sudo ifdown eth0 && sudo ifup eth0
 | `ip addr add` / `ip link`     | Configuration **temporaire** d’interface       |
 | Fichiers YAML ou `interfaces` | Configuration **persistante**                  |
 
+<br>
 
 ## DNS
 
 Le DNS (Domain Name System) est un système qui traduit les noms de domaine en adresses IP. C'est essentiel pour naviguer sur Internet !
-Vous pouvez modifier votre DNS de différentes manières. Soit via le fichier `/etc/resovl.conf`. Soit via l'interface graphique de Network Manager.
+Vous pouvez modifier votre DNS de différentes manières. Soit via le fichier `/etc/resolv.conf`. Soit via **l'interface graphique de Network Manager**. Soit **Via `resolv.conf`**.
 
-- **Via `resolv.conf`** :
+**Exemple avec resolv.conf:**
+
  ```bash
  # Éditer le fichier resolv.conf
  sudo nano /etc/resolv.conf
@@ -471,6 +496,7 @@ Explication :
 * **Bloquer un site** en le redirigeant vers `127.0.0.1`.
 * **Travailler hors ligne** sans serveur DNS.
 
+<br>
 
 ## Rôle des Ports réseau et des Services
 
@@ -491,11 +517,21 @@ Les ports sont des numéros qui identifient les services qui écoutent sur une m
     smtp		25/tcp		mail
     ```
 
+<br>
+<br>
 
-# Quelques outils de dépannage Réseau sous Linux
+---
+
+# **Quelques outils de dépannage Réseau sous Linux**
 
 **INFO:** <br>
-Les outils listés ci-dessous sont présents dans le paquet "net-tools". Il faudra donc l'installer au cas où vous n'en avez pas.🙂
+* netstat, ifconfig, route sont présents dans le paquet net-tools.
+* ping => iputils
+* ss => iproute2
+* traceroute/tcpdump/nmap/mtr/netcat/wireshark => paquets séparés. 
+
+Il faudra donc l'installer au cas où vous n'en avez pas.🙂
+
 
 ## Ping
 
@@ -560,7 +596,7 @@ Les outils listés ci-dessous sont présents dans le paquet "net-tools". Il faud
  nc google.com 80
  ```
 
-### SS
+## SS
 
 - **Qu'est-ce que SS ?** : SS est un outil pour investiguer les sockets.
 - **Comment utiliser SS** :
@@ -569,7 +605,7 @@ Les outils listés ci-dessous sont présents dans le paquet "net-tools". Il faud
  ss -tuln
  ```
 
-### MTR
+## MTR
 
 - **Qu'est-ce que MTR ?** : MTR combine Ping et Traceroute.
 - **Comment utiliser MTR** :
@@ -577,15 +613,18 @@ Les outils listés ci-dessous sont présents dans le paquet "net-tools". Il faud
  # Tester la connectivité et tracer le chemin vers Google
  mtr google.com
  ```
+
 <br>
 <br>
 
-# Entraînement ⚔️
+---
+
+# **Entraînement ⚔️**
 
 ## EXERCICE 1
 
 Faire les challenges du niveau 0 à 20 de la catégorie "Bandit" de la plateforme "overthewire".
-Lien: https://overthewire.org/wargames/bandit/ (Ce lien pointe sur la catégorie "Bandit" directement)
+Lien: <https://overthewire.org/wargames/bandit/> (Ce lien pointe sur la catégorie "Bandit" directement)
 
 Les premiers challenges vous serviront de révision 🙂.
 
@@ -599,11 +638,11 @@ Vous devez réaliser une analyse réseau complète  sur le serveur public scanme
 4. Quel service est associé au port 9929/tcp  ?
      
 
-**⚠️ Attention**: Il est illégal de scanner un réseau ou un site web qui n'est pas le votre sans autorisation. "scanme.nmap.org" est une plateforme de test fournie par nmap afin de tester l'outil nmap librement.
+**⚠️ Attention**: Il est illégal de scanner un réseau ou un site web qui n'est pas le votre sans autorisation. "<scanme.nmap.org>" est une plateforme de test fournie par nmap afin de tester l'outil nmap librement.
 
 ## EXERCICE 3
 
-Lien du script du challenge: https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/Network_EXO_1.sh
+Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/Network_EXO_1.sh>
 
 
 ---

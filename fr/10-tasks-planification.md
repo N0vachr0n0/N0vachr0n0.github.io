@@ -1,11 +1,11 @@
-# Chapitre 10: Planification des tâches
-# Avant-propos 
+# **Chapitre 10: Planification des tâches**
+# **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# Introduction
+# **Introduction**
 
-Dans ce chapitre, nous allons explorer la **planification des tâches** sous Linux, un concept essentiel pour automatiser des processus répétitifs et optimiser la gestion d’un système. Que ce soit pour des sauvegardes, des nettoyages de fichiers temporaires ou des vérifications périodiques, la planification des tâches est une compétence clé pour tout administrateur système ou utilisateur Linux. Nous nous concentrerons sur **cron**, l’outil de planification le plus répandu et puissant sous Linux. Préparez-vous à devenir un maître de l’automatisation chère padawan !
+Dans ce chapitre, nous allons explorer la **planification des tâches** sous Linux, un concept essentiel pour automatiser des processus répétitifs et optimiser la gestion d’un système. Que ce soit pour des sauvegardes, des nettoyages de fichiers temporaires ou des vérifications périodiques, la planification des tâches est une compétence clé pour tout administrateur système ou utilisateur Linux. Nous nous concentrerons sur **cron**, l’outil de planification le plus répandu et puissant sous Linux. Préparez-vous à devenir un maître de l’automatisation cher padawan !
 
 ---
 
@@ -13,12 +13,12 @@ Dans ce chapitre, nous allons explorer la **planification des tâches** sous Lin
 
 Toujours la même histoire. 😉
 
+<br>
+<br>
+
 ---
 
-<br>
-<br>
-
-# Qu'est-ce que la planification des tâches ?
+# **Qu'est-ce que la planification des tâches ?**
 
 La **planification des tâches** permet d’exécuter automatiquement des commandes ou des scripts à des moments précis ou à des intervalles réguliers. Imagine un réveil qui, au lieu de sonner, exécute une tâche sur ton système : sauvegarder des fichiers, envoyer des rapports, ou nettoyer des dossiers. Cela te libère des tâches répétitives et garantit que ton système reste à jour sans intervention manuelle.
 
@@ -42,7 +42,7 @@ Dans ce cours, nous nous concentrerons sur **cron**, le choix privilégié pour 
 Le fichier **crontab** est composé de lignes, chacune représentant une tâche planifiée. Chaque ligne suit cette structure avec **six champs** :
 
 ```
-* * * * * commande 2>&1 >/dev/null
+* * * * * commande  >/dev/null 2>&1
 ^ ^ ^ ^ ^
 | | | | |
 | | | | +­­ jour de la semaine 0­6
@@ -52,7 +52,7 @@ Le fichier **crontab** est composé de lignes, chacune représentant une tâche 
 +­­­­­­­­­­ minute 0­59
 ```
 
-**Note**: **/dev/null** est un fichier qui ne pointe sur rien, la sortie de commande est donc envoyée nulle part. Cela permet de se débarrasser de la sortie pour ne pas la loguer - d'autant que sans redirection, la sortie standard est envoyée par mail à root. Cela dit, vous pouvez rediriger la sortie dans un fichier de log pour vous tenir informer des erreurs qui peuvent survenir lors d'une tâche planifiée ou utiliser la commande chronic.
+**Note**: **/dev/null** est un fichier qui ne pointe sur rien, la sortie de commande est donc envoyée nulle part. Cela permet de se débarrasser de la sortie pour ne pas la loguer - d'autant que sans redirection, la sortie standard est envoyée par mail à root. Cela dit, vous pouvez rediriger la sortie dans un fichier de log pour vous tenir informé des erreurs qui peuvent survenir lors d'une tâche planifiée ou utiliser la commande chronic.
 
 Chaque champ peut contenir :
 - Une valeur spécifique (par ex., `15` pour 15 minutes).  
@@ -253,7 +253,9 @@ rm -f $LOCKFILE
 
 <br>
 
-# Entraînement ⚔️
+---
+
+# **Entraînement ⚔️**
 
 Pour mettre en pratique tes connaissances sur cron, voici trois exercices progressifs pour maîtriser la planification des tâches. 
 
