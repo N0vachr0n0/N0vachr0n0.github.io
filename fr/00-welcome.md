@@ -5,7 +5,7 @@ Welcome !<br>
 (いらっしゃいませ) Irasshaimase !<br>
 Willkommen !<br>
 
-Salut l'ami(e),
+Salut l'ami(e),<br>
 Tu veux donc apprendre Linux, c'est bien ! Tu es au bon endroit selon moi 😉.
 Ce cours regorge d'exercices afin de te permettre d'avoir une immersion assez complète dans le monde de Linux pour t'aventurer dans l'administration système ou DevOps ou dans la Cybersec.
 
