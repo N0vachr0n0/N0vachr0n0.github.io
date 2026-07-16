@@ -55,3 +55,16 @@ A ce stade vous devez être dans le conteneur docker et non dans le terminal rat
 L'environnement du challenge étant prêt, vous pouvez débuter le challenge mais gardez à l'esprit les points suivant:
 * La décompression de **flag.zip** doit se faire dans le container docker.
 * Les problèmes réseaux, d'installation de paquets et autres rencontrés dans le container docker sont tout à fait normaux 😈.
+
+
+<br>
+<br>
+
+---
+---
+
+## Navigation 
+
+* [Débuter l'aventure](./01-inside-linux-world.md)
+
+* [Allez au sommaire](./index.md)
