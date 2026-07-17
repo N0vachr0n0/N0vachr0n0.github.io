@@ -22,6 +22,7 @@ Ce cours vous accompagne pas à pas dans l’apprentissage de Linux à travers d
 
 | #   | Titre                              | Fichier                                 |
 |-----|------------------------------------|------------------------------------------|
+| 00  | Welcome               | [00-welcome.md](./00-welcome.md) |
 | 01  | Introduction à Linux               | [01-inside-linux-world.md](./01-inside-linux-world.md) |
 | 02  | Commandes de base                  | [02-basic-commands.md](./02-basic-commands.md) |
 | 03  | Gestion des processus              | [03-process-management.md](./03-process-management.md) |

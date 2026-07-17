@@ -20,6 +20,7 @@ This course walks you through learning Linux with a hands-on, progressive approa
 
 | #   | Title                              | File                                     |
 |-----|------------------------------------|------------------------------------------|
+| 00  | Welcome               | [00-welcome.md](./00-welcome.md) |
 | 01  | Inside the Linux World             | [01-inside-linux-world.md](./01-inside-linux-world.md) |
 | 02  | Basic Commands                     | [02-basic-commands.md](./02-basic-commands.md) |
 | 03  | Process Management                 | [03-process-management.md](./03-process-management.md) |

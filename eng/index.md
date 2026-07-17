@@ -11,6 +11,7 @@ Welcome to the Linux administration course!
 
 ## 📚 Table of Contents
 
+0. [Welcome](00-welcome.md)
 1. [Inside the Linux World](01-inside-linux-world.md)
 2. [Basic Commands](02-basic-commands.md)
 3. [Process Management](03-process-management.md)
