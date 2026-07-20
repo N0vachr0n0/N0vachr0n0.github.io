@@ -67,4 +67,4 @@ Now that the challenge environment is ready, you can begin the challenge, but ke
 
 * [Start the adventure](./01-inside-linux-world.md)
 
-* [Go to summary](./index.md)
+* [Go To Summary](./index.md)

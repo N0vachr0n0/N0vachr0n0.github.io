@@ -124,7 +124,7 @@ De ce résultat, on pourrait se poser deux (2) questions:
 
 <br>
 
-**Rappel:** La commande **man** et l'option **--help** sont votre meilleur ami.
+**Rappel:** La commande **man** et l'option **--help** (deux tirets svp🫠) sont votre meilleur ami.
 
 <br>
 

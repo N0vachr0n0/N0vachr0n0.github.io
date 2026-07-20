@@ -76,7 +76,7 @@ Le fichier `pubspec.yaml` appartient à l'utilisateur "widal" et au groupe "wida
 
 Sous Linux, les permissions des fichiers et des répertoires définissent qui peut lire, écrire ou exécuter un fichier. Vous pouvez changer ces permissions avec la commande `chmod`. Le changement de permissions peut se faire de deux façons principales : en utilisant des **nombres** ou des **symboles**.
 
-#### 1. **Utilisation des Nombres pour `chmod`**
+#### 1. Utilisation des Nombres pour `chmod`
 
 Chaque type de permission (lecture, écriture, exécution) est représenté par un chiffre :
 - **Lecture** (`r`) = 4
@@ -93,7 +93,7 @@ Exemples :
 - `chmod 755 fichier.txt` : Le propriétaire a tous les droits (`7` = `rwx`; décortiquons: `7` = `r(4) + w(2) + x(1)`), le groupe a des droits de lecture et d'exécution (`5` = `r-x`), et les autres ont aussi des droits de lecture et d'exécution (`5` = `r-x`).
 - `chmod 644 fichier.txt` : Le propriétaire a des droits de lecture et d'écriture (`6` = `rw-`), et les autres ont des droits de lecture seulement (`4` = `r--`).
 
-#### 2. **Utilisation des Symboles pour `chmod`**
+#### 2. Utilisation des Symboles pour `chmod`
 
 On peut aussi spécifier les permissions en utilisant des symboles :
 - `+` : Ajouter une permission.
@@ -105,7 +105,7 @@ Exemples :
 - `chmod g-w fichier.txt` : Retire la permission d'écriture pour le **groupe** (`g` = group).
 - `chmod o=r fichier.txt` : Définit les permissions des autres utilisateurs à "lecture seulement" (`o` = others).
 
-#### 3. **Utilisation de `umask`** (ℹ️ Bon à savoir !)
+#### 3. Utilisation de `umask` (ℹ️ Bon à savoir !)
 
 La commande `umask` détermine les permissions par défaut des fichiers et répertoires lorsque vous les créez. Le `umask` est une sorte de "masque" qui **enlève** certaines permissions des fichiers créés. Par défaut, lorsqu'un fichier est créé, il a des permissions larges (comme `777` pour un répertoire ou `666` pour un fichier), et le `umask` va ajuster ces permissions selon les valeurs spécifiées.
 
@@ -220,7 +220,7 @@ Le sticky bit est souvent utilisé dans des répertoires partagés, comme `/tmp`
 
 ### Comment définir et vérifier le Sticky Bit ?
 
-#### 1. **Définir le Sticky Bit**
+#### 1. Définir le Sticky Bit
 
 Pour définir le sticky bit, vous utilisez la commande `chmod` avec le **`+t`**. Cela se fait généralement sur des répertoires. Par exemple :
 

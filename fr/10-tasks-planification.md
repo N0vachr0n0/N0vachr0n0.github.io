@@ -79,21 +79,21 @@ Voici des exemples concrets pour mieux comprendre :
 
     Exécute clean_logs.sh chaque lundi à 10h00.
     
-- Le 1er de chaque mois à 12h00 :  
+- **Le 1er de chaque mois à 12h00 :**  
    ```bash
     0 12 1 * * /usr/bin/monthly_report.sh
    ```
 
     Exécute monthly_report.sh le 1er jour de chaque mois à midi.
 
-- Toutes les heures :  
+- **Toutes les heures :**  
     ```bash
     0 * * * * /usr/bin/check_status.sh
     ```
 
     Exécute check_status.sh à chaque début d’heure (00:00, 01:00, etc.).
 
-- Tous les jours à minuit :  
+- **Tous les jours à minuit :**  
     ```bash
     0 0 * * * /usr/bin/daily_backup.sh
     ```

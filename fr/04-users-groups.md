@@ -412,6 +412,8 @@ nomgroupe:motdepassedugroupe:gid:liste_utilisateurs
     ```
 * Comme pour les utilisateurs, le groupe root a toujours l'gid 0 !
 
+<br>
+
 **À tester 👨🏾‍💻👩🏾‍💻:**
 - Ouvrir son terminal
 - Exécuter : 
@@ -434,6 +436,8 @@ nom:mdp_chiffré:administrateurs:membres
         * Password hashé avec MD5 et salé
         * root, bin et daemon peuvent prendre ce groupe de base sans que le mot de passe soit demandé
 * Il est déconseillé de modifier directement les fichiers **/etc/group** ou le fichier **/etc/gshadow**
+
+<br>
 
 ## Le groupe sudo ou wheel
 
