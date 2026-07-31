@@ -114,7 +114,7 @@ Un processus peut également avoir un **PPID** (Parent Process ID), ce qui signi
 | Action | Commande | Description ou Commentaire |
 |--------|----------|-------------|
 | Voir tous les logs du système | `sudo journalctl` | Affichage paginé (utilise ↑ ↓ pour naviguer) |
-| Voir les logs d’un service spécifique | `sudo journalctl -u nom_du_service` | Exemple : `sudo journalctl -u ssh` (Debian = ssh | Redhat = sshd) |
+| Voir les logs d’un service spécifique | `sudo journalctl -u nom_du_service` | Exemple : `sudo journalctl -u ssh` (Debian = ssh , Redhat = sshd) |
 | Voir les logs en temps réel | `sudo journalctl -f` | Mode "suivi" (comme `tail -f`) |
 | Voir les logs depuis un moment précis | `sudo journalctl --since "1 hour ago"` | Options possibles : `yesterday`, `2024-01-01`, etc. |
 | Voir les logs jusqu’à une certaine date | `sudo journalctl --until "2024-01-01 12:00"` | Affiche les logs jusqu'au 01/01/2024 à 12h00 |

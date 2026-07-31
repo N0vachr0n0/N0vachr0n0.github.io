@@ -114,7 +114,7 @@ A process can also have a **PPID** (Parent Process ID), meaning it was launched 
 | Action | Command | Description or Comment |
 |--------|----------|-------------|
 | View all system logs | `sudo journalctl` | Paginated display (use ↑ ↓ to navigate) |
-| View logs for a specific service | `sudo journalctl -u service_name` | Example: `sudo journalctl -u ssh` (Debian = ssh | Redhat = sshd) |
+| View logs for a specific service | `sudo journalctl -u service_name` | Example: `sudo journalctl -u ssh` (Debian = ssh, Redhat = sshd) |
 | View logs in real time | `sudo journalctl -f` | "Follow" mode (like `tail -f`) |
 | View logs from a specific time | `sudo journalctl --since "1 hour ago"` | Possible options: `yesterday`, `2024-01-01`, etc. |
 | View logs up to a certain date | `sudo journalctl --until "2024-01-01 12:00"` | Displays logs up to 01/01/2024 at 12:00 |
