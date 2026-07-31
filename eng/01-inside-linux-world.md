@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 1: Introduction to the Linux World"
+---
+
 # **Chapter 1: Introduction to the Linux World**
 # **Foreword**
 
@@ -141,6 +146,6 @@ We will compare distributions according to three criteria: **package and update 
 
 ## Navigation 
 
-* [Next chapter](./02-basic-commands.md)
+* [Next chapter](./02-basic-commands.html)
 
-* [Go to summary](./index.md)
+* [Go to summary](./index.html)

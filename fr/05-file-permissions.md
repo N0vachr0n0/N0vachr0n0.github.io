@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 5: Permissions des fichiers"
+---
+
 # **Chapitre 5: Permissions des fichiers**
 # **Avant-propos**
 
@@ -345,8 +350,8 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 
 ## Navigation 
 
-* [Chapitre précédent](./04-users-groups.md)
+* [Chapitre précédent](./04-users-groups.html)
 
-* [Chapitre suivant](./06-package-management.md)
+* [Chapitre suivant](./06-package-management.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

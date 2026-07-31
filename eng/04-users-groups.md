@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 4: Users and Groups"
+---
+
 # **Chapter 4: Users and Groups**
 # **Foreword**
 
@@ -509,8 +514,8 @@ Run the script to start the challenge like a boss 😉.
 
 ## Navigation 
 
-* [Previous chapter](./03-process-management.md)
+* [Previous chapter](./03-process-management.html)
 
-* [Next chapter](./05-file-permissions.md)
+* [Next chapter](./05-file-permissions.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)

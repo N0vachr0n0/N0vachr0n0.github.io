@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 7: Gestion des services"
+---
+
 # **Chapitre 7: Gestion des services**
 # **Avant-propos**
 
@@ -234,8 +239,8 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 
 ## Navigation 
 
-* [Chapitre précédent](./06-package-management.md)
+* [Chapitre précédent](./06-package-management.html)
 
-* [Chapitre suivant](./08-network-management.md)
+* [Chapitre suivant](./08-network-management.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

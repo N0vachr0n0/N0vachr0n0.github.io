@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 3: Process Management"
+---
+
 # **Chapter 3: Process Management**
 # **Foreword**
 
@@ -196,8 +201,8 @@ It's over here: <https://sadservers.com/scenario/saint-john>
 
 ## Navigation 
 
-* [Previous chapter](./02-basic-commands.md)
+* [Previous chapter](./02-basic-commands.html)
 
-* [Next chapter](./04-users-groups.md)
+* [Next chapter](./04-users-groups.html)
 
-* [Go to the summary](./index.md)
+* [Go to the summary](./index.html)

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Welcome"
+---
+
 # **Welcome**
 
 Bienvenue !<br>
@@ -65,6 +70,6 @@ L'environnement du challenge étant prêt, vous pouvez débuter le challenge mai
 
 ## Navigation 
 
-* [Débuter l'aventure](./01-inside-linux-world.md)
+* [Débuter l'aventure](./01-inside-linux-world.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

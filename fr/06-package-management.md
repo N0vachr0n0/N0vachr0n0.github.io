@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 6: Gestion des paquets"
+---
+
 # **Chapitre 6: Gestion des paquets**
 # **Avant-propos**
 
@@ -199,8 +204,8 @@ Si vous utilisez Docker sur votre VPS ou serveur privé accessible sur internet,
 
 ## Navigation 
 
-* [Chapitre précédent](./05-file-permissions.md)
+* [Chapitre précédent](./05-file-permissions.html)
 
-* [Chapitre suivant](./07-service-management.md)
+* [Chapitre suivant](./07-service-management.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

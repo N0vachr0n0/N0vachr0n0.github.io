@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 6: Package Management"
+---
+
 # **Chapter 6: Package Management**
 # **Foreword**
 
@@ -199,8 +204,8 @@ If you use Docker on your VPS or private server accessible over the internet, pl
 
 ## Navigation 
 
-* [Previous chapter](./05-file-permissions.md)
+* [Previous chapter](./05-file-permissions.html)
 
-* [Next chapter](./07-service-management.md)
+* [Next chapter](./07-service-management.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)

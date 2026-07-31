@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 3: Gestion des processus"
+---
+
 # **Chapitre 3: Gestion des processus**
 # **Avant-propos**
 
@@ -196,8 +201,8 @@ C'est par ici: <https://sadservers.com/scenario/saint-john>
 
 ## Navigation 
 
-* [Chapitre précédent](./02-basic-commands.md)
+* [Chapitre précédent](./02-basic-commands.html)
 
-* [Chapitre suivant](./04-users-groups.md)
+* [Chapitre suivant](./04-users-groups.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

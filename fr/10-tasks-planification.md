@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 10: Planification des tâches"
+---
+
 # **Chapitre 10: Planification des tâches**
 # **Avant-propos**
 
@@ -297,8 +302,8 @@ Merci d'avoir suivi ce cours. J'espère qu'il vous a aidé à mieux appréhender
 
 ## Navigation 
 
-* [Chapitre précédent](./09-firewall.md)
+* [Chapitre précédent](./09-firewall.html)
 
-* [Chapitre suivant](./11-extra.md)
+* [Chapitre suivant](./11-extra.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

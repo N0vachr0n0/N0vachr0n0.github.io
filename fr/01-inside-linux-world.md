@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 1: Introduction au monde de Linux"
+---
+
 # **Chapitre 1: Introduction au monde de Linux**
 # **Avant-propos**
 
@@ -141,6 +146,6 @@ Nous allons comparer les distributions selon trois critères : **la gestion des 
 
 ## Navigation 
 
-* [Chapitre suivant](./02-basic-commands.md)
+* [Chapitre suivant](./02-basic-commands.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

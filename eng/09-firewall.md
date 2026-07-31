@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 9: Firewall"
+---
+
 # **Chapter 9: Firewall**
 # **Foreword**
 
@@ -145,8 +150,8 @@ Self-service 🙂
 
 ## Navigation 
 
-* [Previous chapter](./08-network-management.md)
+* [Previous chapter](./08-network-management.html)
 
-* [Next chapter](./10-tasks-planification.md)
+* [Next chapter](./10-tasks-planification.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)

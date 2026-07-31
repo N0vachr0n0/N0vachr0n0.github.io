@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 10: Task Scheduling"
+---
+
 # **Chapter 10: Task Scheduling**
 # **Foreword**
 
@@ -297,8 +302,8 @@ Thank you for taking this course. I hope it helped you better understand the wor
 
 ## Navigation 
 
-* [Previous chapter](./09-firewall.md)
+* [Previous chapter](./09-firewall.html)
 
-* [Next chapter](./11-extra.md)
+* [Next chapter](./11-extra.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)

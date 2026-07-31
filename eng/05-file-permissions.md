@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 5: File Permissions"
+---
+
 # **Chapter 5: File Permissions**
 # **Foreword**
 
@@ -345,8 +350,8 @@ Run the script to start the challenge like a boss 😉.
 
 ## Navigation 
 
-* [Previous chapter](./04-users-groups.md)
+* [Previous chapter](./04-users-groups.html)
 
-* [Next chapter](./06-package-management.md)
+* [Next chapter](./06-package-management.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)

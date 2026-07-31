@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 2: Commandes de base"
+---
+
 # **Chapitre 2: Commandes de base**
 # **Avant-propos**
 
@@ -342,8 +347,8 @@ Ouvrez votre terminal et tapez **vimtutor**. Vous aurez un retour similaire à:
 
 ## Navigation 
 
-* [Chapitre précédent](./01-inside-linux-world.md)
+* [Chapitre précédent](./01-inside-linux-world.html)
 
-* [Chapitre suivant](./03-process-management.md)
+* [Chapitre suivant](./03-process-management.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

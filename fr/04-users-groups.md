@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 4: Utilisateurs et groupes"
+---
+
 # **Chapitre 4: Utilisateurs et groupes**
 # **Avant-propos**
 
@@ -509,8 +514,8 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 
 ## Navigation 
 
-* [Chapitre précédent](./03-process-management.md)
+* [Chapitre précédent](./03-process-management.html)
 
-* [Chapitre suivant](./05-file-permissions.md)
+* [Chapitre suivant](./05-file-permissions.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

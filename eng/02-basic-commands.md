@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 2: Basic Commands"
+---
+
 # **Chapter 2: Basic Commands**
 # **Foreword**
 
@@ -342,8 +347,8 @@ Open your terminal and type **vimtutor**. You'll get output similar to:
 
 ## Navigation 
 
-* [Previous chapter](./01-inside-linux-world.md)
+* [Previous chapter](./01-inside-linux-world.html)
 
-* [Next chapter](./03-process-management.md)
+* [Next chapter](./03-process-management.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)

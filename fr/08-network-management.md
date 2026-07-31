@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 8: Gestion réseau"
+---
+
 # **Chapitre 8: Gestion réseau**
 # **Avant-propos**
 
@@ -660,8 +665,8 @@ Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/
 
 ## Navigation 
 
-* [Chapitre précédent](./07-service-management.md)
+* [Chapitre précédent](./07-service-management.html)
 
-* [Chapitre suivant](./09-firewall.md)
+* [Chapitre suivant](./09-firewall.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Welcome"
+---
+
 # **Welcome**
 
 Bienvenue !<br>
@@ -65,6 +70,6 @@ Now that the challenge environment is ready, you can begin the challenge, but ke
 
 ## Navigation 
 
-* [Start the adventure](./01-inside-linux-world.md)
+* [Start the adventure](./01-inside-linux-world.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)

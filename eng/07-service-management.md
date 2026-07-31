@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 7: Service Management"
+---
+
 # **Chapter 7: Service Management**
 # **Foreword**
 
@@ -234,8 +239,8 @@ Run the script to start the challenge like a pro 😉.
 
 ## Navigation 
 
-* [Previous chapter](./06-package-management.md)
+* [Previous chapter](./06-package-management.html)
 
-* [Next chapter](./08-network-management.md)
+* [Next chapter](./08-network-management.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)

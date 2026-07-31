@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapitre 9: Pare-feu"
+---
+
 # **Chapitre 9: Pare-feu**
 # **Avant-propos**
 
@@ -145,8 +150,8 @@ En libre-service 🙂
 
 ## Navigation 
 
-* [Chapitre précédent](./08-network-management.md)
+* [Chapitre précédent](./08-network-management.html)
 
-* [Chapitre suivant](./10-tasks-planification.md)
+* [Chapitre suivant](./10-tasks-planification.html)
 
-* [Allez au sommaire](./index.md)
+* [Allez au sommaire](./index.html)

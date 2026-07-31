@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 8: Network Management"
+---
+
 # **Chapter 8: Network Management**
 # **Foreword**
 
@@ -660,8 +665,8 @@ Challenge script link: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/h
 
 ## Navigation 
 
-* [Previous chapter](./07-service-management.md)
+* [Previous chapter](./07-service-management.html)
 
-* [Next chapter](./09-firewall.md)
+* [Next chapter](./09-firewall.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)

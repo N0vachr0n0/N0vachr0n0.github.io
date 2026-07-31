@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Chapter 11: Extras"
+---
+
 # **Chapter 11: Extras**
 # **Extra**
 
@@ -57,6 +62,6 @@ To go further, I suggest you explore the resources below.
 
 ## Navigation 
 
-* [Previous chapter](./10-tasks-planification.md)
+* [Previous chapter](./10-tasks-planification.html)
 
-* [Go To Summary](./index.md)
+* [Go To Summary](./index.html)
