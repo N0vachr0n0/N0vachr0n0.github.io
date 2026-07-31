@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://linuxdojo.widal.dev/sitemap.xml
