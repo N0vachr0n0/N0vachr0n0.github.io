@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Planifier des tâches sous Linux avec cron : syntaxe du crontab, spécificateurs de temps, bonnes pratiques et 3 exercices progressifs."
 title: "Chapitre 10: Planification des tâches"
 ---
 

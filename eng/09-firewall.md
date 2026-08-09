@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Linux firewalls: filtering principles, iptables and ufw. Configure, test and truly understand your rules with hands-on exercises."
 title: "Chapter 9: Firewall"
 ---
 

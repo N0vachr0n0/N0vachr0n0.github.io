@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Linux users and groups: /etc/passwd, useradd, usermod, passwd, userdel, sudo and privilege management. With hands-on exercises."
 title: "Chapter 4: Users and Groups"
 ---
 

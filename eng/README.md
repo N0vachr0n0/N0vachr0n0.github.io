@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Linux Course - About"
+description: "Overview of the LinuxDojo hands-on Linux course in English: goals, the 12 chapters and the learning path."
+noindex: true
+sitemap: false
+---
+
 # 📚 Linux Course - English Version 🇬🇧 
 
 Welcome to the **Hands-on Linux Course** in English.

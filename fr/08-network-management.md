@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Le réseau sous Linux : modèles TCP/IP et OSI, adressage IP, interfaces, routage, loopback et diagnostic. Le chapitre le plus complet du cours."
 title: "Chapitre 8: Gestion réseau"
 ---
 

@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Linux networking: TCP/IP and OSI models, IP addressing, interfaces, routing, loopback and troubleshooting. The most complete chapter of the course."
 title: "Chapter 8: Network Management"
 ---
 

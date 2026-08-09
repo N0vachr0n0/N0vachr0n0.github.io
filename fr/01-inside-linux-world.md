@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Comprendre le monde Linux : distributions, noyau, arborescence des fichiers et premiers pas dans le terminal. Chapitre 1 du cours LinuxDojo."
 title: "Chapitre 1: Introduction au monde de Linux"
 ---
 

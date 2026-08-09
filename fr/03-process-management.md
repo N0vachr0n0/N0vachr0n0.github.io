@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Gérer les processus sous Linux : ps, top, kill, signaux, jobs et processus zombies. Théorie claire et exercices pratiques."
 title: "Chapitre 3: Gestion des processus"
 ---
 

@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Cours Linux - À propos"
+description: "Présentation du cours Linux LinuxDojo en français : objectifs, liste des 12 chapitres et parcours d'apprentissage."
+noindex: true
+sitemap: false
+---
 
 ---
 # **📚 Cours Linux - Version française 🇫🇷**

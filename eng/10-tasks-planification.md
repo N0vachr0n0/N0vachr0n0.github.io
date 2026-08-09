@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Schedule Linux tasks with cron: crontab syntax, time specifiers, best practices and 3 progressive exercises."
 title: "Chapter 10: Task Scheduling"
 ---
 

@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Essential Linux commands: navigation, files, search and redirections. With 5 scripted challenges plus cmdchallenge and sadservers practice."
 title: "Chapter 2: Basic Commands"
 ---
 

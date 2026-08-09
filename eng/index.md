@@ -1,6 +1,10 @@
 ---
 layout: default
-title: Linux Course - English
+title: "Linux Course - Table of Contents"
+seo_title: "Free Hands-on Linux Course — LinuxDojo"
+description: "Free hands-on Linux course: 12 practical chapters, exercises and CTF challenges covering system administration, DevOps and cybersecurity. No signup."
+course_schema: true
+course_name: "Hands-on Linux Course — LinuxDojo"
 ---
 
 # 🐧 Linux Course - Administration
@@ -26,4 +30,4 @@ Welcome to the Linux administration course!
 
 ---
 
-[📖 View README](README.md)
+[📖 View README](README.html)

@@ -1,0 +1,100 @@
+{%- comment -%}
+  SEO / Open Graph / Twitter Card / hreflang
+  Les chapitres FR et EN portent le meme nom de fichier : l'alternate se deduit de l'URL.
+{%- endcomment -%}
+{%- if page.url contains '/eng/' -%}
+  {%- assign page_lang = 'en' -%}
+  {%- assign og_locale = 'en_US' -%}
+  {%- assign title_suffix = ' — Linux Course | ' | append: site.title -%}
+  {%- assign en_url = page.url | replace: 'index.html', '' -%}
+  {%- assign fr_url = en_url | replace: '/eng/', '/fr/' -%}
+{%- elsif page.url contains '/fr/' -%}
+  {%- assign page_lang = 'fr' -%}
+  {%- assign og_locale = 'fr_FR' -%}
+  {%- assign title_suffix = ' — Cours Linux | ' | append: site.title -%}
+  {%- assign fr_url = page.url | replace: 'index.html', '' -%}
+  {%- assign en_url = fr_url | replace: '/fr/', '/eng/' -%}
+{%- else -%}
+  {%- assign page_lang = 'fr' -%}
+  {%- assign og_locale = 'fr_FR' -%}
+  {%- assign title_suffix = ' — Cours Linux | ' | append: site.title -%}
+{%- endif -%}
+{%- if page.seo_title -%}
+  {%- assign page_title = page.seo_title -%}
+{%- elsif page.title -%}
+  {%- assign page_title = page.title | append: title_suffix -%}
+{%- else -%}
+  {%- assign page_title = site.title -%}
+{%- endif -%}
+{%- assign page_desc = page.description | default: site.description -%}
+{%- assign canonical = page.url | replace: 'index.html', '' | absolute_url -%}
+{%- assign og_image = page.image | default: site.og_image | absolute_url -%}
+
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_desc | strip_newlines | escape }}">
+<link rel="canonical" href="{{ canonical }}">
+{%- if page.noindex %}
+<meta name="robots" content="noindex, follow">
+{%- endif %}
+
+<link rel="alternate" hreflang="fr" href="{{ fr_url | default: '/fr/' | absolute_url }}">
+<link rel="alternate" hreflang="en" href="{{ en_url | default: '/eng/' | absolute_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="{{ og_locale }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_desc | strip_newlines | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="LinuxDojo : un pingouin en kimono, ceinture noire, tenant un sabre vert">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title | escape }}">
+<meta name="twitter:description" content="{{ page_desc | strip_newlines | escape }}">
+<meta name="twitter:image" content="{{ og_image }}">
+
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon-16.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+
+{%- if page.course_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": {{ page.course_name | default: site.title | jsonify }},
+  "description": {{ page_desc | strip_newlines | jsonify }},
+  "url": {{ canonical | jsonify }},
+  "inLanguage": {{ page_lang | jsonify }},
+  "image": {{ og_image | jsonify }},
+  "isAccessibleForFree": true,
+  "teaches": ["Linux", "Administration systeme", "DevOps", "Cybersecurite"],
+  "provider": {
+    "@type": "Organization",
+    "name": "LinuxDojo",
+    "url": {{ '/' | absolute_url | jsonify }}
+  },
+  "author": {
+    "@type": "Person",
+    "name": "widal",
+    "url": "https://github.com/N0vachr0n0"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT20H"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "category": "Free"
+  }
+}
+</script>
+{%- endif %}

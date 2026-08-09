@@ -1,17 +1,18 @@
+{%- if page.url contains '/eng/' -%}{%- assign html_lang = 'en' -%}{%- else -%}{%- assign html_lang = 'fr' -%}{%- endif -%}
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en-US' }}">
+<html lang="{{ html_lang }}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: site.title }}</title>
+    {% include seo.html %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include analytics.html %}
   </head>
   <body>
     <header class="page-header" role="banner">
       <h1 class="project-name">{{ page.title | default: site.title }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description }}</h2>
+      <h2 class="project-tagline">{{ page.tagline | default: site.tagline }}</h2>
       
       <!-- Badge GitHub Stars -->
       <a href="https://github.com/N0vachr0n0/Hands-on-Linux-course">

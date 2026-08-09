@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Linux package management: apt, dpkg, repositories, upgrades and installing from source. With hands-on exercises."
 title: "Chapter 6: Package Management"
 ---
 

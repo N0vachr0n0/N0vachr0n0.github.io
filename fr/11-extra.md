@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Ressources pour aller plus loin en Linux, DevOps, SRE et cybersécurité : plateformes d'entraînement, chaînes YouTube et podcasts sélectionnés."
 title: "Chapitre 11: Extras"
 ---
 

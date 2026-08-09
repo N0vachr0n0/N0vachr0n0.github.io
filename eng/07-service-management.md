@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Manage Linux services with systemd: systemctl, building a custom service, setting up Apache HTTP Server. Includes 3 exercises."
 title: "Chapter 7: Service Management"
 ---
 

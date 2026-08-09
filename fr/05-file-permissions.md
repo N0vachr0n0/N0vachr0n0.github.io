@@ -1,5 +1,6 @@
 ---
 layout: default
+description: "Permissions Linux expliquées : chmod, chown, notation octale, umask, SUID, SGID et sticky bit. Avec exercices et un deep dive."
 title: "Chapitre 5: Permissions des fichiers"
 ---
 
