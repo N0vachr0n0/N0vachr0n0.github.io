@@ -64,7 +64,7 @@ L'environnement du challenge étant prêt, vous pouvez débuter le challenge mai
 
 <br>
 
-⚠️  Nous vous recommandons d'effectuer le lab dans une VM / sandbox ou via la VM Ubuntu de killercoda (![](https://killercoda.com/playgrounds/scenario/ubuntu) | C'est gratuit) ou encore l'environnement cloud shell de Google (![](https://shell.cloud.google.com) | C'est gratuit aussi).
+⚠️  Nous vous recommandons d'effectuer le lab dans une VM / sandbox ou via la VM Ubuntu de killercoda (<https://killercoda.com/playgrounds/scenario/ubuntu>) ou encore via l'environnement Cloud shell de Google (<https://shell.cloud.google.com>). Les deux solutions proprosées sont gratuites.
 
 <br>
 <br>

@@ -64,7 +64,7 @@ Now that the challenge environment is ready, you can begin the challenge, but ke
 
 <br>
 
-⚠️  We recommend running the lab in a VM or sandbox, or using killercoda's Ubuntu VM (![](https://killercoda.com/playgrounds/scenario/ubuntu) | It's free) or Google Cloud Shell (![](https://shell.cloud.google.com) | It's free, too).
+⚠️  We recommend running the lab in a VM or sandbox, or using killercoda's Ubuntu VM (<https://killercoda.com/playgrounds/scenario/ubuntu>) or Google Cloud Shell (<https://shell.cloud.google.com>). Both are free.
 
 <br>
 <br>
