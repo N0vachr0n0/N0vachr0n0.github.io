@@ -52,7 +52,7 @@ Pour aller plus loin, je vous propose d'explorer les ressources ci-dessous.
 
 <details>
   <summary>Cliquer ici</summary>
-  Que ta vie ne soit pas une vie stérile. — Sois utile. — Laisse ton empreinte.
+  Que ta vie ne soit pas une vie stérile. - Sois utile. - Laisse ton empreinte.
     <br>
     St Josémaria, (Chemin n°1).
 </details>

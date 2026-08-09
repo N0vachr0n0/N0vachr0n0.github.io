@@ -62,6 +62,9 @@ L'environnement du challenge étant prêt, vous pouvez débuter le challenge mai
 * La décompression de **flag.zip** doit se faire dans le container docker.
 * Les problèmes réseaux, d'installation de paquets et autres rencontrés dans le container docker sont tout à fait normaux 😈.
 
+<br>
+
+⚠️  Nous vous recommandons d'effectuer le lab dans une VM / sandbox ou via la VM Ubuntu de killercoda (![](https://killercoda.com/playgrounds/scenario/ubuntu) | C'est gratuit) ou encore l'environnement cloud shell de Google (![](https://shell.cloud.google.com) | C'est gratuit aussi).
 
 <br>
 <br>

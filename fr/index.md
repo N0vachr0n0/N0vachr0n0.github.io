@@ -1,10 +1,10 @@
 ---
 layout: default
 title: "Cours Linux - Sommaire"
-seo_title: "Cours Linux gratuit en français — LinuxDojo"
+seo_title: "Cours Linux gratuit en français - LinuxDojo"
 description: "Cours Linux gratuit en français : 12 chapitres pratiques, exercices et CTF pour maîtriser l'admin système, le DevOps et la cybersécurité. Sans inscription."
 course_schema: true
-course_name: "Cours Linux — LinuxDojo"
+course_name: "Cours Linux - LinuxDojo"
 ---
 
 # **🐧 Cours Linux - Administration**

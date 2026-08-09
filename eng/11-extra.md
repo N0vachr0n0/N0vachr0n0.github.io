@@ -52,7 +52,7 @@ To go further, I suggest you explore the resources below.
 
 <details>
   <summary>Click here</summary>
-  May your life not be a sterile life. — Be useful. — Leave your mark.
+  May your life not be a sterile life. - Be useful. - Leave your mark.
     <br>
     St Josemaria, (The Way, no. 1).
 </details>

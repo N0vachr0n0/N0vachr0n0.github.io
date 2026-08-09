@@ -1,6 +1,6 @@
 # Hands-on Linux Course
 
-Welcome to the official repository of the **Hands-on Linux Course** — a practical and progressive course to learn how to use Linux effectively, from the basics to system administration.
+Welcome to the official repository of the **Hands-on Linux Course** - a practical and progressive course to learn how to use Linux effectively, from the basics to system administration.
 
 📘 **Version Française**: [Accéder au cours en Français](./fr/README.md)  
 📙 **English version**: [Access the course in English](./eng/README.md)
@@ -13,7 +13,7 @@ Welcome to the official repository of the **Hands-on Linux Course** — a practi
 
 ## About the course
 
-> “Future hacker? Aspiring Linux system administrator? DevOps in the making? Just curious or passionate about computing? Let’s explore together the wonderful universe of Linux — that famous open source operating system everyone seems to fear.”
+> “Future hacker? Aspiring Linux system administrator? DevOps in the making? Just curious or passionate about computing? Let’s explore together the wonderful universe of Linux - that famous open source operating system everyone seems to fear.”
 
 This course is for:
 

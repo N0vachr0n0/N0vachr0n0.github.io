@@ -10,7 +10,7 @@ sitemap: false
 
 Welcome to the **Hands-on Linux Course** in English.
 
-This course walks you through learning Linux with a hands-on, progressive approach — from basic commands to system administration skills.
+This course walks you through learning Linux with a hands-on, progressive approach - from basic commands to system administration skills.
 
 ---
 

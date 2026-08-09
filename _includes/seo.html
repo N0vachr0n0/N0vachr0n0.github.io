@@ -5,19 +5,19 @@
 {%- if page.url contains '/eng/' -%}
   {%- assign page_lang = 'en' -%}
   {%- assign og_locale = 'en_US' -%}
-  {%- assign title_suffix = ' — Linux Course | ' | append: site.title -%}
+  {%- assign title_suffix = ' - Linux Course | ' | append: site.title -%}
   {%- assign en_url = page.url | replace: 'index.html', '' -%}
   {%- assign fr_url = en_url | replace: '/eng/', '/fr/' -%}
 {%- elsif page.url contains '/fr/' -%}
   {%- assign page_lang = 'fr' -%}
   {%- assign og_locale = 'fr_FR' -%}
-  {%- assign title_suffix = ' — Cours Linux | ' | append: site.title -%}
+  {%- assign title_suffix = ' - Cours Linux | ' | append: site.title -%}
   {%- assign fr_url = page.url | replace: 'index.html', '' -%}
   {%- assign en_url = fr_url | replace: '/fr/', '/eng/' -%}
 {%- else -%}
   {%- assign page_lang = 'fr' -%}
   {%- assign og_locale = 'fr_FR' -%}
-  {%- assign title_suffix = ' — Cours Linux | ' | append: site.title -%}
+  {%- assign title_suffix = ' - Cours Linux | ' | append: site.title -%}
 {%- endif -%}
 {%- if page.seo_title -%}
   {%- assign page_title = page.seo_title -%}

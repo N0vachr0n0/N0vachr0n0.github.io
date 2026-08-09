@@ -1,6 +1,6 @@
 # Hands-on Linux Course
 
-Bienvenue sur le dépôt officiel du **Hands-on Linux Course** — un cours pratique et progressif pour apprendre à utiliser Linux efficacement, depuis les bases jusqu'à l'administration système.
+Bienvenue sur le dépôt officiel du **Hands-on Linux Course** - un cours pratique et progressif pour apprendre à utiliser Linux efficacement, depuis les bases jusqu'à l'administration système.
 
 📘 **Version Française** : [Accéder au cours en Français](./fr/README.md)  
 📙 **English version**: [Access the course in English](./eng/README.md)

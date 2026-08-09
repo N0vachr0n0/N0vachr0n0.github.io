@@ -62,6 +62,9 @@ Now that the challenge environment is ready, you can begin the challenge, but ke
 * The decompression of **flag.zip** must be done inside the docker container.
 * Network issues, package installation issues, and other problems encountered in the docker container are totally normal 😈.
 
+<br>
+
+⚠️  We recommend running the lab in a VM or sandbox, or using killercoda's Ubuntu VM (![](https://killercoda.com/playgrounds/scenario/ubuntu) | It's free) or Google Cloud Shell (![](https://shell.cloud.google.com) | It's free, too).
 
 <br>
 <br>

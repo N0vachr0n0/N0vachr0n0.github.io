@@ -92,7 +92,7 @@ The **OSI model** (*Open Systems Interconnection*) is a **theoretical representa
 > "All People Seem To Need Data Processing" (Application, Presentation, Session, Transport, Network, Data link, Physical)
 
 
-### OSI vs TCP/IP — What's the difference?
+### OSI vs TCP/IP - What's the difference?
 
 | OSI (7 layers)               | TCP/IP (4 layers)                                                       |
 | ----------------------------- | ------------------------------------------------------------------------ |
@@ -186,7 +186,7 @@ The **loopback** interface (`lo`) lets a machine **send messages to itself**, as
 ### **1. Local network testing (localhost)**
 
 * **127.0.0.1** (or `localhost`) is used to **test network applications locally**, without needing a real network connection.
-* Example: you're developing a website on your PC. You can launch a local server on `127.0.0.1:8000`, and access it via a browser — it never leaves the machine.
+* Example: you're developing a website on your PC. You can launch a local server on `127.0.0.1:8000`, and access it via a browser - it never leaves the machine.
 
 
 ### **2. Internal system services**
