@@ -15,7 +15,7 @@ Bienvenue dans le cours d'administration Linux !
 
 ## 📚 Table des matières
 
-0. [Welcome](00-welcome.html)
+0. [Bienvenue](00-welcome.html)
 1. [Introduction au monde Linux](01-inside-linux-world.html)
 2. [Commandes de base](02-basic-commands.html)
 3. [Gestion des processus](03-process-management.html)
