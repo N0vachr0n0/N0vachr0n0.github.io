@@ -47,7 +47,11 @@
       "author": {
         "@type": "Person",
         "name": "widal",
-        "url": "https://github.com/N0vachr0n0"
+        "url": "https://github.com/N0vachr0n0",
+        "sameAs": [
+          "https://github.com/N0vachr0n0",
+          "https://www.linkedin.com/in/wilfried-dal%C3%A9-5b190012a/"
+        ]
       }
     }
     </script>
@@ -57,11 +61,23 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .site-footer {
+            text-align: center;
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            line-height: 1.7;
+            padding: 0 20px 30px;
+        }
+        .site-footer a {
+            color: #fff;
+            text-decoration: underline;
         }
         .container {
             text-align: center;
@@ -149,5 +165,14 @@
             <a href="eng/" class="lang-btn btn-en" hreflang="en">🇬🇧 English</a>
         </div>
     </div>
+
+    {%- assign year_now = 'now' | date: '%Y' -%}
+    {%- assign year_start = site.copyright_start_year | default: '2025' -%}
+    <footer class="site-footer">
+        &copy; {% if year_now != year_start %}{{ year_start }}&ndash;{% endif %}{{ year_now }}
+        <a href="{{ site.author_url }}" target="_blank" rel="me noopener noreferrer">{{ site.author }}</a>
+        &middot; Cours Linux gratuit et open source
+        &middot; <a href="https://github.com/N0vachr0n0/Hands-on-Linux-course" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </footer>
 </body>
 </html>

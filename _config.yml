@@ -3,6 +3,9 @@ description: "Cours Linux gratuit en français et en anglais : administration sy
 lang: fr
 tagline: "Apprends Linux par la pratique — admin système, DevOps & cybersécurité"
 og_image: /assets/og-image.png
+author: widal
+author_url: "https://www.linkedin.com/in/wilfried-dal%C3%A9-5b190012a/"
+copyright_start_year: "2025"
 theme: jekyll-theme-cayman
 
 # Configuration pour les chemins relatifs

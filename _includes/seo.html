@@ -80,8 +80,12 @@
   },
   "author": {
     "@type": "Person",
-    "name": "widal",
-    "url": "https://github.com/N0vachr0n0"
+    "name": {{ site.author | default: 'widal' | jsonify }},
+    "url": "https://github.com/N0vachr0n0",
+    "sameAs": [
+      "https://github.com/N0vachr0n0",
+      {{ site.author_url | jsonify }}
+    ]
   },
   "hasCourseInstance": {
     "@type": "CourseInstance",
