@@ -72,7 +72,11 @@
   "inLanguage": {{ page_lang | jsonify }},
   "image": {{ og_image | jsonify }},
   "isAccessibleForFree": true,
-  "teaches": ["Linux", "Administration systeme", "DevOps", "Cybersecurite"],
+  {%- if page_lang == 'en' %}
+  "teaches": ["Linux", "System administration", "DevOps", "Cybersecurity"],
+  {%- else %}
+  "teaches": ["Linux", "Administration système", "DevOps", "Cybersécurité"],
+  {%- endif %}
   "provider": {
     "@type": "Organization",
     "name": "LinuxDojo",
