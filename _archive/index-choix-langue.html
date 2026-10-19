@@ -1,0 +1,178 @@
+---
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cours Linux gratuit en français - LinuxDojo</title>
+    <meta name="description" content="Cours Linux gratuit en français : 12 chapitres pratiques, exercices et CTF pour maîtriser l'admin système, le DevOps et la cybersécurité. Sans inscription.">
+    <link rel="canonical" href="https://linuxdojo.widal.dev/">
+
+    <link rel="alternate" hreflang="fr" href="https://linuxdojo.widal.dev/fr/">
+    <link rel="alternate" hreflang="en" href="https://linuxdojo.widal.dev/eng/">
+    <link rel="alternate" hreflang="x-default" href="https://linuxdojo.widal.dev/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LinuxDojo">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="Cours Linux gratuit en français - LinuxDojo">
+    <meta property="og:description" content="Tu ne lis pas 40 pages avant de toucher un terminal. Dès le chapitre 0, un CTF. 12 chapitres pour passer des commandes de base à l'admin système. Gratuit, sans inscription, FR et EN.">
+    <meta property="og:url" content="https://linuxdojo.widal.dev/">
+    <meta property="og:image" content="https://linuxdojo.widal.dev/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LinuxDojo : un pingouin en kimono, ceinture noire, tenant un sabre vert">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cours Linux gratuit en français - LinuxDojo">
+    <meta name="twitter:description" content="Dès le chapitre 0, un CTF. 12 chapitres pour passer des commandes de base à l'admin système. Gratuit, sans inscription, FR et EN.">
+    <meta name="twitter:image" content="https://linuxdojo.widal.dev/assets/og-image.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "LinuxDojo",
+      "alternateName": "LinuxDojo by widal",
+      "url": "https://linuxdojo.widal.dev/",
+      "inLanguage": ["fr", "en"],
+      "description": "Cours Linux gratuit en français et en anglais : administration système, DevOps et cybersécurité. 12 chapitres pratiques avec exercices et challenges.",
+      "author": {
+        "@type": "Person",
+        "name": "widal",
+        "url": "https://github.com/N0vachr0n0",
+        "sameAs": [
+          "https://github.com/N0vachr0n0",
+          "https://www.linkedin.com/in/wilfried-dal%C3%A9-5b190012a/"
+        ]
+      }
+    }
+    </script>
+
+    {% include analytics.html %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .site-footer {
+            text-align: center;
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            line-height: 1.7;
+            padding: 0 20px 30px;
+        }
+        .site-footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 640px;
+            margin: 40px 20px;
+        }
+        .logo {
+            width: 180px;
+            height: auto;
+            max-width: 60%;
+        }
+        h1 {
+            color: #333;
+            margin: 20px 0 10px;
+            font-size: 28px;
+        }
+        .tagline {
+            color: #555;
+            line-height: 1.6;
+            margin: 0 0 10px;
+        }
+        .pitch {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 30px;
+        }
+        .select-lang {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .lang-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+        .lang-btn {
+            padding: 20px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .lang-btn:hover {
+            transform: scale(1.05);
+        }
+        .btn-fr {
+            background: #0055A4;
+            color: white;
+        }
+        .btn-en {
+            background: #C8102E;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/assets/logo.png" alt="LinuxDojo - pingouin en kimono, ceinture noire, tenant un sabre vert" class="logo" width="180" height="180">
+
+        <h1>LinuxDojo - Cours Linux gratuit</h1>
+
+        <p class="tagline">
+            Apprends Linux par la pratique : administration système, DevOps et cybersécurité.
+            12 chapitres, des exercices et des challenges à chaque étape.
+        </p>
+
+        <p class="pitch">
+            Dès le chapitre 0, un CTF : tu lances un conteneur Docker et tu dois y trouver un flag caché.
+            Rien à installer, une VM Ubuntu gratuite tourne dans ton navigateur.
+            100 % gratuit, sans inscription.
+        </p>
+
+        <p class="select-lang">Choisissez votre langue / Select your language</p>
+        <div class="lang-buttons">
+            <a href="fr/" class="lang-btn btn-fr" hreflang="fr">🇫🇷 Français</a>
+            <a href="eng/" class="lang-btn btn-en" hreflang="en">🇬🇧 English</a>
+        </div>
+    </div>
+
+    {%- assign year_now = 'now' | date: '%Y' -%}
+    {%- assign year_start = site.copyright_start_year | default: '2025' -%}
+    <footer class="site-footer">
+        &copy; {% if year_now != year_start %}{{ year_start }}&ndash;{% endif %}{{ year_now }}
+        <a href="{{ site.author_url }}" target="_blank" rel="me noopener noreferrer">{{ site.author }}</a>
+        &middot; Cours Linux gratuit et open source
+        &middot; <a href="https://github.com/N0vachr0n0/Hands-on-Linux-course" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </footer>
+</body>
+</html>
