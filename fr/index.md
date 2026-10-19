@@ -5,6 +5,8 @@ seo_title: "Cours Linux gratuit en français - LinuxDojo"
 description: "Cours Linux gratuit en français : 12 chapitres pratiques, exercices et CTF pour maîtriser l'Admin Système, le DevOps et la Cybersécurité. Sans inscription."
 course_schema: true
 course_name: "Cours Linux - LinuxDojo"
+og_title: "Cours Linux gratuit : deviens ceinture noire du terminal"
+og_description: "Apprends Linux en tapant des commandes, pas en lisant 40 pages. Un CTF dès le chapitre 0, 12 chapitres pratiques, rien à installer. Gratuit, sans inscription."
 ---
 
 # 🐧 Cours Linux gratuit : deviens ceinture noire du terminal

@@ -5,6 +5,8 @@ seo_title: "Free Hands-on Linux Course - LinuxDojo"
 description: "Free hands-on Linux course: 12 practical chapters, exercises and CTF challenges covering system administration, DevOps and cybersecurity. No signup."
 course_schema: true
 course_name: "Hands-on Linux Course - LinuxDojo"
+og_title: "Free Linux course: earn your black belt in the terminal"
+og_description: "Learn Linux by typing commands, not reading 40 pages. A CTF from chapter 0, 12 hands-on chapters, nothing to install. Free, no signup."
 ---
 
 # 🐧 Free Linux Course: earn your terminal black belt
