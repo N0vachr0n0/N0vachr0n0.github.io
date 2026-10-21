@@ -6,11 +6,11 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 1: Introduction to the Linux World**
-# **Foreword**
+## **Foreword**
 
 We recommend that you do not use AI to do the exercises since you are in the learning phase.
 
-# **Introduction**
+## **Introduction**
 
 Future hacker? Future Linux system administrator? Future DevOps? Just a curious mind? Passionate about computers? Let's explore together this wonderful universe that is Linux. Linux, that famous open source operating system that everyone dreads.
 
@@ -19,9 +19,9 @@ Future hacker? Future Linux system administrator? Future DevOps? Just a curious 
 
 ---
 
-# **History of Linux**
+## **History of Linux**
 
-## Deep dive
+### Deep dive
 
 Linux was born in 1991, created by Linus Torvalds, a Finnish student inspired by UNIX, a powerful and modular operating system developed in the 1970s by Ken Thompson, Dennis Ritchie, and others at Bell Labs. UNIX was renowned for its stability and portability, but its code was not free. Torvalds wanted to recreate a similar system, free and open, by publishing the Linux kernel, which he shared with the community.
 By combining it with tools from the GNU project (launched by Richard Stallman in the 1980s to create a free operating system similar to UNIX), Linux became a complete operating system, often called GNU/Linux. It inherited concepts such as multi-user management and multitasking from its UNIX roots, while evolving thanks to open source. Today, Linux dominates the server, supercomputer, and even smartphone (via Android) markets, often surpassing UNIX in popularity.
@@ -39,7 +39,7 @@ Let's do a quick recap of the essential points to remember:
 - **Legacy and impact**: Linux keeps the spirit of UNIX while surpassing it in accessibility and popularity, becoming a pillar of modern computing.
 
 
-## Short Exercise
+### Short Exercise
 
 * Research the differences between Unix, Linux, BSD, and GNU.
 * What is open source?
@@ -52,7 +52,7 @@ Let's do a quick recap of the essential points to remember:
 
 ---
 
-# **Linux distributions**
+## **Linux distributions**
 
 You now know what Linux is. You might be wondering how to install it. Installing Linux is done in three major steps.
 
@@ -61,14 +61,14 @@ You now know what Linux is. You might be wondering how to install it. Installing
 3. The installation 🙃​
 
 
-## Let's talk about Linux distributions 
+### Let's talk about Linux distributions 
 
 Linux is installed via a **distribution**. A Linux distribution (or "distro") is a complete, ready-to-use version of the Linux operating system, built around the Linux kernel. It includes not only the kernel, but also a set of software, tools, libraries, and often a user interface (like a desktop environment), all tailored to specific needs. It should also be noted that each distribution has its own particularities.
 
 In the Linux universe, we talk about **parent distributions**. A parent distribution is a Linux distribution that serves as the base or starting point for other derivative distributions. These "parents" are often stable, well established, and provide a technical foundation on which other projects build their own versions, adding customizations or specific goals.
 
 
-## Examples of parent distributions 
+### Examples of parent distributions 
 
 * **Debian**: One of the most influential, known for its stability. It is the origin of many distributions such as Ubuntu, Linux Mint, or Kali Linux.
 * **Red Hat**: Mainly used in enterprises, it gave rise to Fedora (community version), CentOS (before its transition to CentOS Stream), and Rocky Linux.
@@ -89,7 +89,7 @@ A Linux distribution without a user interface can look like this:
 **Info:** In general, Linux is installed on servers without a user interface. Management is therefore done via the command line only.
 
 
-## The major differences between distributions
+### The major differences between distributions
 
 We will compare distributions according to three criteria: **package and update management**, **philosophy and target audience**, and **ease of use**.
 
@@ -120,7 +120,7 @@ We will compare distributions according to three criteria: **package and update 
 
 ---
 
-# **Exercise ⚔️**
+## **Exercise ⚔️**
 
 * Take a tour of <https://distrowatch.com/>
 * Find two Linux distributions for each of the different particularities (hacking, gaming, general-purpose, and lightweight)
@@ -136,7 +136,7 @@ We will compare distributions according to three criteria: **package and update 
 ---
 
 
-## Feedback
+### Feedback
 
 
 > Let us know what you think about this chapter.
@@ -146,7 +146,7 @@ We will compare distributions according to three criteria: **package and update 
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Next chapter](./02-basic-commands.html)
 

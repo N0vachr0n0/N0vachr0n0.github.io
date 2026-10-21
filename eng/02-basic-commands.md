@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 2: Basic Commands**
-# **Foreword**
+## **Foreword**
 
 We recommend that you not use AI to do the exercises, since you are still in the learning phase.
 
-# **Introduction**
+## **Introduction**
 
 Even though there is a multitude of commands in Linux, a few of them turn out to be essential to make the most of this system. Chances are you will use them every day.
 
-## Prerequisites 
+### Prerequisites 
 
 * Have a virtual machine or a PC or a Linux environment (ideally Ubuntu)
 * Be resilient 😜
@@ -44,7 +44,7 @@ You will now have this view:
 
 ---
 
-# **Discovering the Linux terminal**
+## **Discovering the Linux terminal**
 
 Who says Linux terminal, mainly says command prompt and command interpreter (shell). But also commands.
 
@@ -100,7 +100,7 @@ Example of a Linux terminal:
 
 ---
 
-# **The Linux system tree**
+## **The Linux system tree**
 
 The Linux system tree is like a big, well-organized cabinet full of drawers and folders. It's the way files and directories are structured in a Linux system. Everything starts from a single point called the root, denoted simply by a slash **" / "**. From there, everything is organized into branches, like a tree (hence the name "tree structure").
 
@@ -145,11 +145,11 @@ The **"/etc"** directory mainly contains configurations related to your entire L
 
 ---
 
-# **Comparison between the Linux and Windows directory trees (BONUS)**
+## **Comparison between the Linux and Windows directory trees (BONUS)**
 
 Let's compare the Linux directory tree with that of Windows, as if we were comparing two cabinets with different storage logics.
 
-### Linux: The unified tree (everything starts from `/`)
+#### Linux: The unified tree (everything starts from `/`)
 In Linux, everything starts at the **root** (`/`) and is organized into a single large structure. Each directory has a well-defined role:
 - **/home** : Users' personal space.
 - **/bin** : Basic tools.
@@ -158,14 +158,14 @@ In Linux, everything starts at the **root** (`/`) and is organized into a single
 
 It's a **unified** system: no matter where you install Linux or which disk you add, everything is seen as a branch of this single tree. For example, an external disk might be mounted under `/mnt` or `/media`.
 
-### Windows: A structure based on drive letters
+#### Windows: A structure based on drive letters
 In Windows, there isn't a single root, but several separate "cabinets," identified by **letters** (C:, D:, etc.). Each letter represents a disk or partition, and the organization is less standardized. Here are the main equivalents:
 - **C:\Users** (or C:\Utilisateurs) : Like `/home` in Linux, users' personal space.
 - **C:\Windows\System32** : Close to `/bin` or `/usr/bin`, where the files essential to running the system are located.
 - **C:\Windows** : Similar to `/etc`, with configuration files (but everything is mixed together with the rest).
 - **D:** or other : If you plug in an external disk or a USB stick, it will get its own letter and its own "tree," independent of C:.
 
-### The big differences
+#### The big differences
 1. **Single root vs. multiple letters**:
    - Linux: Everything is connected to `/`.
    - Windows: Each disk is a separate island (C:, D:, etc.).
@@ -176,7 +176,7 @@ In Windows, there isn't a single root, but several separate "cabinets," identifi
    - Linux: `/home/user/doc.txt`.
    - Windows: `C:\Users\User\doc.txt`, with backslashes (`\`).
 
-### Concrete example
+#### Concrete example
 Let's imagine you want to store a personal file:
 - **On Linux**: It goes into `/home/your_name/my_docs`.
 - **On Windows**: It goes into `C:\Users\YourName\My Documents`.
@@ -185,7 +185,7 @@ And if you plug in a USB stick:
 - **On Linux**: It appears under `/media/your_name/key`.
 - **On Windows**: It becomes `E:` or another letter.
 
-### In summary
+#### In summary
 Linux is like a big library with a single entry point and well-labeled shelves, while Windows is like several small independent libraries, each with its own storage system.
 
 <br>
@@ -194,11 +194,11 @@ Linux is like a big library with a single entry point and well-labeled shelves, 
 
 ---
 
-# **Basic commands**
+## **Basic commands**
 
 **Info :** If you're used to using your graphical interface to work, your goal will be to reproduce everything you know how to do in the graphical interface in the Linux terminal (create/move/copy/delete files/folders, create shortcuts, move around directories/folders ...)
 
-## Navigation and file management commands
+### Navigation and file management commands
 
 - **`pwd`** : Displays the absolute path of the current directory (e.g. `/home/user`).
 - **`ls`** : Lists files and folders.  
@@ -214,7 +214,7 @@ Linux is like a big library with a single entry point and well-labeled shelves, 
 - **`tar`** : Archives or unarchives files (e.g. `tar -cvf archive.tar folder` to create an archive, or `tar -xvf archive.tar` to extract).
 - **`zip`** : Compresses files into ZIP format (e.g. `zip archive.zip file.txt` to compress, or `unzip archive.zip` to decompress).
 
-## Commands for displaying and manipulating content
+### Commands for displaying and manipulating content
 
 - **`cat`** : Displays the content of a file (e.g. `cat file.txt`).
 - **`less`** : Displays a file page by page (e.g. `less file.txt`, quit with `q`).
@@ -227,13 +227,13 @@ Linux is like a big library with a single entry point and well-labeled shelves, 
 - **`vim`** : Improved version of Vi (e.g. `vim file.txt`, same commands as Vi but with more features).
 - **`which`** : Displays the full path of a command or program (e.g. `which python` to see where the Python program is located).
 
-## Search and filter commands
+### Search and filter commands
 
 - **`find`** : Searches for files or folders in a directory tree (e.g. `find /home -name "file.txt"` to search for a file named `file.txt` in `/home`).
 - **`grep`** : Searches for a pattern in files or in output (e.g. `grep "word" file.txt` to find "word" in `file.txt`, or `ls | grep "doc"` to filter the results of `ls`).
 - **`locate`**: Agent 007. It lets you do an ultra-fast search for a file via an indexed database on your system (e.g. `locate file.txt`). It's less accurate if the file you're looking for was just created. If the file doesn't show up, you'll need to update the database with the command `sudo updatedb`. 
 
-## System information commands
+### System information commands
 
 - **`whoami`** : Displays the current user.
 - **`uname`** : Gives information about the system (e.g. `uname -a` for everything).
@@ -242,19 +242,19 @@ Linux is like a big library with a single entry point and well-labeled shelves, 
 - **`top`** : Shows running processes (like a task manager).
 - **`nproc`** : Displays the number of processors (cores) available on the machine.
 
-## Permission management commands
+### Permission management commands
 
 - **`chmod`** : Changes the permissions of a file (e.g. `chmod +x script.sh` to make it executable).
 - **`chown`** : Changes the owner of a file (e.g. `chown user file.txt`).
 - **`ls -l`** : Checks permissions (e.g. `-rwxr-xr-x`).
 
-## Network commands
+### Network commands
 
 - **`ping`** : Tests network connectivity (e.g. `ping google.com`).
 - **`curl`** : Retrieves data from a URL (e.g. `curl http://example.com`).
 - **`wget`** : Downloads files from the web (e.g. `wget http://example.com/file`).
 
-## Utility commands
+### Utility commands
 
 - **`man`** : Displays the manual for a command (e.g. `man ls`).
 - **`history`** : Lists previous commands.
@@ -263,7 +263,7 @@ Linux is like a big library with a single entry point and well-labeled shelves, 
 - **`exit`** : Closes the terminal or the session.
 - **`alias`** : Creates a shortcut for a command (e.g. `alias ll="ls -l"` so that `ll` runs `ls -l`).
 
-## Redirections and pipes
+### Redirections and pipes
 
 - **`>`** : Redirects output to a file (e.g. `echo "text" > file.txt`).
 - **`>>`** : Appends to a file without overwriting it (e.g. `echo "more" >> file.txt`).
@@ -286,14 +286,14 @@ Keep in mind that it's through practice that you'll remember these various comma
 
 ---
 
-# **Training ⚔️**
+## **Training ⚔️**
 
-## Exercise 1
+### Exercise 1
 
 * Do at least the first 10 challenges on this site: <https://cmdchallenge.com/>
 
 
-## Exercise 2
+### Exercise 2
 
 The exercises in this section will be in the form of challenges. There will be five challenges. Each challenge is accessible via a script that you'll need to run to get started.
 
@@ -323,12 +323,12 @@ chmod +x BC_EXO_1.sh
 
 <br>
 
-## Exercise 3 (Deep dive)
+### Exercise 3 (Deep dive)
 
 * Do this challenge <https://sadservers.com/scenario/saskatoon>
 
 
-## Exercise 4 (Bonus)
+### Exercise 4 (Bonus)
 
 To learn how to master / get familiar with the **vim** text editor, we recommend going through **vimtutor**.
 Open your terminal and type **vimtutor**. You'll get output similar to:
@@ -338,7 +338,7 @@ Open your terminal and type **vimtutor**. You'll get output similar to:
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Let us know what you think of this chapter.
 
@@ -347,7 +347,7 @@ Open your terminal and type **vimtutor**. You'll get output similar to:
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Previous chapter](./01-inside-linux-world.html)
 

@@ -6,17 +6,17 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 8: Network Management**
-# **Foreword**
+## **Foreword**
 
 We recommend that you do not use AI to do the exercises, as you are still in the learning phase.
 
-# **Introduction**
+## **Introduction**
 
 In this section, we will cover the following points:
 * Computer networks (briefly)
 * Network troubleshooting on Linux 
 
-## Prerequisites 
+### Prerequisites 
 
 Same old story. 😉
 
@@ -25,24 +25,24 @@ Same old story. 😉
 
 ---
 
-# **Computer networks (briefly)**
+## **Computer networks (briefly)**
 
-## Introduction to computer networks
+### Introduction to computer networks
 
 A computer network is a set of computers and devices connected to each other to share resources, exchange data, and provide services. Computer networks are essential in the modern world, enabling communication, file sharing, and access to remote resources.
 
 
-### How does it all work?
+#### How does it all work?
 
 For computers to communicate with each other, **they must speak a common language**: these are **network protocols**. The most fundamental of all is **TCP/IP**.
 
 
-### The TCP/IP model (how the Internet really works)
+#### The TCP/IP model (how the Internet really works)
 
 **TCP/IP** is **the set of rules (or "protocol stack") used to run the Internet and most networks**.
 It is made up of several layers, **each with a specific role**.
 
-#### Layers of the TCP/IP model (simplified):
+##### Layers of the TCP/IP model (simplified):
 
 | Layer                  | Role                                                                        |
 | ---------------------- | --------------------------------------------------------------------------- |
@@ -52,17 +52,17 @@ It is made up of several layers, **each with a specific role**.
 | **4. Application**     | What the user uses: HTTP, FTP, email, etc.                                  |
 
 
-### TCP and UDP: two ways to transport data
+#### TCP and UDP: two ways to transport data
 
 At the **Transport layer**, two protocols are mainly used:
 
-#### TCP (Transmission Control Protocol)
+##### TCP (Transmission Control Protocol)
 
 * **Reliable**: guarantees that all data arrives **in the correct order**, without error.
 * **Connection-based**: establishes a "link" between the sender and the recipient before sending the data.
 * **Example uses**: websites (HTTP/HTTPS), email (SMTP, IMAP), files (FTP).
 
-#### UDP (User Datagram Protocol)
+##### UDP (User Datagram Protocol)
 
 * **Fast**: sends data without checking whether it was actually received.
 * **Connectionless**: no prior exchange, less overhead.
@@ -75,7 +75,7 @@ At the **Transport layer**, two protocols are mainly used:
 
 ---
 
-### The OSI model (theoretical 7-layer model)
+#### The OSI model (theoretical 7-layer model)
 
 The **OSI model** (*Open Systems Interconnection*) is a **theoretical representation** used to understand how data flows through a network, dividing it into **7 layers**.
 
@@ -93,7 +93,7 @@ The **OSI model** (*Open Systems Interconnection*) is a **theoretical representa
 > "All People Seem To Need Data Processing" (Application, Presentation, Session, Transport, Network, Data link, Physical)
 
 
-### OSI vs TCP/IP - What's the difference?
+#### OSI vs TCP/IP - What's the difference?
 
 | OSI (7 layers)               | TCP/IP (4 layers)                                                       |
 | ----------------------------- | ------------------------------------------------------------------------ |
@@ -107,7 +107,7 @@ The **OSI model** (*Open Systems Interconnection*) is a **theoretical representa
 <br>
 
 
-## Types of Computer Networks
+### Types of Computer Networks
 
 You should know that there are different types of networks:
 
@@ -117,14 +117,14 @@ You should know that there are different types of networks:
 - **WAN (Wide Area Network)**: Connects several LANs over long distances (cities, countries, continents). The Internet is the largest WAN that exists.
 - **GAN (Global Area Network)**: A network at a worldwide scale, meant to describe a WAN that literally covers the entire planet, often via satellites (Starlink is a good concrete example).
 
-## Network Equipment
+### Network Equipment
 
 Now, let's talk about network equipment:
 
 - **Router**: A router connects several networks and routes traffic between them. It's like a switchyard for your data packets!
 - **Switch**: A switch connects several computers within a network and routes data packets to their intended recipient.
 
-## Network Addresses
+### Network Addresses
 
 In a computer network, there are two main elements used to identify a machine: the IP address and the MAC address.
 
@@ -180,23 +180,23 @@ In our case, we have 3 network interfaces: **lo**, **enp1s0**, and **docker0**.
 - **docker0**: docker0 is a virtual interface created by Docker to allow containers to communicate with each other and with the host.
 
 
-## Focus on the loopback interface
+### Focus on the loopback interface
 
 The **loopback** interface (`lo`) lets a machine **send messages to itself**, as if it were going through the network. This might seem pointless, but in reality, it's fundamental for:
 
-### **1. Local network testing (localhost)**
+#### **1. Local network testing (localhost)**
 
 * **127.0.0.1** (or `localhost`) is used to **test network applications locally**, without needing a real network connection.
 * Example: you're developing a website on your PC. You can launch a local server on `127.0.0.1:8000`, and access it via a browser - it never leaves the machine.
 
 
-### **2. Internal system services**
+#### **2. Internal system services**
 
 * Many **system services communicate with each other over the network**, even when running on the same machine (for the sake of modularity or security).
 * Example: a PostgreSQL database, a Redis server, etc. They often listen on `127.0.0.1`, and only allow local connections.
 
 
-### **3. Network diagnostics**
+#### **3. Network diagnostics**
 
 * You can test the **network stack** without needing a cable or an Internet connection:
 
@@ -207,13 +207,13 @@ The **loopback** interface (`lo`) lets a machine **send messages to itself**, as
   This verifies that the operating system can send and receive TCP/IP packets.
 
 
-### **4. Security**
+#### **4. Security**
 
 * Services that **must not be accessible from the outside** can be bound only to `127.0.0.1`.
 * Example: an administration interface accessible **only locally**.
 
 
-###  Concrete example:
+####  Concrete example:
 
 Let's imagine you're developing a local web application:
 
@@ -244,7 +244,7 @@ http://127.0.0.1:8000
 
 Even if you have **no Internet access**, this communication works via the loopback interface.
 
-### In summary:
+#### In summary:
 
 The `lo` interface lets a computer **address itself** using standard network protocols. This is **essential** for:
 
@@ -255,14 +255,14 @@ The `lo` interface lets a computer **address itself** using standard network pro
 
 <br>
 
-## Network configuration and routing on Linux
+### Network configuration and routing on Linux
 
-### Understanding **routing**
+#### Understanding **routing**
 
 In networking, **"routing"** means **deciding which path (interface, gateway) to send IP packets through** in order to reach a destination. Let's look at a few commands related to routing.
 
 
-#### `route` (old command)
+##### `route` (old command)
 
 The `route` command is **obsolete**, but is still sometimes used to display the **routing table**:
 
@@ -275,7 +275,7 @@ route -n
 
 
 
-#### `ip r` or `ip route` (modern)
+##### `ip r` or `ip route` (modern)
 
 ```bash
 ip route
@@ -285,7 +285,7 @@ ip r
 
 > Displays the system's current routing table.
 
-##### Example:
+###### Example:
 
 ```bash
 default via 192.168.1.1 dev eth0
@@ -298,7 +298,7 @@ default via 192.168.1.1 dev eth0
 * **192.168.1.0/24**: local subnet.
 
 
-#### `ip route get`
+##### `ip route get`
 
 ```bash
 ip route get 8.8.8.8
@@ -306,7 +306,7 @@ ip route get 8.8.8.8
 
 > Displays **the exact path** a packet would take to reach a given IP.
 
-##### Example result:
+###### Example result:
 
 ```bash
 8.8.8.8 via 192.168.1.1 dev eth0 src 192.168.1.100
@@ -316,7 +316,7 @@ ip route get 8.8.8.8
 
 ---
 
-### Gateway
+#### Gateway
 
 The **gateway** is **the IP address of a router** on the local network, through which **traffic heading out to the outside world** (e.g., the Internet) is redirected.
 
@@ -327,9 +327,9 @@ Without a defined gateway → the system **cannot reach the outside world**.
 
 <br>
 
-###  Configuring a network interface
+####  Configuring a network interface
 
-#### Method 1 – **Temporary** (non-persistent)
+##### Method 1 – **Temporary** (non-persistent)
 
 Using `ip` commands:
 
@@ -348,15 +348,15 @@ sudo ip route add default via 192.168.1.1
 
 <br>
 
-#### Method 2 – **Persistent** (configuration kept after reboot)
+##### Method 2 – **Persistent** (configuration kept after reboot)
 
 Depends on the distribution:
 
 
 
-#### On Debian / Ubuntu (with Netplan or interfaces)
+##### On Debian / Ubuntu (with Netplan or interfaces)
 
-##### With `netplan` (Ubuntu 18.04+)
+###### With `netplan` (Ubuntu 18.04+)
 
 Edit the YAML file:
 
@@ -386,7 +386,7 @@ sudo netplan apply
 
 
 
-##### With `/etc/network/interfaces` (older systems):
+###### With `/etc/network/interfaces` (older systems):
 
 ```bash
 auto eth0
@@ -407,7 +407,7 @@ sudo systemctl restart networking
 
 ---
 
-####  On Red Hat / CentOS / Fedora (with `nmcli` or `ifcfg-` files)
+#####  On Red Hat / CentOS / Fedora (with `nmcli` or `ifcfg-` files)
 
 Example file:
 
@@ -436,7 +436,7 @@ sudo ifdown eth0 && sudo ifup eth0
 <br>
 
 
-### Summary
+#### Summary
 
 | Command / Element              | Role                                             |
 | ------------------------------- | ------------------------------------------------- |
@@ -449,7 +449,7 @@ sudo ifdown eth0 && sudo ifup eth0
 
 <br>
 
-## DNS
+### DNS
 
 DNS (Domain Name System) is a system that translates domain names into IP addresses. It's essential for browsing the Internet!
 You can change your DNS in different ways. Either via the `/etc/resolv.conf` file. Or via **the Network Manager graphical interface**. Or **via `resolv.conf`**.
@@ -505,7 +505,7 @@ Explanation:
 
 <br>
 
-## Role of Network Ports and Services
+### Role of Network Ports and Services
 
 Ports are numbers that identify the services listening on a machine. You can see the standard port numbers and their services in the `/etc/services` file.
 
@@ -529,7 +529,7 @@ Ports are numbers that identify the services listening on a machine. You can see
 
 ---
 
-# **Some network troubleshooting tools on Linux**
+## **Some network troubleshooting tools on Linux**
 
 **INFO:** <br>
 * netstat, ifconfig, route are included in the net-tools package.
@@ -540,7 +540,7 @@ Ports are numbers that identify the services listening on a machine. You can see
 So you'll need to install it in case you don't have it.🙂
 
 
-## Ping
+### Ping
 
 - **What is Ping?**: Ping tests connectivity and measures response time.
 - **How to use Ping**:
@@ -549,7 +549,7 @@ So you'll need to install it in case you don't have it.🙂
  ping google.com
  ```
 
-## Traceroute
+### Traceroute
 
 - **What is Traceroute?**: Traceroute follows the path that data packets take from source to destination.
 - **How to use Traceroute**:
@@ -558,7 +558,7 @@ So you'll need to install it in case you don't have it.🙂
  traceroute google.com
  ```
 
-## Netstat
+### Netstat
 
 - **What is Netstat?**: Netstat displays active Internet/network connections, routing tables, and interface statistics.
 - **How to use Netstat**:
@@ -567,7 +567,7 @@ So you'll need to install it in case you don't have it.🙂
  netstat -tuln
  ```
 
-## Tcpdump
+### Tcpdump
 
 - **What is Tcpdump?**: Tcpdump captures and displays network traffic.
 - **How to use Tcpdump**:
@@ -576,7 +576,7 @@ So you'll need to install it in case you don't have it.🙂
  sudo tcpdump -i eth0
  ```
 
-## Wireshark
+### Wireshark
 
 - **What is Wireshark?**: Wireshark analyzes network traffic.
 - **How to use Wireshark**:
@@ -585,7 +585,7 @@ So you'll need to install it in case you don't have it.🙂
  sudo wireshark
  ```
 
-## Nmap
+### Nmap
 
 - **What is Nmap?**: Nmap scans networks for hosts and services.
 - **How to use Nmap**:
@@ -594,7 +594,7 @@ So you'll need to install it in case you don't have it.🙂
  nmap -sS 192.168.1.0/24
  ```
 
-## Netcat
+### Netcat
 
 - **What is Netcat?**: Netcat reads and writes network connections.
 - **How to use Netcat**:
@@ -603,7 +603,7 @@ So you'll need to install it in case you don't have it.🙂
  nc google.com 80
  ```
 
-## SS
+### SS
 
 - **What is SS?**: SS is a tool for investigating sockets.
 - **How to use SS**:
@@ -612,7 +612,7 @@ So you'll need to install it in case you don't have it.🙂
  ss -tuln
  ```
 
-## MTR
+### MTR
 
 - **What is MTR?**: MTR combines Ping and Traceroute.
 - **How to use MTR**:
@@ -626,16 +626,16 @@ So you'll need to install it in case you don't have it.🙂
 
 ---
 
-# **Training ⚔️**
+## **Training ⚔️**
 
-## EXERCISE 1
+### EXERCISE 1
 
 Complete the level 0 to 20 challenges of the "Bandit" category on the "overthewire" platform.
 Link: <https://overthewire.org/wargames/bandit/> (This link points directly to the "Bandit" category)
 
 The first challenges will serve as a review 🙂.
 
-## EXERCISE 2
+### EXERCISE 2
 
 You must perform a complete network analysis on the public server scanme.nmap.org using the Nmap tool, in order to answer the following questions: 
 
@@ -647,7 +647,7 @@ You must perform a complete network analysis on the public server scanme.nmap.or
 
 **⚠️ Warning**: It is illegal to scan a network or website that is not yours without authorization. "<scanme.nmap.org>" is a testing platform provided by nmap so you can freely test the nmap tool.
 
-## EXERCISE 3
+### EXERCISE 3
 
 Challenge script link: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/Network_EXO_1.sh>
 
@@ -655,7 +655,7 @@ Challenge script link: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/h
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Give us your feedback on this chapter.
 
@@ -665,7 +665,7 @@ Challenge script link: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/h
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Previous chapter](./07-service-management.html)
 

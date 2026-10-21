@@ -6,17 +6,17 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 10: Planification des tâches**
-# **Avant-propos**
+## **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# **Introduction**
+## **Introduction**
 
 Dans ce chapitre, nous allons explorer la **planification des tâches** sous Linux, un concept essentiel pour automatiser des processus répétitifs et optimiser la gestion d’un système. Que ce soit pour des sauvegardes, des nettoyages de fichiers temporaires ou des vérifications périodiques, la planification des tâches est une compétence clé pour tout administrateur système ou utilisateur Linux. Nous nous concentrerons sur **cron**, l’outil de planification le plus répandu et puissant sous Linux. Préparez-vous à devenir un maître de l’automatisation cher padawan !
 
 ---
 
-## Prérequis 
+### Prérequis 
 
 Toujours la même histoire. 😉
 
@@ -25,7 +25,7 @@ Toujours la même histoire. 😉
 
 ---
 
-# **Qu'est-ce que la planification des tâches ?**
+## **Qu'est-ce que la planification des tâches ?**
 
 La **planification des tâches** permet d’exécuter automatiquement des commandes ou des scripts à des moments précis ou à des intervalles réguliers. Imagine un réveil qui, au lieu de sonner, exécute une tâche sur ton système : sauvegarder des fichiers, envoyer des rapports, ou nettoyer des dossiers. Cela te libère des tâches répétitives et garantit que ton système reste à jour sans intervention manuelle.
 
@@ -38,13 +38,13 @@ Dans ce cours, nous nous concentrerons sur **cron**, le choix privilégié pour 
 
 ---
 
-## Cron
+### Cron
 
-### Qu'est-ce que cron ?
+#### Qu'est-ce que cron ?
 
 **cron** est un **démon** (un programme qui s’exécute en arrière-plan) qui lit des fichiers de configuration appelés **crontabs** pour exécuter des tâches planifiées. Chaque utilisateur peut avoir son propre **crontab**, et il existe aussi un **crontab système** pour les tâches globales. Pense à **cron** comme un chef d’orchestre qui veille à ce que chaque tâche soit jouée au bon moment.
 
-### Structure du crontab
+#### Structure du crontab
 
 Le fichier **crontab** est composé de lignes, chacune représentant une tâche planifiée. Chaque ligne suit cette structure avec **six champs** :
 
@@ -68,7 +68,7 @@ Chaque champ peut contenir :
 - Une plage (par ex., `1-5`).  
 - Un intervalle (par ex., `*/5` pour toutes les 5 minutes).
 
-### Exemples de tâches cron
+#### Exemples de tâches cron
 
 Voici des exemples concrets pour mieux comprendre :
 
@@ -111,7 +111,7 @@ Voici des exemples concrets pour mieux comprendre :
 
 **Astuce pédagogique** : Utilisez l’outil en ligne crontab guru (https://crontab.guru/) pour tester et visualiser les expressions cron en temps réel.
 
-### Édition du fichier crontab
+#### Édition du fichier crontab
 
 Pour gérer les tâches cron d’un utilisateur, utilisez la commande crontab :
 
@@ -141,7 +141,7 @@ Pour gérer les tâches cron d’un utilisateur, utilisez la commande crontab :
 **Note** : Le crontab système (pour les tâches root ou globales) se trouve dans /etc/crontab ou /etc/cron.d/. Il inclut un champ supplémentaire pour spécifier l’utilisateur exécutant la commande.
 
 
-### Spécificateurs de temps
+#### Spécificateurs de temps
 
 Pour simplifier certaines planifications, cron propose des spécificateurs spéciaux :
 
@@ -160,7 +160,7 @@ Pour initialiser un service au démarrage :
 @reboot /usr/bin/start_service.sh
 ```
 
-## Conseils et meilleures pratiques
+### Conseils et meilleures pratiques
 
 Pour éviter les erreurs courantes et optimiser tes tâches cron :
 
@@ -196,7 +196,7 @@ echo "Task completed at $(date)" >> /var/log/task.log
 ```
 
 
-### Mini explication rapide !
+#### Mini explication rapide !
 
 **"Évite les chevauchements"** : C’est quoi exactement ?
 
@@ -262,21 +262,21 @@ rm -f $LOCKFILE
 
 ---
 
-# **Entraînement ⚔️**
+## **Entraînement ⚔️**
 
 Pour mettre en pratique tes connaissances sur cron, voici trois exercices progressifs pour maîtriser la planification des tâches. 
 
-## Exercice 1 : Tâche cron simple
+### Exercice 1 : Tâche cron simple
 
 Créer une tâche cron qui exécute un script toutes les 5 minutes pour enregistrer la date et l’heure.
 
 
-## Exercice 2 : Tâche quotidienne avec gestion des erreurs
+### Exercice 2 : Tâche quotidienne avec gestion des erreurs
 
 Planifier une tâche quotidienne pour nettoyer les fichiers temporaires et gérer les erreurs dans un fichier journal.
 
     
-## Exercice 3 : Tâche avancée avec dépendances
+### Exercice 3 : Tâche avancée avec dépendances
 
 Configurer deux tâches cron dépendantes pour une sauvegarde et une vérification.
 
@@ -292,7 +292,7 @@ Merci d'avoir suivi ce cours. J'espère qu'il vous a aidé à mieux appréhender
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Faites-nous part de votre avis sur ce chapitre.
 
@@ -302,7 +302,7 @@ Merci d'avoir suivi ce cours. J'espère qu'il vous a aidé à mieux appréhender
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Chapitre précédent](./09-firewall.html)
 

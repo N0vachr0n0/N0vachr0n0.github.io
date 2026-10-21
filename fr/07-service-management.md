@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 7: Gestion des services**
-# **Avant-propos**
+## **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# **Introduction**
+## **Introduction**
 
 Dans cette partie, nous aborderons la gestion des services sur Linux. 
 
-## Prérequis 
+### Prérequis 
 
 Toujours la même histoire. 😉
 
@@ -23,30 +23,30 @@ Toujours la même histoire. 😉
 
 ---
 
-# **Débutons l'exploration**
+## **Débutons l'exploration**
 
-## Les services (ou démons)
+### Les services (ou démons)
 
 Les services, aussi appelés **démons** (*daemons* en anglais), sont des composants essentiels d’un système Linux. Ils fonctionnent en arrière-plan, **sans interaction directe avec l’utilisateur**, et assurent des tâches fondamentales pour le bon fonctionnement du système. Ils permettent notamment de maintenir le système opérationnel et d’ajouter des fonctionnalités supplémentaires.
 
 Généralement, on distingue deux grands types de services (service système et service installé par un utilisateur) :
 
 
-### Services système
+#### Services système
 
 Ce sont les services internes nécessaires au démarrage du système.  
 Ils s’occupent de tâches matérielles importantes et initialisent les composants indispensables au fonctionnement du système d’exploitation.  
 Ils sont comparables au **moteur et à la transmission d’une voiture** : ils se lancent dès que vous tournez la clé de contact et sont indispensables pour que la voiture avance. Sans eux, le système ne pourrait pas fonctionner.
 
 
-### Services installés par l’utilisateur
+#### Services installés par l’utilisateur
 
 Ces services sont ajoutés par les utilisateurs ou les administrateurs.  
 Ils incluent généralement des applications serveur ou d’autres processus en arrière-plan qui offrent des fonctionnalités spécifiques.  
 Ce sont comme les options d’une voiture (climatisation, GPS...): non essentiels pour faire rouler la voiture, mais très utiles pour améliorer le confort ou ajouter des fonctionnalités selon les besoins de l’utilisateur.
 
 
-### TLDR (Parlons concrètement d'un service)
+#### TLDR (Parlons concrètement d'un service)
 
 Une application n’a pas toujours besoin d’un service pour fonctionner. Cependant, un service joue un rôle essentiel dans la gestion du cycle de vie d’une application. Il permet notamment de la démarrer automatiquement au lancement du système, ou de la contrôler facilement (démarrer, arrêter, redémarrer) selon les besoins. 
 
@@ -55,7 +55,7 @@ Prenons l’exemple d’OpenSSH, qui permet d’accéder à une machine à dista
 Cela rend la gestion de l’application fastidieuse et peu fiable. C’est là qu’intervient un **service**, qui simplifie toute cette gestion. Dans le cas d’OpenSSH, ce service s’appelle **sshd**. Il permet non seulement de lancer automatiquement OpenSSH au démarrage, mais aussi de gérer son fonctionnement simplement avec des commandes comme **systemctl start sshd**, **systemctl stop sshd** ou **systemctl restart sshd**. 
      
 
-### Comment reconnaître un démon (un service) ?
+#### Comment reconnaître un démon (un service) ?
 
 Les noms des démons se terminent souvent par la lettre **`d`**.  
 Par exemple :
@@ -67,7 +67,7 @@ Par exemple :
 Tout comme une voiture repose sur ses pièces essentielles ainsi que sur ses options pour offrir une expérience complète, un système Linux utilise à la fois les services système et les services utilisateur pour fonctionner efficacement et répondre aux besoins de chacun.
 
 
-## Objectifs courants liés aux services ou processus
+### Objectifs courants liés aux services ou processus
 
 En général, voici les actions principales que l’on souhaite effectuer avec un service ou un processus :
 
@@ -79,7 +79,7 @@ En général, voici les actions principales que l’on souhaite effectuer avec u
 
 <br>
 
-## Le rôle de systemd
+### Le rôle de systemd
 
 La plupart des distributions Linux modernes utilisent **systemd** en remplacement de **SystemV** comme système d'initialisation (*init system*).  
 C’est le **premier processus lancé au démarrage** du système, et il porte le numéro d’identification de processus (**PID**) `1`.
@@ -92,9 +92,9 @@ Un processus peut également avoir un **PPID** (Parent Process ID), ce qui signi
 
 ---
 
-# **Les commandes en rapport avec la gestion des services**
+## **Les commandes en rapport avec la gestion des services**
 
-## La commande systemctl
+### La commande systemctl
 
 **systemctl** est l’outil principal pour gérer les services, les unités et le démarrage du système  sur les distributions Linux utilisant systemd  (comme Ubuntu, Debian, Fedora, Arch, etc.).
 
@@ -114,7 +114,7 @@ Un processus peut également avoir un **PPID** (Parent Process ID), ce qui signi
 | Démasquer un service | `sudo systemctl unmask nom_du_service` | Annule l’effet de `mask` |
 
 
-## La commande journalctl
+### La commande journalctl
 
 **journalctl** est l’outil pour lire les logs du système ou des applications géré(e)s par systemd.
 
@@ -140,9 +140,9 @@ Pour rappel, un log (ou journal de bord) est un enregistrement d'événements g�
 
 ---
 
-# **Entraînement ⚔️**
+## **Entraînement ⚔️**
 
-## Exercice 1 (Easy)
+### Exercice 1 (Easy)
 
 Cet exercice consistera à installer le logiciel **Apache HTTP Server** qui permettra à votre machine de jouer le rôle d'un serveur web. Et par la suite de passer à la gestion du service de ce dernier.
 
@@ -167,7 +167,7 @@ Cet exercice consistera à installer le logiciel **Apache HTTP Server** qui perm
 
 
 
-## Exercice 2 (On complique un peu les choses)
+### Exercice 2 (On complique un peu les choses)
 
 Cet exercice consistera à créer un service personnalisé (bonjour.service) qui exécute un script simple.
 
@@ -221,7 +221,7 @@ Cet exercice consistera à créer un service personnalisé (bonjour.service) qui
     journalctl -u bonjour
     ```
 
-## Exercice 3 (Deep Dive)
+### Exercice 3 (Deep Dive)
 
 Exécuter le script pour débuter le challenge comme un grand 😉.
 
@@ -230,7 +230,7 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Faites-nous part de votre avis sur ce chapitre.
 
@@ -239,7 +239,7 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Chapitre précédent](./06-package-management.html)
 

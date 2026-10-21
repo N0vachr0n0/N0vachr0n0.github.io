@@ -32,7 +32,7 @@ On that note, have a good adventure, Ciao!
 
 ---
 
-# **Challenge**
+## **Challenge**
 
 This challenge consists of searching for the flag.zip file and decompressing it to obtain the flag (special character string).
 Before starting the challenge, you will need to set up the environment as follows:
@@ -73,7 +73,7 @@ Now that the challenge environment is ready, you can begin the challenge, but ke
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Start the adventure](./01-inside-linux-world.html)
 

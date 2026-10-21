@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 5: File Permissions**
-# **Foreword**
+## **Foreword**
 
 We recommend that you do not use AI to do the exercises since you are in the learning phase.
 
-# **Introduction**
+## **Introduction**
 
 In this section, we will cover file management under Linux. More specifically, we'll talk about permissions and access management on files.
 
-## Prerequisites 
+### Prerequisites 
 
 Same old story. 😉
 
@@ -23,10 +23,10 @@ Same old story. 😉
 
 ---
 
-# **File Management**
+## **File Management**
 
-## File permissions
-### General information
+### File permissions
+#### General information
 
 Under Linux, file permissions are an essential barrier against unauthorized access.
 
@@ -76,14 +76,14 @@ Let's break down each part of this line:
 
 7. **`pubspec.yaml`**: This is the **file's name**.
 
-#### Summary:
+##### Summary:
 The `pubspec.yaml` file belongs to the user "widal" and to the group "widal"; it is readable and writable by both of these entities, but only readable by others. It weighs 244 bytes and was last modified on April 23 at 01:48.
 
-### Changing file permissions
+#### Changing file permissions
 
 Under Linux, file and directory permissions define who can read, write, or execute a file. You can change these permissions with the `chmod` command. Changing permissions can be done in two main ways: using **numbers** or **symbols**.
 
-#### 1. Using Numbers with `chmod`
+##### 1. Using Numbers with `chmod`
 
 Each type of permission (read, write, execute) is represented by a digit:
 - **Read** (`r`) = 4
@@ -100,7 +100,7 @@ Examples:
 - `chmod 755 file.txt`: The owner has all rights (`7` = `rwx`; let's break it down: `7` = `r(4) + w(2) + x(1)`), the group has read and execute rights (`5` = `r-x`), and others also have read and execute rights (`5` = `r-x`).
 - `chmod 644 file.txt`: The owner has read and write rights (`6` = `rw-`), and others have read-only rights (`4` = `r--`).
 
-#### 2. Using Symbols with `chmod`
+##### 2. Using Symbols with `chmod`
 
 Permissions can also be specified using symbols:
 - `+`: Add a permission.
@@ -112,7 +112,7 @@ Examples:
 - `chmod g-w file.txt`: Removes the write permission for the **group** (`g` = group).
 - `chmod o=r file.txt`: Sets the permissions for other users to "read only" (`o` = others).
 
-#### 3. Using `umask` (ℹ️ Good to know!)
+##### 3. Using `umask` (ℹ️ Good to know!)
 
 The `umask` command determines the default permissions of files and directories when you create them. The `umask` is a kind of "mask" that **removes** certain permissions from created files. By default, when a file is created, it has broad permissions (like `777` for a directory or `666` for a file), and the `umask` will adjust these permissions according to the specified values.
 
@@ -125,7 +125,7 @@ Example:
 - `umask 0022`: For a file, the permissions will be `644` (owner: `rw-`, group and others: `r--`).
 - `umask 0777`: For a file, the permissions will be `000`, which prevents any access to the file.
 
-#### 4. Bonus: Managing permissions when copying a file ( **`cp -p`** )
+##### 4. Bonus: Managing permissions when copying a file ( **`cp -p`** )
 
 The `cp` command is used to copy files or directories. The `-p` option of `cp` lets you **preserve** the source file's attributes during the copy, such as:
 - The permissions.
@@ -139,7 +139,7 @@ cp -p source_file.txt copy_file.txt
 This creates a copy of the file while keeping the same permissions and other metadata as the original file.
 
 
-### Table of permissions and `chmod` values
+#### Table of permissions and `chmod` values
 
 | Permission | Numeric value | Description       | Associated symbols |
 |------------|------------------|-------------------|-------------------|
@@ -161,7 +161,7 @@ This creates a copy of the file while keeping the same permissions and other met
 | `chmod 000 file.txt` | --- | --- | --- | No access for anyone (except root) |
 
 
-### Practical example
+#### Practical example
 
 Let's imagine you have a file `script.sh` with the following permissions:
 
@@ -191,7 +191,7 @@ This will keep the same metadata and permissions in the copy.
 
 <br>
 
-## Managing a file's owner and group
+### Managing a file's owner and group
 
 * Every file has a single owner and a single group it belongs to
 * Generally, the file's initial owner is the user tied to the
@@ -214,20 +214,20 @@ Below is a table showing how a file's owner and group are managed.
 
 <br>
 
-## The Sticky Bit ( Good to know!)
+### The Sticky Bit ( Good to know!)
 
 The **sticky bit** is a special permission that can be set on a directory. When enabled, this bit changes the behavior of files placed in that directory. It essentially lets you **restrict file deletion** to the file's owner. In other words, **only the owner of a file or the administrator (root)** can delete or rename that file in a directory marked with the sticky bit, even if other users have write permissions on the directory.
 
-### Usefulness of the Sticky Bit
+#### Usefulness of the Sticky Bit
 
 The sticky bit is often used on shared directories, such as `/tmp`, where many users can create and modify files, but where it's essential that users cannot delete or modify other users' files.
 
 **Typical use case**:
 - **The `/tmp` directory**: This is a directory used by the system and users to store temporary files. It's common to set the sticky bit on this directory to prevent users from deleting files created by other users in it.
 
-### How do you set and check the Sticky Bit?
+#### How do you set and check the Sticky Bit?
 
-#### 1. Setting the Sticky Bit
+##### 1. Setting the Sticky Bit
 
 To set the sticky bit, you use the `chmod` command with **`+t`**. This is generally done on directories. For example:
 
@@ -249,7 +249,7 @@ drwxrwxrwt 10 root root 4096 avril 23 10:00 /tmp
 
 Here, the `t` in the **`rwxrwxrwt` permissions** (instead of `x` at the end) indicates that the sticky bit is enabled.
 
-#### 2. **Removing the Sticky Bit**
+##### 2. **Removing the Sticky Bit**
 
 If you want to remove the sticky bit from a directory, you can use the following command:
 
@@ -259,7 +259,7 @@ chmod -t /tmp
 
 This removes the sticky bit, and users with write permissions on that directory can then delete or modify other users' files.
 
-### Summary - Sticky Bit Behavior
+#### Summary - Sticky Bit Behavior
 
 - **With the sticky bit**: If the sticky bit is enabled on a directory, only the **file's owner** and **root** can delete or rename that file. Other users with write permissions on the directory cannot affect files belonging to other users.
 
@@ -267,15 +267,15 @@ This removes the sticky bit, and users with write permissions on that directory 
 
 <br>
 
-## SETUID and SETGID
+### SETUID and SETGID
 
 **SETUID** (Set User ID) and **SETGID** (Set Group ID) are special bits that can be set on executable files under Linux. When enabled, these bits change how the system handles the execution of files. Their main purpose is to grant temporary permissions for running a program, allowing a user to execute a file with the permissions of another user (usually a privileged user, such as root).
 
-### SETUID (Set User ID)
+#### SETUID (Set User ID)
 - **Purpose**: Allows a user to execute a file with the **permissions of the file's owner**, **not those of the user** launching the execution.
 - **Use case**: This is often used for programs that require elevated privileges to accomplish a specific task, such as `passwd` (changing a password), which must be run with root privileges, even if the user running it isn't root.
 
-#### Example:
+##### Example:
 ```bash
 chmod u+s /path/to/file
 ```
@@ -295,17 +295,17 @@ This adds the **SETUID** bit to an executable file.
     ```
 <br>
 
-### SETGID (Set Group ID)
+#### SETGID (Set Group ID)
 - **Purpose**: Allows a user to execute a file with the **permissions of the file's group**, rather than the permissions of the group of the user launching the execution.
 - **Use case**: Very useful for shared programs or directories where it's important to maintain specific group permissions.
 
-#### Example:
+##### Example:
 ```bash
 chmod g+s /path/to/file
 ```
 This adds the **SETGID** bit to an executable file or a directory.
 
-### In summary:
+#### In summary:
 - **SETUID**: Allows a file to be executed with the **permissions of the file's owner** (often root).
 - **SETGID**: Allows a file to be executed with the **permissions of the file's group**.
 
@@ -321,27 +321,27 @@ These two bits are mainly used for managing temporary permissions when running p
 
 ---
 
-# **Training ⚔️**
-## Exercise 1 
+## **Training ⚔️**
+### Exercise 1 
 * Do some research on:
     * setfacl
     * getfacl
     * inodes (in the context of Linux, of course!)
 
-## Exercise 2 (🧪)
+### Exercise 2 (🧪)
 
 Run the script to start the challenge like a boss 😉.
 
 * Link to the challenge script: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/FilesPerms_EXO_1.sh>
 
-## Exercise 3 (Deep Dive)
+### Exercise 3 (Deep Dive)
 
 * Complete this challenge: <https://sadservers.com/scenario/budapest>    
 
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Let us know what you think of this chapter.
 
@@ -350,7 +350,7 @@ Run the script to start the challenge like a boss 😉.
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Previous chapter](./04-users-groups.html)
 

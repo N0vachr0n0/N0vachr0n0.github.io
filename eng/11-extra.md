@@ -6,11 +6,11 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 11: Extras**
-# **Extra**
+## **Extra**
 
 To go further, I suggest you explore the resources below.
 
-## Linux System Administration - DevOps - SRE
+### Linux System Administration - DevOps - SRE
 
 - <https://www.youtube.com/@xavki>
 - <https://www.youtube.com/@TechWorldwithNana>
@@ -22,7 +22,7 @@ To go further, I suggest you explore the resources below.
 - <https://github.com/N0vachr0n0/ctf_sysadmin>
 
 
-## Cybersecurity - Hacking
+### Cybersecurity - Hacking
 
 - <https://www.youtube.com/@_JohnHammond>
 - <https://www.youtube.com/@davidbombal>
@@ -41,7 +41,7 @@ To go further, I suggest you explore the resources below.
 - <https://pwn.college/> 🔥
 
 
-## Podcast IT
+### Podcast IT
 
 - <https://podcastaddict.com/podcast/informatique-pour-tous/4071273>
 - <https://podcastaddict.com/podcast/nolimitsecu/1698255>
@@ -49,7 +49,7 @@ To go further, I suggest you explore the resources below.
 - <https://podcastaddict.com/podcast/le-rendez-vous-tech/3835253>
 
 
-## Last word !
+### Last word !
 
 <details>
   <summary>Click here</summary>
@@ -62,7 +62,7 @@ To go further, I suggest you explore the resources below.
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Previous chapter](./10-tasks-planification.html)
 

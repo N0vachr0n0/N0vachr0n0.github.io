@@ -1,10 +1,65 @@
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5QY9K92V"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  (function () {
+    // Pas de suivi en local, ni pour l'auteur : ouvrir une fois le site avec ?notrack (?track pour réactiver)
+    var host = location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0' || /\.local$/.test(host)) return;
+    try {
+      if (/[?&]notrack\b/.test(location.search)) localStorage.setItem('ga_optout', '1');
+      if (/[?&]track\b/.test(location.search)) localStorage.removeItem('ga_optout');
+      if (localStorage.getItem('ga_optout') === '1') return;
+    } catch (e) {}
 
-  gtag('config', 'G-JV5QY9K92V');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JV5QY9K92V';
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+
+    // La racine / redirige en JS : elle transmet ici le vrai référent (LinkedIn, WhatsApp...) pour garder la source
+    var config = {};
+    try {
+      var ref = sessionStorage.getItem('orig_referrer');
+      if (ref !== null) {
+        sessionStorage.removeItem('orig_referrer');
+        if (ref) config.page_referrer = ref;
+      }
+    } catch (e) {}
+    gtag('config', 'G-JV5QY9K92V', config);
+
+    // Événements à déclarer comme « événements clés » dans GA4
+    var lang = location.pathname.indexOf('/eng/') === 0 ? 'en' : 'fr';
+    function chapterOf(path) {
+      var m = /\/(?:fr|eng)\/(\d\d)-[^/]+\.html$/.exec(path);
+      return m ? parseInt(m[1], 10) : null;
+    }
+    var current = chapterOf(location.pathname);
+    var onHome = /^\/(fr|eng)\/(index\.html)?$/.test(location.pathname);
+
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var url;
+      try { url = new URL(a.href, location.href); } catch (err) { return; }
+
+      if (url.hostname === 'forms.gle') {
+        gtag('event', 'feedback_click', { chapter: current, lang: lang });
+      } else if (url.hostname === 'github.com') {
+        gtag('event', 'github_click', { chapter: current, lang: lang });
+      } else if (url.hostname === location.hostname) {
+        var target = chapterOf(url.pathname);
+        var targetLang = url.pathname.indexOf('/eng/') === 0 ? 'en' : (url.pathname.indexOf('/fr/') === 0 ? 'fr' : null);
+        if (targetLang && targetLang !== lang) {
+          gtag('event', 'language_switch', { from: lang, to: targetLang });
+        } else if (onHome && (target === 0 || target === 1)) {
+          gtag('event', 'start_course', { chapter: target, lang: lang });
+        } else if (current !== null && target === current + 1) {
+          gtag('event', 'next_chapter', { from: current, to: target, lang: lang });
+        }
+      }
+    });
+  })();
 </script>
-

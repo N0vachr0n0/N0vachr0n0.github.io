@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 9: Firewall**
-# **Foreword**
+## **Foreword**
 
 We recommend that you do not use AI to do the exercises, as you are in the learning phase.
 
-# **Introduction**
+## **Introduction**
 
 In this chapter, we will talk about exploiting firewalls on Linux.
 
-## Prerequisites 
+### Prerequisites 
 
 Same old story. 😉
 
@@ -23,7 +23,7 @@ Same old story. 😉
 
 ---
 
-# **What is a firewall?**
+## **What is a firewall?**
 
 A firewall is a network security system that controls access between an internal network and an external network, usually the Internet. Its role is to protect the internal network against attacks and unauthorized access.
 
@@ -39,7 +39,7 @@ There are several types of firewalls:
 
 ---
 
-# **Firewalls on Linux**
+## **Firewalls on Linux**
 
 On Linux, we will cover three popular tools for managing firewalls:
 
@@ -47,7 +47,7 @@ On Linux, we will cover three popular tools for managing firewalls:
 2. **ufw** (Uncomplicated Firewall): this is a simplified firewall management tool for Ubuntu and other Linux distributions.
 3. **firewalld**: this is a firewall management tool that uses iptables rules under the hood.
 
-## Iptables
+### Iptables
 
 **What is iptables?**
 
@@ -72,7 +72,7 @@ iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -A INPUT -p icmp -j DROP
 ```
 
-## UFW (Uncomplicated Firewall)
+### UFW (Uncomplicated Firewall)
 
 **What is ufw?**
 
@@ -96,7 +96,7 @@ ufw allow 22
 ```
 
 
-## Firewalld
+### Firewalld
 
 **What is firewalld?**
 
@@ -133,14 +133,14 @@ firewall-cmd --zone=public --add-icmp-block=echo-request --permanent
 
 ---
 
-# **Training ⚔️**
+## **Training ⚔️**
 
 Self-service 🙂
 
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Give us your feedback on this chapter.
 
@@ -150,7 +150,7 @@ Self-service 🙂
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Previous chapter](./08-network-management.html)
 

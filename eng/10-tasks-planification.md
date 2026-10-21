@@ -6,17 +6,17 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 10: Task Scheduling**
-# **Foreword**
+## **Foreword**
 
 We recommend that you do not use AI to do the exercises, as you are still in the learning phase.
 
-# **Introduction**
+## **Introduction**
 
 In this chapter, we will explore **task scheduling** under Linux, an essential concept for automating repetitive processes and optimizing the management of a system. Whether for backups, cleaning up temporary files, or periodic checks, task scheduling is a key skill for any system administrator or Linux user. We will focus on **cron**, the most widespread and powerful scheduling tool under Linux. Get ready to become a master of automation, dear padawan!
 
 ---
 
-## Prerequisites 
+### Prerequisites 
 
 Same story as always. 😉
 
@@ -25,7 +25,7 @@ Same story as always. 😉
 
 ---
 
-# **What is task scheduling?**
+## **What is task scheduling?**
 
 **Task scheduling** allows you to automatically execute commands or scripts at precise moments or at regular intervals. Imagine an alarm clock that, instead of ringing, executes a task on your system: backing up files, sending reports, or cleaning up folders. This frees you from repetitive tasks and guarantees that your system stays up to date without manual intervention.
 
@@ -38,13 +38,13 @@ In this course, we will focus on **cron**, the preferred choice for recurring au
 
 ---
 
-## Cron
+### Cron
 
-### What is cron?
+#### What is cron?
 
 **cron** is a **daemon** (a program that runs in the background) that reads configuration files called **crontabs** to execute scheduled tasks. Each user can have their own **crontab**, and there is also a **system crontab** for global tasks. Think of **cron** as a conductor who makes sure each task is played at the right moment.
 
-### Crontab structure
+#### Crontab structure
 
 The **crontab** file is made up of lines, each representing a scheduled task. Each line follows this structure with **six fields**:
 
@@ -68,7 +68,7 @@ Each field can contain:
 - A range (e.g., `1-5`).  
 - An interval (e.g., `*/5` for every 5 minutes).
 
-### Examples of cron tasks
+#### Examples of cron tasks
 
 Here are some concrete examples to help you understand better:
 
@@ -111,7 +111,7 @@ Here are some concrete examples to help you understand better:
 
 **Teaching tip**: Use the online tool crontab guru (https://crontab.guru/) to test and visualize cron expressions in real time.
 
-### Editing the crontab file
+#### Editing the crontab file
 
 To manage a user's cron tasks, use the crontab command:
 
@@ -141,7 +141,7 @@ To manage a user's cron tasks, use the crontab command:
 **Note**: The system crontab (for root or global tasks) is found in /etc/crontab or /etc/cron.d/. It includes an extra field to specify the user executing the command.
 
 
-### Time specifiers
+#### Time specifiers
 
 To simplify certain schedules, cron offers special specifiers:
 
@@ -160,7 +160,7 @@ To start up a service at boot:
 @reboot /usr/bin/start_service.sh
 ```
 
-## Tips and best practices
+### Tips and best practices
 
 To avoid common mistakes and optimize your cron tasks:
 
@@ -196,7 +196,7 @@ echo "Task completed at $(date)" >> /var/log/task.log
 ```
 
 
-### Quick mini-explanation!
+#### Quick mini-explanation!
 
 **"Avoid overlaps"**: What exactly is that?
 
@@ -262,21 +262,21 @@ rm -f $LOCKFILE
 
 ---
 
-# **Training ⚔️**
+## **Training ⚔️**
 
 To put your knowledge of cron into practice, here are three progressive exercises to master task scheduling. 
 
-## Exercise 1: Simple cron task
+### Exercise 1: Simple cron task
 
 Create a cron task that runs a script every 5 minutes to record the date and time.
 
 
-## Exercise 2: Daily task with error handling
+### Exercise 2: Daily task with error handling
 
 Schedule a daily task to clean up temporary files and handle errors in a log file.
 
     
-## Exercise 3: Advanced task with dependencies
+### Exercise 3: Advanced task with dependencies
 
 Set up two dependent cron tasks for a backup and a check.
 
@@ -292,7 +292,7 @@ Thank you for taking this course. I hope it helped you better understand the wor
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Let us know what you think about this chapter.
 
@@ -302,7 +302,7 @@ Thank you for taking this course. I hope it helped you better understand the wor
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Previous chapter](./09-firewall.html)
 

@@ -6,17 +6,17 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 8: Gestion réseau**
-# **Avant-propos**
+## **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# **Introduction**
+## **Introduction**
 
 Dans cette partie, nous aborderons les points suivants :
 * Le réseau informatique (brièvement)
 * Le troubleshooting ou dépannage réseau sous Linux 
 
-## Prérequis 
+### Prérequis 
 
 Toujours la même histoire. 😉
 
@@ -25,24 +25,24 @@ Toujours la même histoire. 😉
 
 ---
 
-# **Le réseau informatique (brièvement)**
+## **Le réseau informatique (brièvement)**
 
-## Introduction au réseau informatique
+### Introduction au réseau informatique
 
 Un réseau informatique est un ensemble d'ordinateurs et de périphériques connectés entre eux pour partager des ressources, échanger des données et fournir des services. Les réseaux informatiques sont essentiels dans le monde moderne, permettant la communication, le partage de fichiers et l'accès à des ressources distantes.
 
 
-### Comment tout cela fonctionne ?
+#### Comment tout cela fonctionne ?
 
 Pour que les ordinateurs puissent communiquer entre eux, **ils doivent parler un langage commun** : ce sont les **protocoles réseau**. Le plus fondamental de tous, c’est **TCP/IP**.
 
 
-### Le modèle TCP/IP (le vrai fonctionnement d'Internet)
+#### Le modèle TCP/IP (le vrai fonctionnement d'Internet)
 
 **TCP/IP**, c’est **l'ensemble de règles (ou "pile de protocoles") utilisé pour faire fonctionner Internet et la plupart des réseaux**.
 Il est composé de plusieurs couches, **chacune ayant un rôle spécifique**.
 
-#### Couches du modèle TCP/IP (simplifié) :
+##### Couches du modèle TCP/IP (simplifié) :
 
 | Couche              | Rôle                                                                        |
 | ------------------- | --------------------------------------------------------------------------- |
@@ -52,17 +52,17 @@ Il est composé de plusieurs couches, **chacune ayant un rôle spécifique**.
 | **4. Application**  | Ce que l’utilisateur utilise : HTTP, FTP, mail, etc.                        |
 
 
-### TCP et UDP : deux manières de transporter les données
+#### TCP et UDP : deux manières de transporter les données
 
 Au niveau de la **couche Transport**, deux protocoles sont principalement utilisés :
 
-#### TCP (Transmission Control Protocol)
+##### TCP (Transmission Control Protocol)
 
 * **Fiable** : garantit que toutes les données arrivent **dans le bon ordre**, sans erreur.
 * **Connexion** : établit un "lien" entre l’expéditeur et le destinataire avant d’envoyer les données.
 * **Exemples d’usages** : sites web (HTTP/HTTPS), mails (SMTP, IMAP), fichiers (FTP).
 
-#### UDP (User Datagram Protocol)
+##### UDP (User Datagram Protocol)
 
 * **Rapide** : envoie les données sans vérifier si elles sont bien reçues.
 * **Pas de connexion** : pas d’échange préalable, moins de surcharge.
@@ -75,7 +75,7 @@ Au niveau de la **couche Transport**, deux protocoles sont principalement utilis
 
 ---
 
-### Le modèle OSI (modèle théorique en 7 couches)
+#### Le modèle OSI (modèle théorique en 7 couches)
 
 Le **modèle OSI** (*Open Systems Interconnection*) est une **représentation théorique** utilisée pour comprendre comment les données circulent dans un réseau, en les divisant en **7 couches**.
 
@@ -93,7 +93,7 @@ Le **modèle OSI** (*Open Systems Interconnection*) est une **représentation th
 > "All People Seem To Need Data Processing" (Application, Présentation, Session, Transport, Réseau, Données, Physique)
 
 
-### OSI vs TCP/IP - Quelle différence ?
+#### OSI vs TCP/IP - Quelle différence ?
 
 | OSI (7 couches)           | TCP/IP (4 couches)                                                     |
 | ------------------------- | ---------------------------------------------------------------------- |
@@ -107,7 +107,7 @@ Le **modèle OSI** (*Open Systems Interconnection*) est une **représentation th
 <br>
 
 
-## Types de Réseaux Informatiques
+### Types de Réseaux Informatiques
 
 Vous devez savoir qu'il existe différents types de réseaux :
 
@@ -117,14 +117,14 @@ Vous devez savoir qu'il existe différents types de réseaux :
 - **WAN (Wide Area Network)** : Connecte plusieurs LAN sur de grandes distances (villes, pays, continents). Internet est le plus grand WAN qui existe.
 - **GAN (Global Area Network)** : Réseau à l'échelle mondiale, censé désigner un WAN qui couvre littéralement toute la planète, souvent via satellites (Starlink en est un bon exemple concret).
 
-## Équipements Réseau
+### Équipements Réseau
 
 Maintenant, parlons des équipements réseau :
 
 - **Routeur** : Un routeur connecte plusieurs réseaux et achemine le trafic entre eux. C'est comme un aiguillage pour vos paquets de données !
 - **Commutateur (Switch)** : Un commutateur connecte plusieurs ordinateurs dans un réseau et achemine les paquets de données vers le destinataire prévu.
 
-## Adresses Réseau
+### Adresses Réseau
 
 Dans un réseau informatique, il y a deux éléments principaux pour identifier une machine. L'adresse IP et l'adresse MAC.
 
@@ -180,23 +180,23 @@ Dans notre cas, nous avons 3 interfaces réseau: **lo**, **enp1s0** et **docker0
 - **docker0** : docker0 est une interface virtuelle créée par Docker pour permettre aux conteneurs de communiquer entre eux et avec l’hôte.
 
 
-## Focus sur l'interface loopback
+### Focus sur l'interface loopback
 
 L’interface **loopback** (`lo`) permet à une machine de **s’envoyer des messages à elle-même**, comme si elle passait par le réseau. Cela peut paraître inutile, mais en réalité, c’est fondamental pour :
 
-### **1. Test de réseau local (localhost)**
+#### **1. Test de réseau local (localhost)**
 
 * **127.0.0.1** (ou `localhost`) est utilisée pour **tester des applications réseau localement**, sans avoir besoin d’une vraie connexion réseau.
 * Exemple : tu développes un site web sur ton PC. Tu peux lancer un serveur local sur `127.0.0.1:8000`, et y accéder via un navigateur - ça ne sort jamais de la machine.
 
 
-### **2. Services internes du système**
+#### **2. Services internes du système**
 
 * Beaucoup de **services système communiquent entre eux via le réseau**, même s’ils tournent sur la même machine (par souci de modularité ou sécurité).
 * Exemple : une base de données PostgreSQL, un serveur Redis, etc. Ils écoutent souvent sur `127.0.0.1`, et n’autorisent que les connexions locales.
 
 
-### **3. Diagnostic réseau**
+#### **3. Diagnostic réseau**
 
 * Tu peux tester la **pile réseau** sans avoir besoin de câble ni d’Internet :
 
@@ -207,13 +207,13 @@ L’interface **loopback** (`lo`) permet à une machine de **s’envoyer des mes
   Cela vérifie que le système d’exploitation peut envoyer et recevoir des paquets TCP/IP.
 
 
-### **4. Sécurité**
+#### **4. Sécurité**
 
 * Les services qui **ne doivent pas être accessibles depuis l’extérieur** peuvent être liés uniquement à `127.0.0.1`.
 * Exemple : une interface d’administration accessible **uniquement localement**.
 
 
-###  Exemple concret :
+####  Exemple concret :
 
 Imaginons que tu développes une application web locale :
 
@@ -244,7 +244,7 @@ http://127.0.0.1:8000
 
 Même si tu n’as **aucun accès Internet**, cette communication fonctionne via l’interface loopback.
 
-### En résumé :
+#### En résumé :
 
 L’interface `lo` permet à un ordinateur de **s’adresser à lui-même** via des protocoles réseau standard. C’est **indispensable** pour :
 
@@ -255,14 +255,14 @@ L’interface `lo` permet à un ordinateur de **s’adresser à lui-même** via 
 
 <br>
 
-## Configuration réseau et routage sous Linux
+### Configuration réseau et routage sous Linux
 
-### Comprendre le **routage**
+#### Comprendre le **routage**
 
 En réseau, **"router"** signifie **décider par quel chemin (interface, passerelle) envoyer les paquets IP** pour atteindre une destination. Voyons quelques commandes en rapport avec le routage.
 
 
-#### `route` (ancienne commande)
+##### `route` (ancienne commande)
 
 La commande `route` est **obsolète**, mais encore utilisée parfois pour afficher la **table de routage** :
 
@@ -275,7 +275,7 @@ route -n
 
 
 
-#### `ip r` ou `ip route` (moderne)
+##### `ip r` ou `ip route` (moderne)
 
 ```bash
 ip route
@@ -285,7 +285,7 @@ ip r
 
 > Affiche la table de routage actuelle du système.
 
-##### Exemple :
+###### Exemple :
 
 ```bash
 default via 192.168.1.1 dev eth0
@@ -298,7 +298,7 @@ default via 192.168.1.1 dev eth0
 * **192.168.1.0/24** : sous-réseau local.
 
 
-#### `ip route get`
+##### `ip route get`
 
 ```bash
 ip route get 8.8.8.8
@@ -306,7 +306,7 @@ ip route get 8.8.8.8
 
 > Affiche **le chemin précis** qu'un paquet prendrait pour atteindre une IP donnée.
 
-##### Résultat exemple :
+###### Résultat exemple :
 
 ```bash
 8.8.8.8 via 192.168.1.1 dev eth0 src 192.168.1.100
@@ -316,7 +316,7 @@ ip route get 8.8.8.8
 
 ---
 
-### Gateway (passerelle)
+#### Gateway (passerelle)
 
 La **gateway**, ou passerelle, est **l’adresse IP d’un routeur** sur le réseau local, par lequel **le trafic sortant vers l’extérieur** (ex : Internet) est redirigé.
 
@@ -327,9 +327,9 @@ Sans gateway définie → le système **ne peut pas atteindre l’extérieur**.
 
 <br>
 
-###  Configuration d’une interface réseau
+####  Configuration d’une interface réseau
 
-#### Méthode 1 – **Temporaire** (non persistante)
+##### Méthode 1 – **Temporaire** (non persistante)
 
 Utilisation des commandes `ip` :
 
@@ -348,15 +348,15 @@ sudo ip route add default via 192.168.1.1
 
 <br>
 
-#### Méthode 2 – **Persistante** (configuration conservée après redémarrage)
+##### Méthode 2 – **Persistante** (configuration conservée après redémarrage)
 
 Dépend de la distribution :
 
 
 
-#### Depuis Debian / Ubuntu (avec Netplan ou interfaces)
+##### Depuis Debian / Ubuntu (avec Netplan ou interfaces)
 
-##### Avec `netplan` (Ubuntu 18.04+)
+###### Avec `netplan` (Ubuntu 18.04+)
 
 Éditer le fichier YAML :
 
@@ -386,7 +386,7 @@ sudo netplan apply
 
 
 
-##### Avec `/etc/network/interfaces` (systèmes plus anciens) :
+###### Avec `/etc/network/interfaces` (systèmes plus anciens) :
 
 ```bash
 auto eth0
@@ -407,7 +407,7 @@ sudo systemctl restart networking
 
 ---
 
-####  Depuis Red Hat / CentOS / Fedora (avec `nmcli` ou fichiers `ifcfg-`)
+#####  Depuis Red Hat / CentOS / Fedora (avec `nmcli` ou fichiers `ifcfg-`)
 
 Exemple fichier :
 
@@ -436,7 +436,7 @@ sudo ifdown eth0 && sudo ifup eth0
 <br>
 
 
-### Résumé
+#### Résumé
 
 | Commande / Élément            | Rôle                                           |
 | ----------------------------- | ---------------------------------------------- |
@@ -449,7 +449,7 @@ sudo ifdown eth0 && sudo ifup eth0
 
 <br>
 
-## DNS
+### DNS
 
 Le DNS (Domain Name System) est un système qui traduit les noms de domaine en adresses IP. C'est essentiel pour naviguer sur Internet !
 Vous pouvez modifier votre DNS de différentes manières. Soit via le fichier `/etc/resolv.conf`. Soit via **l'interface graphique de Network Manager**. Soit **Via `resolv.conf`**.
@@ -505,7 +505,7 @@ Explication :
 
 <br>
 
-## Rôle des Ports réseau et des Services
+### Rôle des Ports réseau et des Services
 
 Les ports sont des numéros qui identifient les services qui écoutent sur une machine. Vous pouvez voir les numéros de ports standards et les services dans le fichier `/etc/services`.
 
@@ -529,7 +529,7 @@ Les ports sont des numéros qui identifient les services qui écoutent sur une m
 
 ---
 
-# **Quelques outils de dépannage Réseau sous Linux**
+## **Quelques outils de dépannage Réseau sous Linux**
 
 **INFO:** <br>
 * netstat, ifconfig, route sont présents dans le paquet net-tools.
@@ -540,7 +540,7 @@ Les ports sont des numéros qui identifient les services qui écoutent sur une m
 Il faudra donc l'installer au cas où vous n'en avez pas.🙂
 
 
-## Ping
+### Ping
 
 - **Qu'est-ce que Ping ?** : Ping teste la connectivité et mesure le temps de réponse.
 - **Comment utiliser Ping** :
@@ -549,7 +549,7 @@ Il faudra donc l'installer au cas où vous n'en avez pas.🙂
  ping google.com
  ```
 
-## Traceroute
+### Traceroute
 
 - **Qu'est-ce que Traceroute ?** : Traceroute suit le chemin que prennent les paquets de données de la source à la destination.
 - **Comment utiliser Traceroute** :
@@ -558,7 +558,7 @@ Il faudra donc l'installer au cas où vous n'en avez pas.🙂
  traceroute google.com
  ```
 
-## Netstat
+### Netstat
 
 - **Qu'est-ce que Netstat ?** : Netstat affiche les connexions Internet / Réseaux actives, les tables de routage et les statistiques d'interface.
 - **Comment utiliser Netstat** :
@@ -567,7 +567,7 @@ Il faudra donc l'installer au cas où vous n'en avez pas.🙂
  netstat -tuln
  ```
 
-## Tcpdump
+### Tcpdump
 
 - **Qu'est-ce que Tcpdump ?** : Tcpdump capture et affiche le trafic réseau.
 - **Comment utiliser Tcpdump** :
@@ -576,7 +576,7 @@ Il faudra donc l'installer au cas où vous n'en avez pas.🙂
  sudo tcpdump -i eth0
  ```
 
-## Wireshark
+### Wireshark
 
 - **Qu'est-ce que Wireshark ?** : Wireshark analyse le trafic réseau.
 - **Comment utiliser Wireshark** :
@@ -585,7 +585,7 @@ Il faudra donc l'installer au cas où vous n'en avez pas.🙂
  sudo wireshark
  ```
 
-## Nmap
+### Nmap
 
 - **Qu'est-ce que Nmap ?** : Nmap scanne les réseaux pour les hôtes et les services.
 - **Comment utiliser Nmap** :
@@ -594,7 +594,7 @@ Il faudra donc l'installer au cas où vous n'en avez pas.🙂
  nmap -sS 192.168.1.0/24
  ```
 
-## Netcat
+### Netcat
 
 - **Qu'est-ce que Netcat ?** : Netcat lit et écrit des connexions réseau.
 - **Comment utiliser Netcat** :
@@ -603,7 +603,7 @@ Il faudra donc l'installer au cas où vous n'en avez pas.🙂
  nc google.com 80
  ```
 
-## SS
+### SS
 
 - **Qu'est-ce que SS ?** : SS est un outil pour investiguer les sockets.
 - **Comment utiliser SS** :
@@ -612,7 +612,7 @@ Il faudra donc l'installer au cas où vous n'en avez pas.🙂
  ss -tuln
  ```
 
-## MTR
+### MTR
 
 - **Qu'est-ce que MTR ?** : MTR combine Ping et Traceroute.
 - **Comment utiliser MTR** :
@@ -626,16 +626,16 @@ Il faudra donc l'installer au cas où vous n'en avez pas.🙂
 
 ---
 
-# **Entraînement ⚔️**
+## **Entraînement ⚔️**
 
-## EXERCICE 1
+### EXERCICE 1
 
 Faire les challenges du niveau 0 à 20 de la catégorie "Bandit" de la plateforme "overthewire".
 Lien: <https://overthewire.org/wargames/bandit/> (Ce lien pointe sur la catégorie "Bandit" directement)
 
 Les premiers challenges vous serviront de révision 🙂.
 
-## EXERCICE 2
+### EXERCICE 2
 
 Vous devez réaliser une analyse réseau complète  sur le serveur public scanme.nmap.org à l’aide de l’outil Nmap , afin de répondre aux questions suivantes : 
 
@@ -647,7 +647,7 @@ Vous devez réaliser une analyse réseau complète  sur le serveur public scanme
 
 **⚠️ Attention**: Il est illégal de scanner un réseau ou un site web qui n'est pas le votre sans autorisation. "<scanme.nmap.org>" est une plateforme de test fournie par nmap afin de tester l'outil nmap librement.
 
-## EXERCICE 3
+### EXERCICE 3
 
 Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/Network_EXO_1.sh>
 
@@ -655,7 +655,7 @@ Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Faites-nous part de votre avis sur ce chapitre.
 
@@ -665,7 +665,7 @@ Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Chapitre précédent](./07-service-management.html)
 

@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 2: Commandes de base**
-# **Avant-propos**
+## **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# **Introduction**
+## **Introduction**
 
 Même s’il existe une multitude de commandes sous Linux, quelques-unes se révèlent indispensables pour profiter pleinement de ce système. Il y a de fortes chances que vous les utiliserez tous les jours.
 
-## Prérequis 
+### Prérequis 
 
 * Avoir une machine virtuelle ou un PC ou un environnement sous Linux (Ubuntu idéalement)
 * Être résilient 😜
@@ -44,7 +44,7 @@ Vous aurez à présent cette vue:
 
 ---
 
-# **À la découverte du terminal Linux**
+## **À la découverte du terminal Linux**
 
 Qui dit terminal Linux, dit principalement invite de commande (prompt) et interpréteur de commandes (shell). Mais aussi les commandes.
 
@@ -100,7 +100,7 @@ Exemple de terminal Linux:
 
 ---
 
-# **L'arborescence du système Linux**
+## **L'arborescence du système Linux**
 
 L'arborescence du système Linux, c'est comme une grande armoire bien organisée avec plein de tiroirs et de dossiers. C'est la façon dont les fichiers et les répertoires sont structurés dans un système Linux. Tout commence à partir d'un point unique qu'on appelle la racine, notée simplement par un slash **" / "**. À partir de là, tout s'organise en branches, comme un arbre (d'où le nom "arborescence").
 
@@ -145,11 +145,11 @@ Le répertoire **"/etc"** contient principalement les configurations en rapport 
 
 ---
 
-# **Comparaison entre l'arborescence Linux et Windows (BONUS)**
+## **Comparaison entre l'arborescence Linux et Windows (BONUS)**
 
 Comparons l'arborescence de Linux avec celle de Windows, comme si on comparait deux armoires avec des logiques de rangement différentes.
 
-### Linux : L'arborescence unifiée (tout part de `/`)
+#### Linux : L'arborescence unifiée (tout part de `/`)
 Sous Linux, tout commence à la **racine** (`/`) et s’organise en une seule grande structure. Chaque répertoire a une fonction bien définie :
 - **/home** : L’espace perso des utilisateurs.
 - **/bin** : Les outils de base.
@@ -158,14 +158,14 @@ Sous Linux, tout commence à la **racine** (`/`) et s’organise en une seule gr
 
 C’est un système **unifié** : peu importe où tu installes Linux ou quel disque tu ajoutes, tout est vu comme une branche de cet arbre unique. Par exemple, un disque externe pourrait être monté sous `/mnt` ou `/media`.
 
-### Windows : Une structure basée sur des lettres de lecteurs
+#### Windows : Une structure basée sur des lettres de lecteurs
 Sous Windows, il n’y a pas une seule racine, mais plusieurs "armoires" séparées, identifiées par des **lettres** (C:, D:, etc.). Chaque lettre représente un disque ou une partition, et l’organisation est moins standardisée. Voici les équivalents principaux :
 - **C:\Users** (ou C:\Utilisateurs) : Comme `/home` sous Linux, l’espace perso des utilisateurs.
 - **C:\Windows\System32** : Proche de `/bin` ou `/usr/bin`, là où sont les fichiers essentiels pour faire tourner le système.
 - **C:\Windows** : Similaire à `/etc`, avec des fichiers de configuration (mais tout est mélangé avec le reste).
 - **D:** ou autre : Si tu branches un disque externe ou une clé USB, il aura sa propre lettre et son propre "arbre", indépendant de C:.
 
-### Les grandes différences
+#### Les grandes différences
 1. **Racine unique vs lettres multiples** :
    - Linux : Tout est connecté à `/`.
    - Windows : Chaque disque est une île séparée (C:, D:, etc.).
@@ -176,7 +176,7 @@ Sous Windows, il n’y a pas une seule racine, mais plusieurs "armoires" sépar�
    - Linux : `/home/user/doc.txt`.
    - Windows : `C:\Users\User\doc.txt`, avec des barres inversées (`\`).
 
-### Exemple concret
+#### Exemple concret
 Imaginons que tu veuilles ranger un fichier perso :
 - **Sur Linux** : Il va dans `/home/ton_nom/mes_docs`.
 - **Sur Windows** : Il va dans `C:\Users\TonNom\Mes Documents`.
@@ -185,7 +185,7 @@ Et si tu branches une clé USB :
 - **Sur Linux** : Elle apparaît sous `/media/ton_nom/clé`.
 - **Sur Windows** : Elle devient `E:` ou une autre lettre.
 
-### En résumé
+#### En résumé
 Linux est comme une grande bibliothèque avec un seul point d’entrée et des rayons bien étiquetés, tandis que Windows est comme plusieurs petites bibliothèques indépendantes, chacune avec son propre système de rangement.
 
 <br>
@@ -194,11 +194,11 @@ Linux est comme une grande bibliothèque avec un seul point d’entrée et des r
 
 ---
 
-# **Les commandes de base**
+## **Les commandes de base**
 
 **Info :** Si vous avez l’habitude d’utiliser votre interface graphique pour travailler votre objectif sera de reproduire tout ce que vous savez faire en interface graphique dans le terminal linux (créer/déplacer/copier/supprimer des fichiers/dossiers, créer des raccourcis, se déplacer dans des répertoires/dossiers ...)
 
-## Commandes de navigation et gestion des fichiers
+### Commandes de navigation et gestion des fichiers
 
 - **`pwd`** : Affiche le chemin absolu du répertoire actuel (ex. `/home/user`).
 - **`ls`** : Liste les fichiers et dossiers .  
@@ -214,7 +214,7 @@ Linux est comme une grande bibliothèque avec un seul point d’entrée et des r
 - **`tar`** : Archive ou désarchive des fichiers (ex. `tar -cvf archive.tar dossier` pour créer une archive, ou `tar -xvf archive.tar` pour extraire).
 - **`zip`** : Compresse des fichiers en format ZIP (ex. `zip archive.zip fichier.txt` pour compresser, ou `unzip archive.zip` pour décompresser).
 
-## Commandes d’affichage et manipulation de contenu
+### Commandes d’affichage et manipulation de contenu
 
 - **`cat`** : Affiche le contenu d’un fichier (ex. `cat fichier.txt`).
 - **`less`** : Affiche un fichier page par page (ex. `less fichier.txt`, quitter avec `q`).
@@ -227,13 +227,13 @@ Linux est comme une grande bibliothèque avec un seul point d’entrée et des r
 - **`vim`** : Version améliorée de Vi (ex. `vim fichier.txt`, même commandes que Vi mais avec plus de fonctionnalités).
 - **`which`** : Affiche le chemin complet d'une commande ou d'un programme (ex. `which python` pour voir où se trouve le programme Python).
 
-## Commandes de recherche et filtrage
+### Commandes de recherche et filtrage
 
 - **`find`** : Recherche des fichiers ou dossiers dans une arborescence (ex. `find /home -name "fichier.txt"` pour chercher un fichier nommé `fichier.txt` dans `/home`).
 - **`grep`** : Recherche un motif dans des fichiers ou une sortie (ex. `grep "mot" fichier.txt` pour trouver "mot" dans `fichier.txt`, ou `ls | grep "doc"` pour filtrer les résultats de `ls`).
 - **`locate`**: Agent 007. Il permet de faire une recherche ultra-rapide d'un fichier via une base de données indexée sur votre système (ex. `locate fichier.txt`). Il est moins précis si le fichier recherché vient d'être créé. Si le fichier n'apparaît pas, il faudrait donc mettre à jour la base de données avec la commande `sudo updatedb`. 
 
-## Commandes d’information système
+### Commandes d’information système
 
 - **`whoami`** : Affiche l’utilisateur actuel.
 - **`uname`** : Donne des infos sur le système (ex. `uname -a` pour tout).
@@ -242,19 +242,19 @@ Linux est comme une grande bibliothèque avec un seul point d’entrée et des r
 - **`top`** : Montre les processus en cours (comme un gestionnaire des tâches).
 - **`nproc`** : Affiche le nombre de processeurs (cœurs) disponibles sur la machine.
 
-## Commandes de gestion des permissions
+### Commandes de gestion des permissions
 
 - **`chmod`** : Modifie les permissions d’un fichier (ex. `chmod +x script.sh` pour exécutable).
 - **`chown`** : Change le propriétaire d’un fichier (ex. `chown user fichier.txt`).
 - **`ls -l`** : Vérifie les permissions (ex. `-rwxr-xr-x`).
 
-## Commandes réseau
+### Commandes réseau
 
 - **`ping`** : Teste la connectivité réseau (ex. `ping google.com`).
 - **`curl`** : Récupère des données d’une URL (ex. `curl http://example.com`).
 - **`wget`** : Télécharge des fichiers depuis le web (ex. `wget http://example.com/fichier`).
 
-## Commandes utilitaires
+### Commandes utilitaires
 
 - **`man`** : Affiche le manuel d’une commande (ex. `man ls`).
 - **`history`** : Liste les commandes précédentes.
@@ -263,7 +263,7 @@ Linux est comme une grande bibliothèque avec un seul point d’entrée et des r
 - **`exit`** : Ferme le terminal ou la session.
 - **`alias`** : Crée un raccourci pour une commande (ex. `alias ll="ls -l"` pour que `ll` exécute `ls -l`).
 
-## Redirections et pipes
+### Redirections et pipes
 
 - **`>`** : Redirige la sortie vers un fichier (ex. `echo "texte" > fichier.txt`).
 - **`>>`** : Ajoute à un fichier sans écraser (ex. `echo "suite" >> fichier.txt`).
@@ -286,14 +286,14 @@ Il faut noter que c'est à force de pratiquer que vous retiendrez ces différent
 
 ---
 
-# **Entraînement ⚔️**
+## **Entraînement ⚔️**
 
-## Exercice 1
+### Exercice 1
 
 * Faire au moins les 10 premiers challenge de ce site: <https://cmdchallenge.com/>
 
 
-## Exercice 2
+### Exercice 2
 
 Les exercices de cette partie seront sous forme de challenge. Il y aura cinq challenges. Chaque challenge est accessible via un script qu'il faudra exécuter pour débuter.
 
@@ -323,12 +323,12 @@ chmod +x BC_EXO_1.sh
 
 <br>
 
-## Exercice 3 (Deep dive)
+### Exercice 3 (Deep dive)
 
 * Faire ce challenge <https://sadservers.com/scenario/saskatoon>
 
 
-## Exercice 4 (Bonus)
+### Exercice 4 (Bonus)
 
 Pour apprendre à maitriser / se familiariser avec l'éditeur de texte **vim**, nous vous recommandons de passer par **vimtutor**.
 Ouvrez votre terminal et tapez **vimtutor**. Vous aurez un retour similaire à:
@@ -338,7 +338,7 @@ Ouvrez votre terminal et tapez **vimtutor**. Vous aurez un retour similaire à:
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Faites-nous part de votre avis sur ce chapitre.
 
@@ -347,7 +347,7 @@ Ouvrez votre terminal et tapez **vimtutor**. Vous aurez un retour similaire à:
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Chapitre précédent](./01-inside-linux-world.html)
 

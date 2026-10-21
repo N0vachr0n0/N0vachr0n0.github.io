@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 6: Package Management**
-# **Foreword**
+## **Foreword**
 
 We recommend that you do not use AI to do the exercises because you are in the learning phase.
 
-# **Introduction**
+## **Introduction**
 
 You will often need to install software that is not provided with your distribution, or remove unwanted software so that it doesn't take up hard drive space. In this section, we'll cover the management of software packages or applications on Linux.
 
-## Prerequisites 
+### Prerequisites 
 
 Same old story. 😉
 
@@ -23,11 +23,11 @@ Same old story. 😉
 
 ---
 
-# **Package managers on linux**
+## **Package managers on linux**
 
 First of all, a package is an archive containing a set of files and directories to be deployed on the operating system so that a piece of software can be installed and work properly. A package may require other packages to be present in order to function. These are called **dependencies**. 
 
-## Linux repositories (repo or repository)
+### Linux repositories (repo or repository)
 
 A Linux repository is a place (often on the Internet) where software packages are stored, ready to be downloaded and installed. We can also think of repositories as supermarkets or well-organized storehouses where we find these packages.
 
@@ -54,7 +54,7 @@ deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
 
 <br>
 
-## Package management tools on linux
+### Package management tools on linux
 
 Installing a package goes through a manager / tool. Below is a table presenting a few managers.
 
@@ -78,7 +78,7 @@ Installing a package goes through a manager / tool. Below is a table presenting 
 
 <br>
 
-## Exploring the APT (Advanced Package Tool) manager
+### Exploring the APT (Advanced Package Tool) manager
 
 APT is one of the most popular Linux package managers, since it ships with Ubuntu and other Debian-based distributions. Here are a few examples in action.
 
@@ -101,7 +101,7 @@ Sorry to those of you who aren't on a debian-based distribution 😝.
 
 **INFO:** The **--help** option (two dashes please 🫠) or **-h**, and the **man** command, are your best friends for getting info on how to use a command.
 
-## Good to know
+### Good to know
 
 Installing software on linux is mostly done via a package manager, but it's also possible to install software manually via GitHub repositories or other sources and methods.
 
@@ -110,16 +110,16 @@ Installing software on linux is mostly done via a package manager, but it's also
 
 ---
 
-# **Training ⚔️**
+## **Training ⚔️**
 
-## Research exercise 
+### Research exercise 
 
 1. Find out why there are official and unofficial repositories
 2. Find the differences between a free and a non-free repository
 3. Find the differences between the flatpak and snap package managers
 4. Find the differences between the snap and apt package managers
 
-## Exercise 1
+### Exercise 1
 
 1. Install the **figlet** application and display the text "it's crazy" with figlet
 2. Install the **cowsay** application and display the text "subarashi" with cowsay
@@ -127,7 +127,7 @@ Installing software on linux is mostly done via a package manager, but it's also
 
 **Test:** Type `figlet -v`, `cowsay -h` and `atop -V` to verify the installation.
 
-## Exercise 2 (Deep dive)
+### Exercise 2 (Deep dive)
 
 Time to get serious!!! <br>
 This challenge consists of finding the flag.zip file and extracting it to obtain the flag (a special string).
@@ -164,7 +164,7 @@ Good luck!
 
 <br>
 
-### INFO
+#### INFO
 
 * **Quick lesson:** Docker is a tool that lets you run applications in isolated environments called "containers". It's **like** a **mini virtual machine**, but much lighter and faster to start. In our case, Docker lets us set up a super lightweight version of a linux distribution ready to be used inside a container.
 * The challenge hints can be found here: <https://github.com/N0vachr0n0/NoFD/blob/main/Hint_PKG_EXO_2.md>
@@ -194,7 +194,7 @@ If you use Docker on your VPS or private server accessible over the internet, pl
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Let us know what you think about this chapter.
 
@@ -204,7 +204,7 @@ If you use Docker on your VPS or private server accessible over the internet, pl
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Previous chapter](./05-file-permissions.html)
 

@@ -41,11 +41,11 @@ sitemap: false
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
-    {% include analytics.html %}
-
     <script>
     // Redirection selon la langue du navigateur ; français par défaut.
+    // Pas de GA ici : la page d'arrivée le charge, avec le référent d'origine et les paramètres utm_* conservés.
     (function () {
+        try { sessionStorage.setItem('orig_referrer', document.referrer); } catch (e) {}
         var lang = 'fr';
         var prefs = navigator.languages || [navigator.language || ''];
         for (var i = 0; i < prefs.length; i++) {
@@ -53,7 +53,7 @@ sitemap: false
             if (p.indexOf('fr') === 0) { lang = 'fr'; break; }
             if (p.indexOf('en') === 0) { lang = 'en'; break; }
         }
-        location.replace(lang === 'en' ? '/eng/' : '/fr/');
+        location.replace((lang === 'en' ? '/eng/' : '/fr/') + location.search + location.hash);
     })();
     </script>
     <noscript><meta http-equiv="refresh" content="0; url=/fr/"></noscript>

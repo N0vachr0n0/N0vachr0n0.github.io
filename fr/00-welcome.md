@@ -32,7 +32,7 @@ Sur ce, bonne aventure, Ciao !
 
 ---
 
-# **Challenge**
+## **Challenge**
 
 Ce challenge consiste à rechercher le fichier flag.zip et de le décompresser afin d'obtenir le flag (chaîne de caractères spéciale).
 Avant de démarrer le challenge, il faudra mettre en place l'environnement comme suit:
@@ -73,7 +73,7 @@ L'environnement du challenge étant prêt, vous pouvez débuter le challenge mai
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Débuter l'aventure](./01-inside-linux-world.html)
 

@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 3: Process Management**
-# **Foreword**
+## **Foreword**
 
 We recommend that you do not use AI to do the exercises since you are in a learning phase.
 
-# **Introduction**
+## **Introduction**
 
 In a Linux system, process management is a fundamental aspect of system administration and application operation. A process is simply a program that is currently running. Linux, like all modern operating systems, uses processes to execute tasks and organize work.
 
-## Prerequisites 
+### Prerequisites 
 
 * Have a virtual machine, a PC, or an environment running Linux (ideally Ubuntu)
 * Be resilient 😜
@@ -31,7 +31,7 @@ You will therefore see this view:
 
 ---
 
-# **General information**
+## **General information**
 
 A process is an instance of a program in execution. It can be as simple as a command launched in the terminal or as complex as a background application. Each process has its own memory space, its own unique identifier (PID), and information about its execution state. If process 2 was launched by process 1, it is called a **child process**. The process that launched it is called the **parent process**.
 
@@ -45,7 +45,7 @@ There are different types of processes in Linux:
 * **Zombie processes**: These are processes that have finished executing but whose information remains in the process table because their parent has not yet retrieved their exit status.
 
 
-## TLDR (Quick summary)
+### TLDR (Quick summary)
 
 * A process is an instance of a program in execution.
 * Every process has:
@@ -54,7 +54,7 @@ There are different types of processes in Linux:
 * Types of processes: interactive, background, and zombie
 
 
-## Let's type a little
+### Let's type a little
 
 **To test 👨🏾‍💻👩🏾‍💻:**
 - Open your terminal
@@ -112,9 +112,9 @@ From this result, we might ask ourselves two (2) questions:
 
 ---
 
-# **Process management**
+## **Process management**
 
-## Commands to display running processes 
+### Commands to display running processes 
 
 - **In real time:** `top`  
 - **At a given moment:** `ps`  
@@ -135,9 +135,9 @@ From this result, we might ask ourselves two (2) questions:
 
 <br>
 
-## Other commands
+### Other commands
 
-### The pgrep and pkill commands
+#### The pgrep and pkill commands
 
 The **pgrep** command searches among the currently running processes for a process name and displays on standard output the PIDs matching the selection criteria.
 
@@ -165,9 +165,9 @@ The **pkill** command sends the specified signal (default **SIGTERM**) to every 
 
 ---
 
-# **Training ⚔️**
+## **Training ⚔️**
 
-## Exercise 1
+### Exercise 1
 
 * Link to the challenge script: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/PRM_EXO_1.sh>
 
@@ -184,14 +184,14 @@ chmod +x PRM_EXO_1.sh
 ./PRM_EXO_1.sh
 ```
 
-## Exercise 2
+### Exercise 2
 
 It's over here: <https://sadservers.com/scenario/saint-john>
 
 ---
 ---
 
-## Feedback
+### Feedback
 
 
 > Let us know what you think of this chapter.
@@ -201,7 +201,7 @@ It's over here: <https://sadservers.com/scenario/saint-john>
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Previous chapter](./02-basic-commands.html)
 

@@ -6,11 +6,11 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 1: Introduction au monde de Linux**
-# **Avant-propos**
+## **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# **Introduction**
+## **Introduction**
 
 Futur hacker ? Futur administrateur ou administratrice système Linux ? Futur·e DevOps ? Petit curieux ou petite curieuse ? Passionné(e) d'informatique ? Explorons ensemble cet univers merveilleux qu'est Linux. Linux, ce fameux système d'exploitation open source que tout le monde redoute.
 
@@ -19,9 +19,9 @@ Futur hacker ? Futur administrateur ou administratrice système Linux ? Futur·e
 
 ---
 
-# **Historique de Linux**
+## **Historique de Linux**
 
-## Deep dive
+### Deep dive
 
 Linux est né en 1991, créé par Linus Torvalds, un étudiant finlandais inspiré par UNIX, un système d'exploitation puissant et modulaire développé dans les années 1970 par Ken Thompson, Dennis Ritchie et d'autres chez Bell Labs. UNIX était réputé pour sa stabilité et sa portabilité, mais son code n'était pas libre. Torvalds a voulu recréer un système similaire, gratuit et ouvert, en publiant le noyau Linux, qu'il a partagé avec la communauté.
 En l'associant aux outils du projet GNU (lancé par Richard Stallman dans les années 1980 pour créer un système d'exploitation libre similaire à UNIX), Linux est devenu un système d'exploitation complet, souvent appelé GNU/Linux. Il a hérité de ses racines UNIX des concepts comme la gestion multi-utilisateur et le multitâche, tout en évoluant grâce à l'open source. Aujourd'hui, Linux domine le marché des serveurs, des superordinateurs et même des smartphones (via Android), surpassant souvent UNIX en popularité.
@@ -39,7 +39,7 @@ Faisons un p'tit récap des points essentiels à retenir:
 - **Héritage et impact** : Linux conserve l’esprit d’UNIX tout en le surpassant en accessibilité et en popularité, devenant un pilier de l’informatique moderne.
 
 
-## Petit Exercice
+### Petit Exercice
 
 * Faire des recherches sur les différences entre Unix, Linux, BSD et GNU.
 * Qu'est-ce que l’open source ?
@@ -52,7 +52,7 @@ Faisons un p'tit récap des points essentiels à retenir:
 
 ---
 
-# **Les distributions Linux**
+## **Les distributions Linux**
 
 Vous connaissez à présent c'est quoi Linux. Vous pouvez vous demander comment l'installer. L'installation de Linux se fait en trois grandes étapes.
 
@@ -61,14 +61,14 @@ Vous connaissez à présent c'est quoi Linux. Vous pouvez vous demander comment 
 3. L'installation 🙃​
 
 
-## Parlons des distributions Linux 
+### Parlons des distributions Linux 
 
 Linux s’installe via une **distribution**. Une distribution Linux (ou "distro") est une version complète et prête à l’emploi du système d’exploitation Linux, construite autour du noyau Linux. Elle inclut non seulement le noyau, mais aussi un ensemble de logiciels, d’outils, de bibliothèques et souvent une interface utilisateur (comme un environnement de bureau), tous adaptés à des besoins spécifiques. Il faut aussi noter que chaque distribution a ses particularités.
 
 Dans l’univers Linux, on parle de **distributions mères**. Une distribution mère est une distribution Linux qui sert de base ou de point de départ pour d’autres distributions dérivées. Ces "mères" sont souvent stables, bien établies, et fournissent une fondation technique sur laquelle d’autres projets construisent leurs propres versions, en y ajoutant des personnalisations ou des objectifs spécifiques.
 
 
-## Exemples de distributions mères 
+### Exemples de distributions mères 
 
 * **Debian** : L’une des plus influentes, connue pour sa stabilité. Elle est à l’origine de nombreuses distributions comme Ubuntu, Linux Mint ou Kali Linux.
 * **Red Hat** : Principalement utilisée en entreprise, elle a donné naissance à Fedora (version communautaire), CentOS (avant sa transition vers CentOS Stream) et Rocky Linux.
@@ -89,7 +89,7 @@ Une distribution Linux sans interface utilisateur peut ressembler à ça:
 **Info:** En général, Linux s'installe sur les serveurs sans interface utilisateur. La gestion se fait donc en ligne de commande uniquement.
 
 
-## Les différences majeures entre les distributions
+### Les différences majeures entre les distributions
 
 Nous allons comparer les distributions selon trois critères : **la gestion des paquets et mises à jour**, **la philosophie et le public cible**, et **la facilité d’utilisation**.
 
@@ -120,7 +120,7 @@ Nous allons comparer les distributions selon trois critères : **la gestion des 
 
 ---
 
-# **Exercice ⚔️**
+## **Exercice ⚔️**
 
 * Faire un tour sur <https://distrowatch.com/>
 * Trouver deux distributions Linux en fonction des différentes particularités (hacking, gaming, généraliste et légères)
@@ -136,7 +136,7 @@ Nous allons comparer les distributions selon trois critères : **la gestion des 
 ---
 
 
-## Feedback
+### Feedback
 
 
 > Faites-nous part de votre avis sur ce chapitre.
@@ -146,7 +146,7 @@ Nous allons comparer les distributions selon trois critères : **la gestion des 
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Chapitre suivant](./02-basic-commands.html)
 

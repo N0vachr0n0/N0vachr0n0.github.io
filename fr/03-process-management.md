@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 3: Gestion des processus**
-# **Avant-propos**
+## **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# **Introduction**
+## **Introduction**
 
 Dans un système Linux, la gestion des processus est un aspect fondamental de l'administration du système et du fonctionnement des applications. Un processus est simplement un programme en cours d'exécution. Linux, comme tous les systèmes d'exploitation modernes, utilise des processus pour exécuter des tâches et organiser le travail.
 
-## Prérequis 
+### Prérequis 
 
 * Avoir une machine virtuelle ou un PC ou un environnement sous Linux (Ubuntu idéalement)
 * Être résilient 😜
@@ -31,7 +31,7 @@ Vous aurez donc cette vue:
 
 ---
 
-# **Généralités**
+## **Généralités**
 
 Un processus est une instance d'un programme en exécution. Il peut être aussi simple qu'une commande lancée dans le terminal ou aussi complexe qu'une application en arrière-plan. Chaque processus possède son propre espace mémoire, son propre identifiant unique (PID) et des informations relatives à son état d'exécution. Si le processus 2 a été lancé par le processus 1, on l’appelle un **processus fils**. Le processus qui l’a lancé est appelé **processus parent**.
 
@@ -45,7 +45,7 @@ Il existe différents types de processus dans Linux :
 * **Processus zombies** : Ce sont des processus qui ont terminé leur exécution mais dont les informations restent dans la table des processus parce que leur parent n’a pas encore récupéré leur état de sortie.
 
 
-## TLDR (Résumé rapide)
+### TLDR (Résumé rapide)
 
 * Un processus est une instance d'un programme en exécution.
 * Chaque processus dispose :
@@ -54,7 +54,7 @@ Il existe différents types de processus dans Linux :
 * Types de processus: interactif, en arrière-plan et zombie
 
 
-## Tapons un peu le clavier
+### Tapons un peu le clavier
 
 **A tester 👨🏾‍💻👩🏾‍💻:**
 - Ouvrir son terminal
@@ -112,9 +112,9 @@ De ce résultat, on pourrait se poser deux (2) questions:
 
 ---
 
-# **Gestion des processus**
+## **Gestion des processus**
 
-## Commandes permettant d'afficher les processus en cours d'exécution 
+### Commandes permettant d'afficher les processus en cours d'exécution 
 
 - **En temps réel :** `top`  
 - **À un instant donné :** `ps`  
@@ -135,9 +135,9 @@ De ce résultat, on pourrait se poser deux (2) questions:
 
 <br>
 
-## Autres commandes
+### Autres commandes
 
-### Les commandes pgrep et pkill
+#### Les commandes pgrep et pkill
 
 La commande **pgrep** cherche, parmi les processus en cours d’exécution, un nom de processus et affiche sur la sortie standard les PID correspondants aux critères de sélection.
 
@@ -165,9 +165,9 @@ La commande **pkill** enverra le signal indiqué (par défaut **SIGTERM**) à ch
 
 ---
 
-# **Entraînement ⚔️**
+## **Entraînement ⚔️**
 
-## Exercice 1
+### Exercice 1
 
 * Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/PRM_EXO_1.sh>
 
@@ -184,14 +184,14 @@ chmod +x PRM_EXO_1.sh
 ./PRM_EXO_1.sh
 ```
 
-## Exercice 2
+### Exercice 2
 
 C'est par ici: <https://sadservers.com/scenario/saint-john>
 
 ---
 ---
 
-## Feedback
+### Feedback
 
 
 > Faites-nous part de votre avis sur ce chapitre.
@@ -201,7 +201,7 @@ C'est par ici: <https://sadservers.com/scenario/saint-john>
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Chapitre précédent](./02-basic-commands.html)
 

@@ -1,0 +1,47 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  llms.txt (https://llmstxt.org) : présentation du site pour les LLM.
+  La liste des chapitres est générée depuis le front matter (title + description) des pages fr/ et eng/.
+{%- endcomment -%}
+{%- assign fr_pages = site.pages | where: "dir", "/fr/" | sort: "name" -%}
+{%- assign en_pages = site.pages | where: "dir", "/eng/" | sort: "name" -%}
+# LinuxDojo
+
+> Free, hands-on Linux course in French and English. 12 practical chapters take learners from their first terminal commands to Linux system administration: processes, users and groups, file permissions, packages, systemd services, networking, firewall and cron. Every chapter ends with exercises or CTF-style challenges. No signup, nothing to install.
+
+Key facts:
+
+- Website: {{ '/' | absolute_url }} (French: {{ '/fr/' | absolute_url }}, English: {{ '/eng/' | absolute_url }}).
+- Audience: complete beginners, and future SysAdmins, DevOps engineers and pentesters. Most learners are French speakers (France and French-speaking Africa).
+- Method: practice first. Chapter 0 opens with a CTF: start a Docker container and find a hidden flag. Learners are asked not to use AI while doing the exercises.
+- Exercises: downloadable challenge scripts, cmdchallenge.com, SadServers scenarios, and a Docker-based CTF.
+- Practice environment: any Linux VM, or a free Ubuntu VM in the browser (Killercoda playground, Google Cloud Shell).
+- Learning path framed as dojo belts: white (chapters 0-2), yellow (3-5), green (6-7), blue (8-9), black (10, then redo the chapter 0 CTF with no AI and no hints).
+- Each chapter exists in French (/fr/) and English (/eng/) with the same file name.
+- Free and open source: https://github.com/N0vachr0n0/Hands-on-Linux-course. Author: {{ site.author }}.
+
+## Cours Linux en français
+
+- [Accueil et parcours]({{ '/fr/' | absolute_url }}): présentation du cours, règles du dojo, parcours en ceintures et FAQ.
+{%- for p in fr_pages %}
+{%- unless p.name == 'index.md' or p.name == 'README.md' %}
+- [{{ p.title }}]({{ p.url | absolute_url }}): {{ p.description | strip_newlines }}
+{%- endunless %}
+{%- endfor %}
+
+## Linux course in English
+
+- [Home and learning path]({{ '/eng/' | absolute_url }}): course overview, dojo rules, belt path and FAQ.
+{%- for p in en_pages %}
+{%- unless p.name == 'index.md' or p.name == 'README.md' %}
+- [{{ p.title }}]({{ p.url | absolute_url }}): {{ p.description | strip_newlines }}
+{%- endunless %}
+{%- endfor %}
+
+## Optional
+
+- [Source code and Markdown of the course](https://github.com/N0vachr0n0/Hands-on-Linux-course): the whole course in Markdown, open to contributions.
+- [Sitemap]({{ '/sitemap.xml' | absolute_url }})

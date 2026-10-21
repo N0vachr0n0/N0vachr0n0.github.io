@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 9: Pare-feu**
-# **Avant-propos**
+## **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# **Introduction**
+## **Introduction**
 
 Dans ce chapitre, nous parlerons de l'exploitation des firewalls sous Linux.
 
-## Prérequis 
+### Prérequis 
 
 Toujours la même histoire. 😉
 
@@ -23,7 +23,7 @@ Toujours la même histoire. 😉
 
 ---
 
-# **Qu'est-ce qu'un firewall ?**
+## **Qu'est-ce qu'un firewall ?**
 
 Un firewall (ou pare-feu) est un système de sécurité réseau qui contrôle les accès entre un réseau interne et un réseau externe, généralement Internet. Son rôle est de protéger le réseau interne contre les attaques et les accès non autorisés.
 
@@ -39,7 +39,7 @@ Il existe plusieurs types de firewalls :
 
 ---
 
-# **Les firewalls sous Linux**
+## **Les firewalls sous Linux**
 
 Sous Linux, nous allons aborder trois outils populaires pour la gestion des firewalls :
 
@@ -47,7 +47,7 @@ Sous Linux, nous allons aborder trois outils populaires pour la gestion des fire
 2. **ufw** (Uncomplicated Firewall) : c'est un outil de gestion de firewall simplifié pour Ubuntu et les autres distributions Linux.
 3. **firewalld** : c'est un outil de gestion de firewall qui utilise les règles iptables sous le capot.
 
-## Iptables
+### Iptables
 
 **Qu'est-ce qu'iptables ?**
 
@@ -72,7 +72,7 @@ iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -A INPUT -p icmp -j DROP
 ```
 
-## UFW (Uncomplicated Firewall)
+### UFW (Uncomplicated Firewall)
 
 **Qu'est-ce qu'ufw ?**
 
@@ -96,7 +96,7 @@ ufw allow 22
 ```
 
 
-## Firewalld
+### Firewalld
 
 **Qu'est-ce que firewalld ?**
 
@@ -133,14 +133,14 @@ firewall-cmd --zone=public --add-icmp-block=echo-request --permanent
 
 ---
 
-# **Entraînement ⚔️**
+## **Entraînement ⚔️**
 
 En libre-service 🙂
 
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Faites-nous part de votre avis sur ce chapitre.
 
@@ -150,7 +150,7 @@ En libre-service 🙂
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Chapitre précédent](./08-network-management.html)
 

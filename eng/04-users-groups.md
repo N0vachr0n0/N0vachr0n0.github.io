@@ -6,11 +6,11 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapter 4: Users and Groups**
-# **Foreword**
+## **Foreword**
 
 We recommend that you do not use AI to do the exercises since you are in the learning phase.
 
-# **Introduction**
+## **Introduction**
 
 Linux is a true multi-user system! Several users can log in and run tasks at the same time. It also has a single-user mode managed by the kernel, used only for maintenance purposes. Users generally have:
 * a login and a password
@@ -20,7 +20,7 @@ Linux is a true multi-user system! Several users can log in and run tasks at the
 * running processes
 
 
-## Prerequisites (Repetition is educational 😜)
+### Prerequisites (Repetition is educational 😜)
 
 * Have a virtual machine, a PC, or a Linux environment (ideally Ubuntu)
 * Be resilient 
@@ -37,9 +37,9 @@ You'll then see this view:
 
 ---
 
-# **User Management**
+## **User Management**
 
-## Intro 
+### Intro 
 
 **To test 👨🏾‍💻👩🏾‍💻:**
 - Open your terminal
@@ -60,7 +60,7 @@ Below is an example of the similar output you'll get:
 
 A bit of quick explanation.
 
-### Command: `whoami`
+#### Command: `whoami`
 
 ```bash
 widal@j4rd1n-d3s-0mbr3s:~$ whoami
@@ -71,7 +71,7 @@ widal
 - Result here: `widal`
 
 
-### Command: `id`
+#### Command: `id`
 
 ```bash
 widal@j4rd1n-d3s-0mbr3s:~$ id
@@ -84,7 +84,7 @@ uid=1000(widal) gid=1000(widal) groupes=1000(widal),4(adm),24(cdrom),27(sudo),30
   - `groupes=...` → secondary groups (e.g.: `sudo`, `docker`, `plugdev`, etc.)
 
 
-### Command: `who`
+#### Command: `who`
 
 ```bash
 widal@j4rd1n-d3s-0mbr3s:~$ who
@@ -99,7 +99,7 @@ widal    pts/2        2025-04-04 16:05 (j)
 - `pts/0`, `pts/1`, `pts/2` → open terminals (e.g. via terminal or SSH)
 
 
-### Command: `w`
+#### Command: `w`
 
 ```bash
 widal@j4rd1n-d3s-0mbr3s:~$ w
@@ -133,7 +133,7 @@ widal    pts/2    j                04avril25 13:53   0.02s  0.02s /bin/bash
   - `QUOI`: Current process/command
 
 
-## What's the /etc/passwd file?
+### What's the /etc/passwd file?
 
 * The **/etc/passwd** file lists all the system's users and their associated information.
 	* common to all distributions
@@ -204,9 +204,9 @@ djo:$y$j9T$3J4GSvuGv7bM4Vn4BRaOm1$3nuzvVPg0VJoidAVUKsMJvf2Hn3Q6.TbC0H5MnqA782:15
 
 <br>
 
-## User management commands
+### User management commands
 
-### Points to note ⚠️
+#### Points to note ⚠️
 * Only the **root** user (the super user / the administrator) has the ability to use user and group management commands.
 
 * A regular user must have admin rights. To do this, they'll need to use the **sudo** command when using a user management command. Using the **sudo** command will prompt you to enter your password.
@@ -232,7 +232,7 @@ widal@j4rd1n-d3s-0mbr3s:~$
 
 <br>
 
-### 1. `useradd` – Add a new user
+#### 1. `useradd` – Add a new user
 
 ```bash
 sudo useradd username
@@ -241,7 +241,7 @@ sudo useradd username
 - Creates a **new user**.
 - ⚠️ By default, **does not create the home directory** (`/home/username`) without an option.
 
-#### Example:
+##### Example:
 ```bash
 sudo useradd -m alice
 ```
@@ -250,7 +250,7 @@ sudo useradd -m alice
 
 ---
 
-### 2. `usermod` – Modify an existing user
+#### 2. `usermod` – Modify an existing user
 
 ```bash
 sudo usermod [options] username
@@ -258,7 +258,7 @@ sudo usermod [options] username
 
 - Used to **change information** about a user: group, directory, shell, etc.
 
-#### Examples:
+##### Examples:
 ```bash
 sudo usermod -aG sudo alice
 ```
@@ -271,7 +271,7 @@ This changes `alice`'s home directory.
 
 ---
 
-### 3. `passwd` – Change a user's password
+#### 3. `passwd` – Change a user's password
 
 ```bash
 sudo passwd username
@@ -280,7 +280,7 @@ sudo passwd username
 This allows you to **set or change** a user's password.
 
 
-#### Example:
+##### Example:
 ```bash
 sudo passwd alice
 ```
@@ -288,7 +288,7 @@ This prompts you to enter a new password for `alice`.
 
 ---
 
-### 4. `userdel` – Delete a user
+#### 4. `userdel` – Delete a user
 
 ```bash
 sudo userdel username
@@ -296,19 +296,19 @@ sudo userdel username
 
 - Deletes the user **without deleting their home directory**.
 
-#### Example:
+##### Example:
 ```bash
 sudo userdel alice
 ```
 
-#### Also delete their directory:
+##### Also delete their directory:
 ```bash
 sudo userdel -r alice
 ```
 
 ---
 
-### `adduser` vs `useradd`
+#### `adduser` vs `useradd`
 
 | Command   | Description |
 |------------|-------------|
@@ -317,7 +317,7 @@ sudo userdel -r alice
 
 
 
-#### Example:
+##### Example:
 ```bash
 sudo adduser bob
 ```
@@ -333,7 +333,7 @@ It can happen that there's a hiccup (usually when using `useradd`) and your user
 
 ---
 
-### TLDR (Quick summary)
+#### TLDR (Quick summary)
 
 | Command     | Role                              |
 |--------------|-----------------------------------|
@@ -345,7 +345,7 @@ It can happen that there's a hiccup (usually when using `useradd`) and your user
 | `mkhomedir_helper` | Create a user's home directory |
 
 
-### Commands to switch users
+#### Commands to switch users
 
 - **su**: Switches user or opens a root session (e.g. `su username` to switch to another user, or `su` to become root).  
   - Useful options: `su - username` (loads the target user's environment, as if it were a new login).
@@ -357,7 +357,7 @@ It can happen that there's a hiccup (usually when using `useradd`) and your user
 <br>
 <br>
 
-## Exercise ⚔️
+### Exercise ⚔️
 
 * Link to the challenge script: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/USER_EXO_1.sh>
 
@@ -379,9 +379,9 @@ chmod +x USER_EXO_1.sh
 
 ---
 
-# **Group Management**
+## **Group Management**
 
-## Intro
+### Intro
 
 *  A group is a set of users who have things in common
 	* the same permissions on certain files
@@ -446,14 +446,14 @@ name:encrypted_password:administrators:members
 
 <br>
 
-## The sudo or wheel group
+### The sudo or wheel group
 
 * In the Linux world, the **sudo** and **wheel** groups are groups that allow a regular user to use administrator rights. Let's say the rights of the **root** user. **sudo** and **wheel** are privileged groups. They're also called the **sudoers group**.
 
 * **sudo**, besides being a group, is first and foremost a package / a command that lets a regular user run a command / an application as an administrator (root). A quick nod to **"Run As Administrator"** or **"Exécuter en tant qu'administrateur"** on **Windows**.
 
 
-## Group management commands
+### Group management commands
 
 ⚠️ Don't forget the points to note ⚠️
 
@@ -467,7 +467,7 @@ name:encrypted_password:administrators:members
 - **groups**: Lists the groups a user belongs to (e.g. `groups username` to display the groups of the specified user, or `groups` for the current user).
 
 
-## Managing the /etc/sudoers file
+### Managing the /etc/sudoers file
 
 The `/etc/sudoers` file is a configuration file used on Linux/Unix systems to define user and group permissions regarding the use of the `sudo` command. It determines who can run commands as administrator (root) or another user, and which specific commands they can run. This file is crucial for security, since a misconfiguration could either block legitimate access or grant too many privileges.
 
@@ -494,7 +494,7 @@ To finish in style, I invite you to do some research on:
 sudo -l
 ```
 
-## Exercise ⚔️
+### Exercise ⚔️
 
 Run the script to start the challenge like a boss 😉.
 
@@ -503,7 +503,7 @@ Run the script to start the challenge like a boss 😉.
 ---
 ---
 
-## Feedback
+### Feedback
 
 
 > Give us your feedback on this chapter.
@@ -514,7 +514,7 @@ Run the script to start the challenge like a boss 😉.
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Previous chapter](./03-process-management.html)
 

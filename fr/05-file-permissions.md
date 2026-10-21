@@ -6,15 +6,15 @@ last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 5: Permissions des fichiers**
-# **Avant-propos**
+## **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# **Introduction**
+## **Introduction**
 
 Dans cette partie nous aborderons la gestion des fichiers sous Linux. Plus précisément, nous parlerons des droits et de la gestion des accès sur les fichiers.
 
-## Prérequis 
+### Prérequis 
 
 Toujours la même histoire. 😉
 
@@ -23,10 +23,10 @@ Toujours la même histoire. 😉
 
 ---
 
-# **La Gestion des fichiers**
+## **La Gestion des fichiers**
 
-## Les permissions sur les fichiers
-### Généralités
+### Les permissions sur les fichiers
+#### Généralités
 
 Sous Linux, les permissions sur les fichiers constituent une barrière essentielle contre les accès non autorisés.
 
@@ -76,14 +76,14 @@ Décortiquons chaque partie de cette ligne :
 
 7. **`pubspec.yaml`** : C'est le **nom du fichier**.
 
-#### Résumé :
+##### Résumé :
 Le fichier `pubspec.yaml` appartient à l'utilisateur "widal" et au groupe "widal", il est lisible et modifiable par ces deux entités, mais seulement lisible par les autres. Il fait 244 octets et a été modifié pour la dernière fois le 23 avril à 01:48.
 
-### Changement de permissions des fichiers
+#### Changement de permissions des fichiers
 
 Sous Linux, les permissions des fichiers et des répertoires définissent qui peut lire, écrire ou exécuter un fichier. Vous pouvez changer ces permissions avec la commande `chmod`. Le changement de permissions peut se faire de deux façons principales : en utilisant des **nombres** ou des **symboles**.
 
-#### 1. Utilisation des Nombres pour `chmod`
+##### 1. Utilisation des Nombres pour `chmod`
 
 Chaque type de permission (lecture, écriture, exécution) est représenté par un chiffre :
 - **Lecture** (`r`) = 4
@@ -100,7 +100,7 @@ Exemples :
 - `chmod 755 fichier.txt` : Le propriétaire a tous les droits (`7` = `rwx`; décortiquons: `7` = `r(4) + w(2) + x(1)`), le groupe a des droits de lecture et d'exécution (`5` = `r-x`), et les autres ont aussi des droits de lecture et d'exécution (`5` = `r-x`).
 - `chmod 644 fichier.txt` : Le propriétaire a des droits de lecture et d'écriture (`6` = `rw-`), et les autres ont des droits de lecture seulement (`4` = `r--`).
 
-#### 2. Utilisation des Symboles pour `chmod`
+##### 2. Utilisation des Symboles pour `chmod`
 
 On peut aussi spécifier les permissions en utilisant des symboles :
 - `+` : Ajouter une permission.
@@ -112,7 +112,7 @@ Exemples :
 - `chmod g-w fichier.txt` : Retire la permission d'écriture pour le **groupe** (`g` = group).
 - `chmod o=r fichier.txt` : Définit les permissions des autres utilisateurs à "lecture seulement" (`o` = others).
 
-#### 3. Utilisation de `umask` (ℹ️ Bon à savoir !)
+##### 3. Utilisation de `umask` (ℹ️ Bon à savoir !)
 
 La commande `umask` détermine les permissions par défaut des fichiers et répertoires lorsque vous les créez. Le `umask` est une sorte de "masque" qui **enlève** certaines permissions des fichiers créés. Par défaut, lorsqu'un fichier est créé, il a des permissions larges (comme `777` pour un répertoire ou `666` pour un fichier), et le `umask` va ajuster ces permissions selon les valeurs spécifiées.
 
@@ -125,7 +125,7 @@ Exemple :
 - `umask 0022` : Pour un fichier, les permissions seront `644` (propriétaire : `rw-`, groupe et autres : `r--`).
 - `umask 0777` : Pour un fichier, les permissions seront `000`, ce qui empêche tout accès au fichier.
 
-#### 4. Bonus: Gestion des permissions lors d'une copie de fichier ( **`cp -p`** )
+##### 4. Bonus: Gestion des permissions lors d'une copie de fichier ( **`cp -p`** )
 
 La commande `cp` sert à copier des fichiers ou des répertoires. L'option `-p` de `cp` permet de **préserver** les attributs du fichier source lors de la copie, tels que :
 - Les permissions.
@@ -139,7 +139,7 @@ cp -p fichier_source.txt fichier_copie.txt
 Cela crée une copie du fichier tout en maintenant les mêmes permissions et autres métadonnées que le fichier d'origine.
 
 
-### Tableau des permissions et valeurs de `chmod`
+#### Tableau des permissions et valeurs de `chmod`
 
 | Permission | Valeur numérique | Description       | Symboles associés |
 |------------|------------------|-------------------|-------------------|
@@ -161,7 +161,7 @@ Cela crée une copie du fichier tout en maintenant les mêmes permissions et aut
 | `chmod 000 fichier.txt` | --- | --- | --- | Aucun accès pour personne (sauf root) |
 
 
-### Exemple pratique
+#### Exemple pratique
 
 Imaginons que vous avez un fichier `script.sh` avec les permissions suivantes :
 
@@ -191,7 +191,7 @@ Cela gardera les mêmes métadonnées et permissions dans la copie.
 
 <br>
 
-## La gestion du propriétaire et du groupe d'un fichier
+### La gestion du propriétaire et du groupe d'un fichier
 
 * Tout fichier a un seul propriétaire et un seul groupe d'appartenance
 * Généralement, le propriétaire initial du fichier est l'utilisateur lié au
@@ -214,20 +214,20 @@ Ci-dessous un tableau qui montre comment se fait la gestion du propriétaire et 
 
 <br>
 
-## Le Sticky Bit ( Bon à savoir !)
+### Le Sticky Bit ( Bon à savoir !)
 
 Le **sticky bit** est une permission spéciale qui peut être définie sur un répertoire. Lorsqu'il est activé, ce bit modifie le comportement des fichiers placés dans ce répertoire. Il permet essentiellement de **restreindre la suppression des fichiers** à leur propriétaire. Autrement dit, **seul le propriétaire d'un fichier ou l'administrateur (root)** peut supprimer ou renommer ce fichier dans un répertoire marqué avec le sticky bit, même si d'autres utilisateurs ont des permissions en écriture sur le répertoire.
 
-### Utilité du Sticky Bit
+#### Utilité du Sticky Bit
 
 Le sticky bit est souvent utilisé dans des répertoires partagés, comme `/tmp`, où de nombreux utilisateurs peuvent créer et modifier des fichiers, mais où il est essentiel que les utilisateurs ne puissent pas supprimer ou modifier les fichiers des autres.
 
 **Cas typique d'utilisation** :
 - **Répertoire `/tmp`** : C’est un répertoire utilisé par le système et les utilisateurs pour stocker des fichiers temporaires. Il est fréquent de définir le sticky bit sur ce répertoire pour empêcher les utilisateurs de supprimer des fichiers créés par d'autres utilisateurs dans ce répertoire.
 
-### Comment définir et vérifier le Sticky Bit ?
+#### Comment définir et vérifier le Sticky Bit ?
 
-#### 1. Définir le Sticky Bit
+##### 1. Définir le Sticky Bit
 
 Pour définir le sticky bit, vous utilisez la commande `chmod` avec le **`+t`**. Cela se fait généralement sur des répertoires. Par exemple :
 
@@ -249,7 +249,7 @@ drwxrwxrwt 10 root root 4096 avril 23 10:00 /tmp
 
 Ici, la `t` dans les **permissions `rwxrwxrwt`** (au lieu de `x` à la fin) indique que le sticky bit est activé.
 
-#### 2. **Enlever le Sticky Bit**
+##### 2. **Enlever le Sticky Bit**
 
 Si vous voulez retirer le sticky bit d'un répertoire, vous pouvez utiliser la commande suivante :
 
@@ -259,7 +259,7 @@ chmod -t /tmp
 
 Cela supprime le sticky bit, et les utilisateurs ayant des permissions d'écriture sur ce répertoire peuvent alors supprimer ou modifier les fichiers des autres utilisateurs.
 
-### Résumé - Comportement du Sticky Bit
+#### Résumé - Comportement du Sticky Bit
 
 - **Avec sticky bit** : Si le sticky bit est activé sur un répertoire, seuls le **propriétaire du fichier** et **root** peuvent supprimer ou renommer ce fichier. Les autres utilisateurs ayant des permissions d'écriture sur le répertoire ne peuvent pas affecter les fichiers appartenant à d'autres utilisateurs.
 
@@ -267,15 +267,15 @@ Cela supprime le sticky bit, et les utilisateurs ayant des permissions d'écritu
 
 <br>
 
-## SETUID et SETGID
+### SETUID et SETGID
 
 Le **SETUID** (Set User ID) et le **SETGID** (Set Group ID) sont des bits spéciaux qui peuvent être définis sur des fichiers exécutables sous Linux. Lorsqu'ils sont activés, ces bits modifient la façon dont le système gère l'exécution des fichiers. Leur objectif principal est de donner des permissions temporaires à l'exécution d'un programme, permettant à un utilisateur d'exécuter un fichier avec les permissions d'un autre utilisateur (généralement un utilisateur privilégié, comme root).
 
-### SETUID (Set User ID)
+#### SETUID (Set User ID)
 - **But** : Permet à un utilisateur d'exécuter un fichier avec les **permissions du propriétaire** du fichier, **pas de l'utilisateur** qui lance l'exécution.
 - **Cas d'utilisation** : C'est souvent utilisé pour des programmes nécessitant des privilèges élevés pour accomplir une tâche spécifique, comme `passwd` (changer un mot de passe), qui doit être exécuté avec les privilèges de root, même si l'utilisateur qui l'exécute n'est pas root.
 
-#### Exemple :
+##### Exemple :
 ```bash
 chmod u+s /chemin/vers/fichier
 ```
@@ -295,17 +295,17 @@ Cela ajoute le bit **SETUID** à un fichier exécutable.
     ```
 <br>
 
-### SETGID (Set Group ID)
+#### SETGID (Set Group ID)
 - **But** : Permet à un utilisateur d'exécuter un fichier avec les **permissions du groupe** du fichier, plutôt que les permissions du groupe de l'utilisateur qui lance l'exécution.
 - **Cas d'utilisation** : Très utile pour des programmes ou des répertoires partagés où il est important de maintenir des permissions de groupe spécifiques.
 
-#### Exemple :
+##### Exemple :
 ```bash
 chmod g+s /chemin/vers/fichier
 ```
 Cela ajoute le bit **SETGID** à un fichier exécutable ou à un répertoire.
 
-### En résumé :
+#### En résumé :
 - **SETUID** : Permet d'exécuter un fichier avec les **permissions du propriétaire** du fichier (souvent root).
 - **SETGID** : Permet d'exécuter un fichier avec les **permissions du groupe** du fichier.
 
@@ -321,27 +321,27 @@ Ces deux bits sont principalement utilisés pour la gestion des permissions temp
 
 ---
 
-# **Entraînement ⚔️**
-## Exercice 1 
+## **Entraînement ⚔️**
+### Exercice 1 
 * Faire des recherches sur:
     * setfacl
     * getfacl
     * les inodes (dans le contexte de Linux bien sûr !)
 
-## Exercice 2 (🧪)
+### Exercice 2 (🧪)
 
 Exécuter le script pour débuter le challenge comme un grand 😉.
 
 * Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/FilesPerms_EXO_1.sh>
 
-## Exercice 3 (Deep Dive)
+### Exercice 3 (Deep Dive)
 
 * Faire ce challenge: <https://sadservers.com/scenario/budapest>    
 
 ---
 ---
 
-## Feedback
+### Feedback
 
 > Faites-nous part de votre avis sur ce chapitre.
 
@@ -350,7 +350,7 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Chapitre précédent](./04-users-groups.html)
 

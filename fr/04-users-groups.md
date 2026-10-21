@@ -1,16 +1,16 @@
 ---
 layout: default
-description: "Utilisateurs et groupes Linux : /etc/passwd, useradd, usermod, passwd, userdel, sudo et gestion des droits. Avec exercices corrigés."
+description: "Utilisateurs et groupes Linux : /etc/passwd, useradd, usermod, passwd, userdel, sudo et gestion des droits. Avec exercices."
 title: "Chapitre 4: Utilisateurs et groupes"
 last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 4: Utilisateurs et groupes**
-# **Avant-propos**
+## **Avant-propos**
 
 Nous vous recommandons de ne pas utiliser d'IA pour faire les exercices car vous êtes en phase d'apprentissage.
 
-# **Introduction**
+## **Introduction**
 
 Linux est un vrai système multi-utilisateurs ! Plusieurs utilisateurs peuvent se connecter et exécuter des tâches en même temps. Il a aussi un mode mono-utilisateur (« single user ») géré par le noyau, utilisé uniquement à des fins de maintenance. Les utilisateurs ont généralement :
 * un login et un mot de passe
@@ -20,7 +20,7 @@ Linux est un vrai système multi-utilisateurs ! Plusieurs utilisateurs peuvent s
 * des processus en cours d'exécution
 
 
-## Prérequis (La répétition est pédagogique 😜)
+### Prérequis (La répétition est pédagogique 😜)
 
 * Avoir une machine virtuelle ou un PC ou un environnement sous Linux (Ubuntu idéalement)
 * Être résilient 
@@ -37,9 +37,9 @@ Vous aurez donc cette vue:
 
 ---
 
-# **Gestion des utilisateurs**
+## **Gestion des utilisateurs**
 
-## Intro 
+### Intro 
 
 **À tester 👨🏾‍💻👩🏾‍💻:**
 - Ouvrir son terminal
@@ -60,7 +60,7 @@ Ci-dessous un exemple de retour similaire que vous aurez:
 
 Un peu d'explication rapide.
 
-### Commande : `whoami`
+#### Commande : `whoami`
 
 ```bash
 widal@j4rd1n-d3s-0mbr3s:~$ whoami
@@ -71,7 +71,7 @@ widal
 - Résultat ici : `widal`
 
 
-### Commande : `id`
+#### Commande : `id`
 
 ```bash
 widal@j4rd1n-d3s-0mbr3s:~$ id
@@ -84,7 +84,7 @@ uid=1000(widal) gid=1000(widal) groupes=1000(widal),4(adm),24(cdrom),27(sudo),30
   - `groupes=...` → Groupes secondaires (ex. : `sudo`, `docker`, `plugdev`, etc.)
 
 
-### Commande : `who`
+#### Commande : `who`
 
 ```bash
 widal@j4rd1n-d3s-0mbr3s:~$ who
@@ -99,7 +99,7 @@ widal    pts/2        2025-04-04 16:05 (j)
 - `pts/0`, `pts/1`, `pts/2` → terminaux ouverts (par ex. via terminal ou SSH)
 
 
-### Commande : `w`
+#### Commande : `w`
 
 ```bash
 widal@j4rd1n-d3s-0mbr3s:~$ w
@@ -133,7 +133,7 @@ widal    pts/2    j                04avril25 13:53   0.02s  0.02s /bin/bash
   - `QUOI` : Processus/commande en cours
 
 
-## C'est quoi le fichier /etc/passwd ?
+### C'est quoi le fichier /etc/passwd ?
 
 * Le fichier **/etc/passwd** recense tous les utilisateurs du système et leurs informations associées.
 	* commun à toutes les distributions
@@ -204,9 +204,9 @@ djo:$y$j9T$3J4GSvuGv7bM4Vn4BRaOm1$3nuzvVPg0VJoidAVUKsMJvf2Hn3Q6.TbC0H5MnqA782:15
 
 <br>
 
-## Les commandes de gestion des utilisateurs
+### Les commandes de gestion des utilisateurs
 
-### Points d'attention ⚠️
+#### Points d'attention ⚠️
 * Seul l'utilisateur **root** (le super utilisateur / l'administrateur) a la capacité d'utiliser les commandes de gestion des utilisateurs et des groupes.
 
 * Un utilisateur simple doit avoir les droits admin. Pour ce faire, il faudra faire appel à la commande **sudo** lors de l'utilisation d'une commande de gestion d'utilisateur. En utilisant la commande **sudo**, vous serez emmené à saisir votre mot de passe.
@@ -232,7 +232,7 @@ widal@j4rd1n-d3s-0mbr3s:~$
 
 <br>
 
-### 1. `useradd` – Ajouter un nouvel utilisateur
+#### 1. `useradd` – Ajouter un nouvel utilisateur
 
 ```bash
 sudo useradd nom_utilisateur
@@ -241,7 +241,7 @@ sudo useradd nom_utilisateur
 - Crée un **nouvel utilisateur**.
 - ⚠️ Par défaut, **ne crée pas le répertoire personnel** (`/home/nom_utilisateur`) sans option.
 
-#### Exemple :
+##### Exemple :
 ```bash
 sudo useradd -m alice
 ```
@@ -250,7 +250,7 @@ sudo useradd -m alice
 
 ---
 
-### 2. `usermod` – Modifier un utilisateur existant
+#### 2. `usermod` – Modifier un utilisateur existant
 
 ```bash
 sudo usermod [options] nom_utilisateur
@@ -258,7 +258,7 @@ sudo usermod [options] nom_utilisateur
 
 - Sert à **changer les infos** d’un utilisateur : groupe, répertoire, shell, etc.
 
-#### Exemples :
+##### Exemples :
 ```bash
 sudo usermod -aG sudo alice
 ```
@@ -271,7 +271,7 @@ Cela change le dossier personnel de `alice`.
 
 ---
 
-### 3. `passwd` – Changer le mot de passe d’un utilisateur
+#### 3. `passwd` – Changer le mot de passe d’un utilisateur
 
 ```bash
 sudo passwd nom_utilisateur
@@ -280,7 +280,7 @@ sudo passwd nom_utilisateur
 Cela permet de **définir ou modifier** le mot de passe d’un utilisateur.
 
 
-#### Exemple :
+##### Exemple :
 ```bash
 sudo passwd alice
 ```
@@ -288,7 +288,7 @@ Cela invite à saisir un nouveau mot de passe pour `alice`.
 
 ---
 
-### 4. `userdel` – Supprimer un utilisateur
+#### 4. `userdel` – Supprimer un utilisateur
 
 ```bash
 sudo userdel nom_utilisateur
@@ -296,19 +296,19 @@ sudo userdel nom_utilisateur
 
 - Supprime l’utilisateur **sans supprimer son dossier personnel**.
 
-#### Exemple :
+##### Exemple :
 ```bash
 sudo userdel alice
 ```
 
-#### Supprimer aussi son dossier :
+##### Supprimer aussi son dossier :
 ```bash
 sudo userdel -r alice
 ```
 
 ---
 
-### `adduser` vs `useradd`
+#### `adduser` vs `useradd`
 
 | Commande   | Description |
 |------------|-------------|
@@ -317,7 +317,7 @@ sudo userdel -r alice
 
 
 
-#### Exemple :
+##### Exemple :
 ```bash
 sudo adduser bob
 ```
@@ -333,7 +333,7 @@ Il peut arriver qu'il y ait un bémol (lors de l'utilisation de `useradd` géné
 
 ---
 
-### TLDR (Résumé rapide)
+#### TLDR (Résumé rapide)
 
 | Commande     | Rôle                              |
 |--------------|-----------------------------------|
@@ -345,7 +345,7 @@ Il peut arriver qu'il y ait un bémol (lors de l'utilisation de `useradd` géné
 | `mkhomedir_helper` | Créer le répertoire personnel d'un utilisateur |
 
 
-### Commandes pour changer d’utilisateur
+#### Commandes pour changer d’utilisateur
 
 - **su** : Change d’utilisateur ou ouvre une session root (ex. `su utilisateur` pour passer à un autre utilisateur, ou `su` pour devenir root).  
   - Options utiles : `su - utilisateur` (charge l’environnement de l’utilisateur cible, comme si c’était une nouvelle connexion).
@@ -357,7 +357,7 @@ Il peut arriver qu'il y ait un bémol (lors de l'utilisation de `useradd` géné
 <br>
 <br>
 
-## Exercice ⚔️
+### Exercice ⚔️
 
 * Lien du script du challenge: <https://raw.githubusercontent.com/N0vachr0n0/NoFD/refs/heads/main/USER_EXO_1.sh>
 
@@ -379,9 +379,9 @@ chmod +x USER_EXO_1.sh
 
 ---
 
-# **Gestion des Groupes**
+## **Gestion des Groupes**
 
-## Intro
+### Intro
 
 *  Un groupe est un ensemble d'utilisateurs ayant des points communs
 	* mêmes autorisations sur certains fichiers
@@ -446,14 +446,14 @@ nom:mdp_chiffré:administrateurs:membres
 
 <br>
 
-## Le groupe sudo ou wheel
+### Le groupe sudo ou wheel
 
 * Dans l'univers Linux, le groupe **sudo** et **wheel** sont des groupes qui permettent à un simple utilisateur d'utiliser des droits d'administrateur. Disons des droits de l'utilisateur **root**. **sudo** et **wheel** sont des groupes privilégiés. On les appelle aussi les **sudoers group**.
 
 * **sudo** en plus d'être un groupe est d'abord un package / une commande qui permet à un simple utilisateur de lancer une commande / une application en tant qu'administrateur (root). Petit coup d'oeil à **"Run As Administrator"** ou **"Exécuter en tant qu'administrateur"** sur **windows**.
 
 
-## Les commandes de gestion des groupes
+### Les commandes de gestion des groupes
 
 ⚠️ N'oubliez pas les points d'attention ⚠️
 
@@ -467,7 +467,7 @@ nom:mdp_chiffré:administrateurs:membres
 - **groups** : Liste les groupes auxquels appartient un utilisateur (ex. `groups utilisateur` pour afficher les groupes de l’utilisateur spécifié, ou `groups` pour l’utilisateur actuel).
 
 
-## Gestion du fichier /etc/sudoers
+### Gestion du fichier /etc/sudoers
 
 Le fichier `/etc/sudoers` est un fichier de configuration utilisé sur les systèmes Linux/Unix pour définir les permissions des utilisateurs et des groupes concernant l’utilisation de la commande `sudo`. Il détermine qui peut exécuter des commandes en tant qu’administrateur (root) ou un autre utilisateur, et quelles commandes spécifiques ils peuvent exécuter. Ce fichier est crucial pour la sécurité, car une mauvaise configuration peut soit bloquer l’accès légitime, soit accorder trop de privilèges.
 
@@ -494,7 +494,7 @@ Pour terminer en beauté, je vous invite à faire des recherches sur:
 sudo -l
 ```
 
-## Exercice ⚔️
+### Exercice ⚔️
 
 Exécuter le script pour débuter le challenge comme un grand 😉.
 
@@ -503,7 +503,7 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 ---
 ---
 
-## Feedback
+### Feedback
 
 
 > Faites-nous part de votre avis sur ce chapitre.
@@ -514,7 +514,7 @@ Exécuter le script pour débuter le challenge comme un grand 😉.
 ---
 ---
 
-## Navigation 
+### Navigation 
 
 * [Chapitre précédent](./03-process-management.html)
 
