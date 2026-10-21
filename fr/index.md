@@ -7,6 +7,7 @@ course_schema: true
 course_name: "Cours Linux - LinuxDojo"
 og_title: "Cours Linux gratuit : deviens ceinture noire du terminal"
 og_description: "Apprends Linux en tapant des commandes, pas en lisant 40 pages. Un CTF dès le chapitre 0, 12 chapitres pratiques, rien à installer. Gratuit, sans inscription."
+last_modified_at: 2026-10-19
 ---
 
 # 🐧 Cours Linux gratuit : deviens ceinture noire du terminal

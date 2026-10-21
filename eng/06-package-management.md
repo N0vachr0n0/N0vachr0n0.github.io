@@ -2,6 +2,7 @@
 layout: default
 description: "Linux package management: apt, dpkg, repositories, upgrades and installing from source. With hands-on exercises."
 title: "Chapter 6: Package Management"
+last_modified_at: 2026-08-09
 ---
 
 # **Chapter 6: Package Management**

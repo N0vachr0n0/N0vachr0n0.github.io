@@ -2,6 +2,7 @@
 layout: default
 description: "Understand the Linux world: distributions, the kernel, the filesystem hierarchy and your first steps in the terminal. Chapter 1 of LinuxDojo."
 title: "Chapter 1: Introduction to the Linux World"
+last_modified_at: 2026-08-09
 ---
 
 # **Chapter 1: Introduction to the Linux World**

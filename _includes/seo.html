@@ -87,6 +87,9 @@
   "inLanguage": {{ page_lang | jsonify }},
   "image": {{ og_image | jsonify }},
   "isAccessibleForFree": true,
+  {%- if page.last_modified_at %}
+  "dateModified": {{ page.last_modified_at | date: '%Y-%m-%d' | jsonify }},
+  {%- endif %}
   {%- if page_lang == 'en' %}
   "teaches": ["Linux", "System administration", "DevOps", "Cybersecurity"],
   {%- else %}

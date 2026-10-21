@@ -54,6 +54,18 @@
           {%- else %} Cours Linux gratuit et open source.
           {%- endif %}
         </span>
+        {%- if page.last_modified_at %}
+        {%- assign mod_iso = page.last_modified_at | date: '%Y-%m-%d' %}
+        <span class="site-footer-credits">
+          {%- if html_lang == 'en' %}
+          Last updated: <time datetime="{{ mod_iso }}">{{ page.last_modified_at | date: '%B %-d, %Y' }}</time>
+          {%- else %}
+          {%- assign mois = 'janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre' | split: ',' %}
+          {%- assign mois_idx = page.last_modified_at | date: '%-m' | minus: 1 %}
+          Mis à jour le <time datetime="{{ mod_iso }}">{{ page.last_modified_at | date: '%-d' }} {{ mois[mois_idx] }} {{ page.last_modified_at | date: '%Y' }}</time>
+          {%- endif %}
+        </span>
+        {%- endif %}
       </footer>
     </main>
   </body>

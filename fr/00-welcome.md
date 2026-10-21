@@ -2,6 +2,7 @@
 layout: default
 description: "Démarre le cours Linux par un CTF : lance un conteneur Docker et retrouve le flag caché. Évalue ton niveau réel avant d'attaquer la théorie."
 title: "Welcome"
+last_modified_at: 2026-08-09
 ---
 
 # **Welcome**

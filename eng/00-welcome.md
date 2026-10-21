@@ -2,6 +2,7 @@
 layout: default
 description: "Start the Linux course with a CTF: spin up a Docker container and find the hidden flag. Measure your real level before any theory."
 title: "Welcome"
+last_modified_at: 2026-08-09
 ---
 
 # **Welcome**

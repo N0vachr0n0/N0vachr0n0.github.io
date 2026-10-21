@@ -2,6 +2,7 @@
 layout: default
 description: "Resources to go further in Linux, DevOps, SRE and cybersecurity: hand-picked practice platforms, YouTube channels and podcasts."
 title: "Chapter 11: Extras"
+last_modified_at: 2026-08-09
 ---
 
 # **Chapter 11: Extras**

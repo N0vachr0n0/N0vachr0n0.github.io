@@ -7,6 +7,7 @@ course_schema: true
 course_name: "Hands-on Linux Course - LinuxDojo"
 og_title: "Free Linux course: earn your black belt in the terminal"
 og_description: "Learn Linux by typing commands, not reading 40 pages. A CTF from chapter 0, 12 hands-on chapters, nothing to install. Free, no signup."
+last_modified_at: 2026-10-19
 ---
 
 # 🐧 Free Linux Course: earn your terminal black belt

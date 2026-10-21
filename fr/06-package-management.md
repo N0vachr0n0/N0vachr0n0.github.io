@@ -2,6 +2,7 @@
 layout: default
 description: "Gestion des paquets Linux : apt, dpkg, dépôts, mises à jour et installation depuis les sources. Avec exercices pratiques."
 title: "Chapitre 6: Gestion des paquets"
+last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 6: Gestion des paquets**

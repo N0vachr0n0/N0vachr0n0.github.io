@@ -4,6 +4,7 @@ title: "Linux Course - About"
 description: "Overview of the LinuxDojo hands-on Linux course in English: goals, the 12 chapters and the learning path."
 noindex: true
 sitemap: false
+last_modified_at: 2026-08-09
 ---
 
 # 📚 Linux Course - English Version 🇬🇧 

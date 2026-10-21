@@ -2,6 +2,7 @@
 layout: default
 description: "Pare-feu sous Linux : principes du filtrage, iptables et ufw. Configurer, tester et comprendre ses règles avec des exercices pratiques."
 title: "Chapitre 9: Pare-feu"
+last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 9: Pare-feu**

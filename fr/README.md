@@ -4,6 +4,7 @@ title: "Cours Linux - À propos"
 description: "Présentation du cours Linux LinuxDojo en français : objectifs, liste des 12 chapitres et parcours d'apprentissage."
 noindex: true
 sitemap: false
+last_modified_at: 2026-08-09
 ---
 
 ---

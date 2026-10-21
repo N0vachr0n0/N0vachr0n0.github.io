@@ -2,6 +2,7 @@
 layout: default
 description: "Les commandes Linux de base : navigation, fichiers, recherche, redirections. Avec 5 challenges scriptés, cmdchallenge et sadservers pour pratiquer."
 title: "Chapitre 2: Commandes de base"
+last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 2: Commandes de base**

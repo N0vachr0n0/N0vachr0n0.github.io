@@ -2,6 +2,7 @@
 layout: default
 description: "Manage Linux processes: ps, top, kill, signals, jobs and zombie processes. Clear theory backed by hands-on exercises."
 title: "Chapter 3: Process Management"
+last_modified_at: 2026-08-09
 ---
 
 # **Chapter 3: Process Management**

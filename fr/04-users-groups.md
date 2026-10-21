@@ -2,6 +2,7 @@
 layout: default
 description: "Utilisateurs et groupes Linux : /etc/passwd, useradd, usermod, passwd, userdel, sudo et gestion des droits. Avec exercices corrigés."
 title: "Chapitre 4: Utilisateurs et groupes"
+last_modified_at: 2026-08-09
 ---
 
 # **Chapitre 4: Utilisateurs et groupes**
