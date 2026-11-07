@@ -6,7 +6,7 @@ Bienvenue sur le dépôt officiel du **Hands-on Linux Course** - un cours pratiq
 📙 **English version**: [Access the course in English](./eng/README.md)
 
 ---
-🔄 **English version available here → [English README](./README-ENG.md)**
+🔄 **English version available here → [English README](./README-ENG.md)** 
 
 
 ---
